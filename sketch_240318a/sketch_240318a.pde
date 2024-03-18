@@ -1,6 +1,7 @@
 int x, y, xDir, yDir, diam;
 color padColor, ballColor;
 int padX, padY, padWidth, padHeight;
+int[] xList = { 11, 22, 33 };
 
 void setup() {
   diam = 80;
@@ -15,6 +16,7 @@ void setup() {
   ballColor = #FFFF00;
   xDir = 10;
   yDir = 10;
+  println(xList[0], xList[2], xList.length);
 }
 
 void draw() {
@@ -23,7 +25,7 @@ void draw() {
   noStroke();
   fill(ballColor);
   ellipse(x, y, diam, diam); 
-  x += xDir; //x = x + xDir;
+  x += xDir;
   y += yDir; 
   
   
@@ -39,7 +41,7 @@ void draw() {
   if (y <= diam / 2 || y >= height - diam/2) { // down side check
     yDir *= -1;
   }
-  
+
   if (x > padX && x < padX + padWidth && y + diam / 2 >= padY) {
     yDir *= -1;
     if (padColor == 0) {
@@ -50,5 +52,4 @@ void draw() {
       padColor = 0;
     }
   }
-
 }
