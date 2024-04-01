@@ -324,5 +324,6 @@ void draw() {
   movePoops();
   addPoopPerSec();
   person.draw();
+  drawScore(count);
   checkCollisions();
 }
