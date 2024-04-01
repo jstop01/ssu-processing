@@ -132,16 +132,37 @@ class Person {
     this.speed = speed;
   }
   // speed와 키보드의 방향에 따라 좌표를 조정하세요. 
-  void move() { // 재은
-      
+  void move(int x, int y) { // 재은
+    this.x = x;
+    this.y = y;
   }
   // 사람을 그리세요 
   void draw() { // 재은
-      
+    pushStyle();
+    fill(#000000);
+    ellipse(x, y, 35, 35);
+    stroke(#000000);
+    line(x, y + 4, x, y + 70);
+    line(x + 52, y + 47, x - 52, y + 47);
+    line(x + 2, y + 67, x - 20, y + 115);
+    line(x, y + 67, x + 30, y + 115);
+    popStyle();
   }
 
   boolean checkIsTouchedPoops(Person person, ArrayList<Poop> poops) {  // 서현
     return true;
+  }
+}
+
+void keyPressed() {
+  if (keyCode == LEFT) {
+    person.move(person.x - person.speed, person.y);
+  } else if (keyCode == RIGHT) {
+    person.move(person.x + person.speed, person.y);
+  } else if (keyCode == UP) {
+    person.move(person.x, person.y - person.speed);
+  } else if (keyCode == DOWN) {
+    person.move(person.x, person.y + person.speed);
   }
 }
 
@@ -152,7 +173,7 @@ class WallPaper { // 나영
 }
 
 Batchu batchu = new Batchu(3);
-Person person = new Person(100, 100, 50, 100, 3);
+Person person;
 WallPaper WallPaper = new WallPaper();
 ArrayList<Poop> poops = new ArrayList<Poop>();
 PImage smallPoop,bigPoop;
@@ -163,6 +184,7 @@ void setup() {
   size(1280, 720);
   smallPoop = loadImage("smallPoop.png");
   bigPoop = loadImage("bigPoop.png");
+  person = new Person(width / 2, height - 100, 50, 100, 30);
 }
 
 // 똥이 화면의 아래를 넘어가면 1점씩 계산해요. 
@@ -182,6 +204,5 @@ void draw() {
   movePoops();
   addPoopPerSec();
   person.draw();
-  person.move();
 
 }
