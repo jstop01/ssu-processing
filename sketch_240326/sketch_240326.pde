@@ -1,4 +1,74 @@
+import processing.sound.*;
 // 모든 x, y는 해당 오브젝트의 센터를 기준으로 합니다.
+
+class Poop { // 재석
+  public int x, y, xDiam, yDiam, speed,click;
+  Poop(int x, int y, int xDiam, int yDiam, int speed, int click) {
+    this.x = x;
+    this.y = y;
+    this.xDiam = xDiam;
+    this.yDiam = yDiam;
+    this.speed = speed;
+    this.click = click;
+  }
+  
+  void draw() {
+    pushStyle();
+    if(click == 0) {
+      image(smallPoop, x - xDiam / 2, y, xDiam, yDiam);
+    } else {
+      image(bigPoop, x - xDiam / 2, y, xDiam, yDiam);
+    }
+    popStyle();
+  }
+  
+  void move() {
+    y += speed;
+  }
+  
+  void increaseSize() { // 똥 크기 조절
+    xDiam += 5; 
+    yDiam += 5; 
+  }
+}
+
+void movePoops() {
+  for (int i = poops.size() - 1; i >= 0; i--) {
+    Poop p = poops.get(i);
+    p.move();
+    if (p.y > height) {
+      count++;
+      poops.remove(i);
+    }
+  }
+}
+
+void drawPoops() {
+  for (int i = poops.size() - 1; i >= 0; i--) {
+    Poop p = poops.get(i);
+    p.draw();
+  }
+}
+
+void mousePressed() {
+  createNewPoop(); 
+}
+
+void createNewPoop() {
+  int newSize = 100; 
+  poops.add(new Poop(mouseX , 130, newSize, newSize, 3, 1));
+  sound = new SoundFile(this, "bigPoop.mp3");
+  sound.play();
+}
+
+void addPoopPerSec() {
+  if (frameCount % 60 == 0) {
+    poops.add(new Poop(mouseX, 130, 50, 50, 3, 0));
+    sound = new SoundFile(this, "smallPoop.mp3");
+    sound.play();
+  }
+}
+
 
 class Batchu { // 미선
   public int x = 0, y = 0, duration;
@@ -49,42 +119,7 @@ class Batchu { // 미선
     ellipse(x - 30, y - 150, 50, 50);// L_발바닥_깜장
 
   }
-
-  Poop makePoop() {  
-    // duration(초단위) 간격으로 Poop을 만들어 리턴하세요. 
-    // 만약 마우스가 클릭 상태라면, duration을 초기화하고 큰 Poop을 만들어 리턴하세요.
-    this.duration++;
-    if (this.duration % 2 == 0) {
-      return new Poop(50, 100, 30, 50, 3);
-    } else {
-      return null;
-    }
-  }
-  
 }
-
-class Poop { // 재석
-  // x좌표, y좌표, x지름, y지름, 속도
-  public int x, y, xDiam, yDiam, speed;
-
-  Poop(int x, int y, int xDiam, int yDiam, int speed) {
-    this.x = x;
-    this.y = y;
-    this.xDiam = xDiam;
-    this.yDiam = yDiam;
-    this.speed = speed;
-  }
-  // speed에 따라 좌표를 조정하세요.
-  // 아래로 똥을 움직이세요. 스피드에 따라 속도가 달라져요.
-  void move() {
-      
-  }
-  // x좌표, y좌표, x지름, y지름을 참고해서 똥을 그리세요.
-  void draw() {
-      
-  }
-}
-
 class Person {
   // x좌표, y좌표, x지름, y지름, 속도
   public int x, y, xDiam, yDiam, speed;
@@ -120,11 +155,14 @@ Batchu batchu = new Batchu(3);
 Person person = new Person(100, 100, 50, 100, 3);
 WallPaper WallPaper = new WallPaper();
 ArrayList<Poop> poops = new ArrayList<Poop>();
+PImage smallPoop,bigPoop;
+SoundFile sound;
+int count = 0;
 
 void setup() {
   size(1280, 720);
-  background(0);
-  poops.add(new Poop(50, 100, 30, 50, 3));
+  smallPoop = loadImage("smallPoop.png");
+  bigPoop = loadImage("bigPoop.png");
 }
 
 // 똥이 화면의 아래를 넘어가면 1점씩 계산해요. 
@@ -140,17 +178,9 @@ void draw() {
   background(255); // 매 프레임마다 배경을 지워줍니다.
   batchu.move(mouseX, 200);
   batchu.draw();
-  Poop newPoop = batchu.makePoop();
-  if (newPoop != null){
-    poops.add(newPoop);
-  }
-
-  for(int i = 0; i < poops.size(); i++) {
-    Poop poop = poops.get(i);
-    poop.draw();
-    poop.move();
-  }
-
+  drawPoops();
+  movePoops();
+  addPoopPerSec();
   person.draw();
   person.move();
 
