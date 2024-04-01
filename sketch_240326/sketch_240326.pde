@@ -193,7 +193,11 @@ int calculateScore(ArrayList<Poop> poops) { // 서현
 }
 
 void drawScore(int score) { // 은지 
-
+  pushStyle();
+  fill(0);
+  textSize(32);
+  text("Score: " + score, width - 200, 50);
+  popStyle();
 }
 
 void draw() {
@@ -204,5 +208,5 @@ void draw() {
   movePoops();
   addPoopPerSec();
   person.draw();
-
+  drawScore(count);
 }
