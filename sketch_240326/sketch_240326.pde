@@ -265,6 +265,28 @@ PImage smallPoop, bigPoop;
 //SoundFile sound;
 int count = 0;
 
+void checkCollisions() {
+  for (int i = poops.size() - 1; i >= 0; i--) {
+    Poop p = poops.get(i);
+    if (isCollision(p)) {
+      gameOver();
+    }
+  }
+}
+
+boolean isCollision(Poop p) {
+  return dist(person.x, person.y, p.x, p.y) < person.xDiam / 2 + p.xDiam / 2;
+}
+
+void gameOver() {
+  background(150, 30, 30, 0.5);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  fill(255);
+  text("Game Over", width/2, height/2);
+  noLoop();
+}
+
 void setup() {
   size(1280, 720);
   smallPoop = loadImage("smallPoop.png");
@@ -302,4 +324,5 @@ void draw() {
   movePoops();
   addPoopPerSec();
   person.draw();
+  checkCollisions();
 }
