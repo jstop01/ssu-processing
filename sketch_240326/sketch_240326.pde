@@ -1,4 +1,4 @@
-//import processing.sound.*;
+import processing.sound.*;
 // 모든 x, y는 해당 오브젝트의 센터를 기준으로 합니다.
 
 class Poop { // 재석
@@ -57,15 +57,15 @@ void mousePressed() {
 void createNewPoop() {
   int newSize = 100;
   poops.add(new Poop(mouseX, 130, newSize, newSize, 3, 1));
-  //sound = new SoundFile(this, "bigPoop.mp3");
-  //sound.play();
+  sound = new SoundFile(this, "bigPoop.mp3");
+  sound.play();
 }
 
 void addPoopPerSec() {
   if (frameCount % 60 == 0) {
     poops.add(new Poop(mouseX, 130, 50, 50, 3, 0));
-    //sound = new SoundFile(this, "smallPoop.mp3");
-    //sound.play();
+    sound = new SoundFile(this, "smallPoop.mp3");
+    sound.play();
   }
 }
 
@@ -262,7 +262,8 @@ Person person;
 WallPaper WallPaper = new WallPaper();
 ArrayList<Poop> poops = new ArrayList<Poop>();
 PImage smallPoop, bigPoop;
-//SoundFile sound;
+SoundFile gameOverSound;
+SoundFile sound;
 int count = 0;
 
 void checkCollisions() {
@@ -285,6 +286,8 @@ void gameOver() {
   fill(255);
   text("Game Over", width/2, height/2);
   noLoop();
+  gameOverSound = new SoundFile(this, "gameOver.mp3");
+  gameOverSound.play();
 }
 
 void setup() {
