@@ -1,18 +1,18 @@
-public class Scene_1 extends BaseScene {
+public class Scene_2 extends BaseScene {
   public void setup() {
-    println("Scene_1 : setup");
+    println("Scene_2 : setup");
   }
  
   public void draw() {
     pushStyle();
     
     background(255, 0, 0);
-    //println("Scene_1 : draw");
+    //println("Scene_2 : draw");
     
     popStyle();
   }
   
   public void mousePressed() {
-    println("Scene_1 : mousePressed");
+    println("Scene_2 : mousePressed");
   }
 }
