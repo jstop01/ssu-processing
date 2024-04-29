@@ -6,5 +6,6 @@ public class SceneManager {
   
   public void loadScene(BaseScene scene) {
     currentScene = scene;
+    currentScene.setup();
   }
 }
