@@ -1,5 +1,7 @@
 public class Button {
   public String text;
+  public color textColor = #000000;
+  // TODO: text font and size
   // Left top of the button 
   public PVector position;
   // Size of the button(rect size)
@@ -16,15 +18,28 @@ public class Button {
   }
   
   public boolean isMouseOver() {
-    return mouseX > position.x && mouseX < position.x + size.x && mouseY > position.y && mouseX < position.y + size.y;
+    return mouseX > position.x && mouseX < position.x + size.x && mouseY > position.y && mouseY < position.y + size.y;
   }
   
   public void draw() {
+    setMouseOverStyle(isMouseOver());  
+    
     rect(position.x, position.y, size.x, size.y);
     if (text != null) {
       float textX = position.x + size.x / 2;
       float textY = position.y + size.y / 2;
+      fill(textColor);
       text(text, textX, textY);
+    }
+  }
+  
+  // Can be overriden in the derived class
+  protected void setMouseOverStyle(boolean isOver) {
+    if (isOver) {
+      strokeWeight(2);
+    }
+    else {
+      strokeWeight(1);
     }
   }
 }

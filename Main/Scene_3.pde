@@ -6,7 +6,7 @@ public class Scene_3 extends BaseScene {
   public void draw() {
     pushStyle();
     
-    background(255, 0, 0);
+    background(0, 0, 255);
     //println("Scene_3 : draw");
     
     popStyle();
