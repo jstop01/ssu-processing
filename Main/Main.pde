@@ -4,16 +4,27 @@
 import static java.awt.event.KeyEvent.*;
 
 void setup() {
-  size(1280, 720);
+  size(1280, 720, P2D);
   println("setup");
   sceneManager.loadScene(new Scene_Intro());
+
+  //postProcessManager.addShader(loadShader("blur.glsl"));
+  //postProcessManager.addShader(loadShader("colorshift.glsl"));
+  //postProcessManager.addShader(loadShader("jitter.glsl"));
+  //postProcessManager.addShader(loadShader("noise.glsl"));
 }
 
 void draw() {
+  background(255);
+  strokeWeight(20);
+  circle(400, 400, 50);
   BaseScene scene = sceneManager.getCurrentScene();
   if (scene != null) {
     scene.draw();
   }
+  
+  postProcessManager.draw(); 
+  image(get(), 0, 0, width, height);
 }
 
 void mousePressed() {
