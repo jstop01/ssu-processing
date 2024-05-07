@@ -11,15 +11,16 @@ public class PostProcessManager {
   }
   
   public void draw() {
+    pushStyle();
+
     float time = millis() / 1000.0;
     for (PShader s : shaders) {
       println("set shader : " + s);
       s.set("time", time);
       s.set("tex", get());
       filter(s);
-      //shader(s);
     }
-    
-    //rect(0, 0, width, height);
+
+    popStyle();
   }
 }
