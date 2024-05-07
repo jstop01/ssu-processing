@@ -1,0 +1,76 @@
+public enum ObjectType {
+  tiger,
+  boy,
+  girl,
+  mom,
+  tiger_mom
+}
+
+public enum ObjectPoseType {
+  front,
+  back
+}
+
+final ObjectFactory objectFactory = new ObjectFactory();
+
+public class ObjectFactory {
+  public ShapeObject create(ObjectType type, ObjectPoseType pose) {
+    PShape shape = loadShape(getShapePath(type, pose));
+    //shape.enableStyle();
+    return new ShapeObject(shape, new PVector(0,0), new PVector(100,100), new PVector(0,0,0));
+  }
+  
+  public String getShapePath(ObjectType type, ObjectPoseType pose) {
+    String prefix = "res/characters/";
+    switch (type) {
+      case tiger:
+        if (pose == ObjectPoseType.front) return prefix + "tiger_f.svg";
+        else if (pose == ObjectPoseType.back) return prefix + "tiger_b.svg";
+        break;
+      case boy:
+        if (pose == ObjectPoseType.front) return prefix + "boy_f.svg";
+        else if (pose == ObjectPoseType.back) return prefix + "boy_b.svg";
+        break;
+      case girl:
+        if (pose == ObjectPoseType.front) return prefix + "girl_f.svg";
+        else if (pose == ObjectPoseType.back) return prefix + "girl_b.svg";
+        break;
+      case mom:
+        if (pose == ObjectPoseType.front) return prefix + "mom_f.svg";
+        else if (pose == ObjectPoseType.back) return prefix + "mom_b.svg";
+        break;
+      case tiger_mom:
+        if (pose == ObjectPoseType.front) return prefix + "tiger_mom_f.svg";
+        else if (pose == ObjectPoseType.back) return prefix + "tiger_mom_b.svg";
+        break;
+      default: throw new UnsupportedOperationException("Not implemented : " + type + " " + pose);
+    }
+    return "";
+  }
+}
+
+public class ShapeObject {
+  private PShape shape;
+  public PVector position;
+  public PVector size;
+  public PVector rotation;
+
+  public ShapeObject(PShape shape, PVector position, PVector size, PVector rotation) {
+    this.shape = shape;
+    this.position = position;
+    this.size = size;
+    this.rotation = rotation;
+  }
+  
+  public void draw() {
+    pushStyle();
+    //noStroke();
+    shapeMode(CENTER);
+    rotate(rotation.x);
+    //rotateX(radians(rotation.x));
+    //rotateY(radians(rotation.y));
+    //rotateZ(radians(rotation.z));
+    shape(shape, position.x, position.y, size.x, size.y);
+    popStyle();
+  }
+}
