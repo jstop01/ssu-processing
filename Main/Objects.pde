@@ -1,14 +1,26 @@
 public enum ObjectType {
-  tiger,
-  boy,
-  girl,
-  mom,
-  tiger_mom
+  tiger("tiger"),
+  boy("boy"),
+  girl("girl"),
+  mom("mom"),
+  tiger_mom("tiger_mom");
+  
+  public final String name;
+
+  private ObjectType(String name) {
+    this.name = name;
+  }
 }
 
 public enum ObjectPoseType {
-  front,
-  back
+  front("f"),
+  back("b");
+  
+  public final String name;
+
+  private ObjectPoseType(String name) {
+    this.name = name;
+  }
 }
 
 final ObjectFactory objectFactory = new ObjectFactory();
@@ -25,7 +37,7 @@ public class ObjectFactory {
     throw new UnsupportedOperationException("Not implemented : " + path);
   }
   
-public String getShapePath(ObjectType type, ObjectPoseType pose) {
+  public String getShapePath(ObjectType type, ObjectPoseType pose) {
     if (!(type instanceof ObjectType) || !(pose instanceof ObjectPoseType))
       throw new UnsupportedOperationException("Not implemented : " + type + " " + pose);
     
@@ -35,6 +47,7 @@ public String getShapePath(ObjectType type, ObjectPoseType pose) {
     
     return prefix + type.name + "_" + pose.name + extension;
   }
+}
 
 public class ShapeObject {
   private PShape shape;
