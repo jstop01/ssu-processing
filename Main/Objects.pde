@@ -25,37 +25,16 @@ public class ObjectFactory {
     throw new UnsupportedOperationException("Not implemented : " + path);
   }
   
-  public String getShapePath(ObjectType type, ObjectPoseType pose) {
+public String getShapePath(ObjectType type, ObjectPoseType pose) {
+    if (!(type instanceof ObjectType) || !(pose instanceof ObjectPoseType))
+      throw new UnsupportedOperationException("Not implemented : " + type + " " + pose);
+    
     boolean useSvg = false;
     String prefix = "res/characters/" + (useSvg ? "svg/" : "png/");
     String extension = useSvg ? ".svg" : ".png";
-    switch (type) {
-      case tiger:
-        if (pose == ObjectPoseType.front) return prefix + "tiger_f" + extension;
-        //if (pose == ObjectPoseType.front) return prefix + "tiger_f" + extension;
-        else if (pose == ObjectPoseType.back) return prefix + "tiger_b" + extension;
-        break;
-      case boy:
-        if (pose == ObjectPoseType.front) return prefix + "boy_f" + extension;
-        else if (pose == ObjectPoseType.back) return prefix + "boy_b" + extension;
-        break;
-      case girl:
-        if (pose == ObjectPoseType.front) return prefix + "girl_f" + extension;
-        else if (pose == ObjectPoseType.back) return prefix + "girl_b" + extension;
-        break;
-      case mom:
-        if (pose == ObjectPoseType.front) return prefix + "mom_f" + extension;
-        else if (pose == ObjectPoseType.back) return prefix + "mom_b" + extension;
-        break;
-      case tiger_mom:
-        if (pose == ObjectPoseType.front) return prefix + "tiger_mom_f" + extension;
-        else if (pose == ObjectPoseType.back) return prefix + "tiger_mom_b" + extension;
-        break;
-      default: throw new UnsupportedOperationException("Not implemented : " + type + " " + pose);
-    }
-    return "";
+    
+    return prefix + type.name + "_" + pose.name + extension;
   }
-}
 
 public class ShapeObject {
   private PShape shape;
