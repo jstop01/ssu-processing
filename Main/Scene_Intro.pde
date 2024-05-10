@@ -20,11 +20,13 @@ public class Scene_Intro extends BaseScene {
     sceneButton3.text = "Scene3";
     sceneButton3.position = new PVector(600, 100);
     sceneButton3.size = new PVector(200, 100);
+
+    Rock rock = new Rock(500,500,120,100,2, #FF0000);
+    Rock rock2 = new Rock(600,600,120,100,1, #00FF00);
   }
  
   public void draw() {
     pushStyle();
-    
     if (sceneButton1.drawAndCheckClick()) {
       sceneManager.loadScene(new Scene_1());
     }
@@ -39,6 +41,9 @@ public class Scene_Intro extends BaseScene {
     //println("Scene_Intro : draw");
     
     popStyle();
+    // drawing code
+    drawManager.drawing();
+    //
   }
   
   public void mousePressed() {
