@@ -37,9 +37,6 @@ void mousePressed() {
   } else {
     println("scene is null!");
   }
-
-  // DrawManager
-  drawManager.mousePressed();
 }
 
 void keyPressed() {

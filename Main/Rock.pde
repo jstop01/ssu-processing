@@ -4,8 +4,7 @@ public class Rock extends Drawable {
     int w;
     int h;
     int zIndex;
-    color c;
-    public Rock(int x, int y, int w, int h, int zIndex, color c) {
+    public Rock(int x, int y, int w, int h, int zIndex ) {
         super();
         this.x = 100;
         this.y = 100;
@@ -24,13 +23,11 @@ public class Rock extends Drawable {
             this.h = h;
         }
         this.zIndex = zIndex;
-        this.c = c;
         this.setup(this.x,this.y,this.w,this.h,this.zIndex);
     }
 
     @Override
     public void draw() {
-        fill(this.c);
         rect(this.x, this.y, this.w, this.h);
     }
 
