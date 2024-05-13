@@ -40,7 +40,7 @@ public class Scene_Intro extends BaseScene {
     }
     
     if (sceneButton3.drawAndCheckClick()) {
-      sceneManager.loadScene(new Scene_3());
+      sceneManager.loadScene(new Scene_301());
     }
     //println("Scene_Intro : draw");
     

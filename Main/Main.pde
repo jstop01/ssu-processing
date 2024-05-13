@@ -6,7 +6,6 @@ import static java.awt.event.KeyEvent.*;
 void setup() {
   size(1280, 720, P2D);
   println("setup");
-  //sceneManager.loadScene(new Scene_ObjectTest());
   
   sceneManager.loadScene(new Scene_Intro());
 
