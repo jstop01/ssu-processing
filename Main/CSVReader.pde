@@ -11,7 +11,6 @@ class CSVReader {
 
     public CSVReader(String filePath) {
         this.filePath = filePath;
-        readCSV();
     }
 
     public List<Map<String, String>> readCSV() {
