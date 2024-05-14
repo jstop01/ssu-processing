@@ -15,7 +15,7 @@ public class Scene_ObjectTest extends BaseScene {
     pushStyle();
     
     background(255, 0, 0);
-    //println("Scene_ObjectTest : draw");
+    println("Scene_ObjectTest : draw");
     tiger.draw();
     
     popStyle();
