@@ -10,12 +10,26 @@ public class PostProcessManager {
     s.set("resolution", (float)width, (float)height);
   }
   
+  public void removeShader(PShader s) {
+    shaders.remove(s);
+  }
+  
+  public void addGrain(PVector grainColor) {
+    var grain = loadShader("grain.glsl");
+    grain.set("col", grainColor);
+    postProcessManager.addShader(grain);
+  }
+  
+  public void clearShaders() {
+    shaders.clear();
+  }
+  
+  
   public void draw() {
     pushStyle();
 
     float time = millis() / 1000.0;
     for (PShader s : shaders) {
-      println("set shader : " + s);
       s.set("time", time);
       s.set("tex", get());
       filter(s);

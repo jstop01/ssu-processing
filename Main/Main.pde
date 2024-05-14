@@ -9,6 +9,7 @@ void setup() {
   
   sceneManager.loadScene(new Scene_Intro());
 
+  postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
   //postProcessManager.addShader(loadShader("blur.glsl"));
   //postProcessManager.addShader(loadShader("colorshift.glsl"));
   //postProcessManager.addShader(loadShader("jitter.glsl"));
