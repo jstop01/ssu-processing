@@ -1,12 +1,10 @@
 public class Scene_Intro extends BaseScene {
-  private DrawManager drawManager;
   private Button sceneButton1;
   private Button sceneButton2;
   private Button sceneButton3;
   
   public void setup() {
     println("Scene_Intro : setup");
-    drawManager = new DrawManager();
     sceneButton1 = new Button();
     sceneButton1.text = "Scene1";
     sceneButton1.position = new PVector(100, 100);

@@ -1,6 +1,5 @@
 public class Scene_301 extends BaseScene {
   ShapeObject tiger;
-  DrawManager drawManager = new DrawManager();
 
   public void setup() {
     tiger = objectFactory.create(ObjectType.tiger_mom, ObjectPoseType.back);
