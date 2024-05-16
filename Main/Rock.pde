@@ -6,16 +6,10 @@ public class Rock extends Drawable {
     int zIndex;
     public Rock(int x, int y, int w, int h, int zIndex ) {
         super();
-        this.x = 100;
-        this.y = 100;
+        this.x = x;
+        this.y = y;
         this.w = 200;
         this.h = 200;
-        if(x != 0){
-            this.x = x;
-        }
-        if(y != 0){
-            this.y = y;
-        }
         if(w != 0){
             this.w = w;
         }
