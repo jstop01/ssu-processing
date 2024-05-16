@@ -1,23 +1,34 @@
 public class Drawable {
-  private int abstractX;
-  private int abstractY;
-  private int w;
-  private int h;
-  private int zIndex;
-  private PVector startPos;
-  private PVector endPos;
-  private PVector center;
+  protected int abstractX;
+  protected int abstractY;
+  protected int w;
+  protected int h;
+  protected float zAngle;
+  protected int zIndex;
+  protected PVector startPos;
+  protected PVector endPos;
+  protected PVector center;
   
   public void setup(int x, int y, int w, int h, int zIndex){
     this.abstractX = x;
     this.abstractY = y;
     this.w = w;
     this.h = h;
+    this.zAngle = 0;
     this.zIndex = zIndex;
 
     this.startPos = new PVector(x, y);
     this.endPos = new PVector(x + w, y + h);
     this.center = new PVector(x + w/2, y + h/2);
+  }
+
+  public void setPosition(int x, int y) {
+    this.abstractX = x;
+    this.abstractY = y;
+  }
+
+  public void rotate(float zAngle) {
+    this.zAngle = zAngle;
   }
 
   // draw function

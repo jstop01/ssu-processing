@@ -30,9 +30,9 @@ public class ObjectFactory {
     String path = getShapePath(type, pose);
 
     if (path.endsWith(".svg"))
-      return new ShapeObject(loadShape(path), new PVector(0,0), new PVector(100,100), new PVector(0,0,0));
+      return new ShapeObject(loadShape(path));
     else if (path.endsWith(".png"))
-      return new ShapeObject(loadImage(path), new PVector(0,0), new PVector(100,100), new PVector(0,0,0));
+      return new ShapeObject(loadImage(path));
 
     throw new UnsupportedOperationException("Not implemented : " + path);
   }
@@ -49,31 +49,23 @@ public class ObjectFactory {
   }
 }
 
-public class ShapeObject {
+public class ShapeObject extends Drawable {
   private PShape shape;
   private PImage image;
 
-  public PVector position;
-  public PVector size;
   public PVector scale;
-  public PVector rotation;
 
-  public ShapeObject(PShape shape, PVector position, PVector size, PVector rotation) {
+  public ShapeObject(PShape shape) {
     this.shape = shape;
-    this.position = position;
-    this.size = size;
     this.scale = new PVector(1, 1, 1);
-    this.rotation = rotation;
   }
 
-  public ShapeObject(PImage image, PVector position, PVector size, PVector rotation) {
+  public ShapeObject(PImage image) {
     this.image = image;
-    this.position = position;
-    this.size = size;
     this.scale = new PVector(1, 1, 1);
-    this.rotation = rotation;
   }
   
+  @Override
   public void draw() {
     if (shape != null)
       drawShape();
@@ -86,8 +78,8 @@ public class ShapeObject {
 
     noStroke();
     shapeMode(CENTER);
-    rotate(rotation.x);
-    shape(shape, position.x, position.y, size.x, size.y);
+    rotate(zAngle);
+    shape(shape, abstractX, abstractY, w, h);
 
     popStyle();
   }
@@ -96,9 +88,9 @@ public class ShapeObject {
     pushStyle();
     
     imageMode(CENTER);
-    rotate(rotation.x);
+    rotate(zAngle);
     //image(image, position.x, position.y, size.x, size.y);
-    image(image, position.x, position.y, image.width * scale.x, image.height * scale.y);
+    image(image, abstractX, abstractY, image.width * scale.x, image.height * scale.y);
 
     popStyle();
   }
