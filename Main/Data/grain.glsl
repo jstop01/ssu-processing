@@ -18,7 +18,7 @@ void main() {
     //mdf *= sin(time) + 1.0; // animate the effect's strength
     
     //vec4 subtractedColor = vec4(0, 1, 1, 1);
-    vec4 subtractedColor = vec4(1f - col.r, 1f - col.g, 1f - col.b, 1);
+    vec4 subtractedColor = vec4(1 - col.r, 1 - col.g, 1 - col.b, 1);
     vec4 finalColor = tColor - (subtractedColor * noise * mdf);
     //vec4 col = mix(tColor, (grainColor * noise * mdf), amount);
 
