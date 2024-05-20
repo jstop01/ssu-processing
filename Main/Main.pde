@@ -10,7 +10,8 @@ void setup() {
   //sceneManager.loadScene(new Scene_ObjectTest());
   sceneManager.loadScene(new Scene_301());
 
-  postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
+  // postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
+
   //postProcessManager.addShader(loadShader("blur.glsl"));
   //postProcessManager.addShader(loadShader("colorshift.glsl"));
   //postProcessManager.addShader(loadShader("jitter.glsl"));
@@ -22,23 +23,27 @@ void draw() {
   strokeWeight(20);
   circle(400, 400, 50);
   BaseScene scene = sceneManager.getCurrentScene();
+
+  cameraManager.draw(); 
+  
   if (scene != null) {
     scene.draw();
   }
-  
-  postProcessManager.draw(); 
-  image(get(), 0, 0, width, height);
+
+  // postProcessManager.draw();
+  // image(get(), 0, 0, width, height);
 }
 
 void mousePressed() {
-  println("mousePressed");
   BaseScene scene = sceneManager.getCurrentScene();
   if (scene != null) {
     scene.mousePressed();
+    cameraManager.zoom(new PVector(mouseX, mouseY), 2.0, 5000);
   } else {
     println("scene is null!");
   }
 }
+
 
 void keyPressed() {
 
