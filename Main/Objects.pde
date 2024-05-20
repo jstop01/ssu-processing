@@ -4,10 +4,30 @@ public enum ObjectType {
   girl("girl"),
   mom("mom"),
   tiger_mom("tiger_mom");
-  
+
   public final String name;
 
   private ObjectType(String name) {
+    this.name = name;
+  }
+}
+
+public enum BackgroundType {
+  구름1("구름1"),
+  구름2("구름2"),
+  달("달"),
+  대문("대문"),
+  돌과풀("돌과풀"),
+  무서운나무("무서운나무"),
+  반짝1("반짝1"),
+  반짝2("반짝2"),
+  반짝3("반짝3"),
+  초가집("초가집"),
+  해("해");
+
+  public final String name;
+
+  private BackgroundType(String name) {
     this.name = name;
   }
 }
@@ -36,6 +56,11 @@ public class ObjectFactory {
 
     throw new UnsupportedOperationException("Not implemented : " + path);
   }
+
+  public ShapeObject create(BackgroundType type) {
+    String path = "res/bg/" + type.name + ".png";
+      return new ShapeObject(loadImage(path));
+  }
   
   public String getShapePath(ObjectType type, ObjectPoseType pose) {
     if (!(type instanceof ObjectType) || !(pose instanceof ObjectPoseType))
@@ -63,6 +88,11 @@ public class ShapeObject extends Drawable {
   public ShapeObject(PImage image) {
     this.image = image;
     this.scale = new PVector(1, 1, 1);
+  }
+
+  public void setScale(float x, float y) {
+    this.scale.x = x;
+    this.scale.y = y;
   }
   
   @Override

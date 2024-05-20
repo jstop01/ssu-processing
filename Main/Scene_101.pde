@@ -1,13 +1,19 @@
 public class Scene_101 extends BaseScene {
   public void setup() {
-    println("Scene_101 : setup");
+    var door = objectFactory.create(BackgroundType.대문);
+    door.setPosition(800, 300);
+    door.scale.x = 0.8;
+    door.scale.y = 0.8;
+    
+
+    drawManager.addDrawable(door);
   }
  
   public void draw() {
     pushStyle();
     
     background(255, 0, 0);
-    println("Scene_101 : draw");
+    drawManager.drawing();
     
     popStyle();
   }
@@ -16,4 +22,3 @@ public class Scene_101 extends BaseScene {
     println("Scene_101 : mousePressed");
   }
 }
-
