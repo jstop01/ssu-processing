@@ -30,11 +30,11 @@ public class Scene_Intro extends BaseScene {
   public void draw() {
     pushStyle();
     if (sceneButton1.drawAndCheckClick()) {
-      sceneManager.loadScene(new Scene_1());
+      sceneManager.loadScene(new Scene_101());
     }
     
     if (sceneButton2.drawAndCheckClick()) {
-      sceneManager.loadScene(new Scene_2());
+      sceneManager.loadScene(new Scene_201());
     }
     
     if (sceneButton3.drawAndCheckClick()) {
