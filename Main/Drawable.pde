@@ -8,6 +8,7 @@ public class Drawable {
   protected PVector startPos;
   protected PVector endPos;
   protected PVector center;
+  protected PVector scale;
   
   public void setup(int x, int y, int w, int h, int zIndex){
     this.abstractX = x;
@@ -20,11 +21,17 @@ public class Drawable {
     this.startPos = new PVector(x, y);
     this.endPos = new PVector(x + w, y + h);
     this.center = new PVector(x + w/2, y + h/2);
+    this.scale = new PVector(1, 1);
   }
 
   public void setPosition(int x, int y) {
     this.abstractX = x;
     this.abstractY = y;
+  }
+
+  public void setScale(float x, float y) {
+    this.scale.x = x;
+    this.scale.y = y;
   }
 
   public void rotate(float zAngle) {

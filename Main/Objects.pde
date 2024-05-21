@@ -78,8 +78,6 @@ public class ShapeObject extends Drawable {
   private PShape shape;
   private PImage image;
 
-  public PVector scale;
-
   public ShapeObject(PShape shape) {
     this.shape = shape;
     this.scale = new PVector(1, 1, 1);
@@ -88,11 +86,6 @@ public class ShapeObject extends Drawable {
   public ShapeObject(PImage image) {
     this.image = image;
     this.scale = new PVector(1, 1, 1);
-  }
-
-  public void setScale(float x, float y) {
-    this.scale.x = x;
-    this.scale.y = y;
   }
   
   @Override
