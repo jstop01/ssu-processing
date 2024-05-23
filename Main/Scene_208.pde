@@ -6,14 +6,13 @@ public class Scene_208 extends BaseScene {
   public void draw() {
     pushStyle();
     
-    background(255, 0, 0);
-    println("Scene_208 : draw");
+    background(#FFFFFF);
+    effectManager.updateAndDraw();
     
     popStyle();
   }
   
   public void mousePressed() {
-    println("Scene_208 : mousePressed");
+     effectManager.addParticles(mouseX, mouseY, EffectType.BLOOD);
   }
 }
-

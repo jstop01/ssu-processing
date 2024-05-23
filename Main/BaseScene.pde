@@ -2,6 +2,7 @@ public abstract class BaseScene {
 
   public DrawManager drawManager = new DrawManager();
   public AnimationManager animationManager = new AnimationManager();
+  public EffectManager effectManager = new EffectManager();
 
   public void startAnimation(BaseAnimation animation) {
     animationManager.startAnimation(animation);

@@ -28,8 +28,6 @@ void draw() {
   updateDeltaTime();
 
   background(255);
-  strokeWeight(20);
-  circle(400, 400, 50);
   BaseScene scene = sceneManager.getCurrentScene();
 
   cameraManager.draw(); 
