@@ -9,6 +9,7 @@ void setup() {
   size(1280, 720, P2D);
   println("setup");
   
+  //sceneManager.loadScene(new Scene_AnimationTest());
   //sceneManager.loadScene(new Scene_SpriteAnimationTest());
   //sceneManager.loadScene(new Scene_ObjectTest());
   //sceneManager.loadScene(new Scene_105());
