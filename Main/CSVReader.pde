@@ -6,38 +6,45 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class CSVReader {
-    private String filePath;
-
-    public CSVReader(String filePath) {
+class TsvProcessor {
+  String filePath;
+    TsvProcessor(String filePath) {
         this.filePath = filePath;
-        readCSV();
     }
 
-    public List<Map<String, String>> readCSV() {
-        List<Map<String, String>> dataList = new ArrayList<>();
+    List<Map<String, String>> readTsvFile() {
+        List<Map<String, String>> list = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            String[] headers = null;
-            if ((line = br.readLine()) != null) {  
-                headers = line.split(",");
-            }
+            String[] headers = br.readLine().split("\t"); 
 
             while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
-                if (headers.length != values.length) {
-                    throw new IllegalArgumentException("ERROR");
-                }
+                String[] values = line.split("\t");
+                Map<String, String> map = new HashMap<>();
 
-                Map<String, String> dataMap = new HashMap<>();
                 for (int i = 0; i < headers.length; i++) {
-                    dataMap.put(headers[i], values[i]);
+                    if (i < values.length) {
+                        map.put(headers[i], values[i]);
+                    } else {
+                        map.put(headers[i], "");
+                    }
                 }
-                dataList.add(dataMap);
+                list.add(map);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return dataList;
+        return list;
     }
+    
+    
+    Map<String, String> getDataById(List<Map<String, String>> data, String id) {
+        for (Map<String, String> row : data) {
+            if (row.containsKey("id") && row.get("id").equals(id)) {
+                return row;
+            }
+        }
+        return null;
+    }
+
 }
