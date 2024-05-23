@@ -1,13 +1,11 @@
 public class Rock extends Drawable {
-    int zIndex;
-    public Rock(int x, int y, int w, int h, int zIndex) {
-        super();
-        this.setup(x,y,w,h,zIndex);
+    public Rock(float x, float y, float w, float h, int zIndex) {
+        super(x, y, w, h, zIndex);
     }
 
     @Override
     public void draw() {
-        rect(this.abstractX, this.abstractY, this.w, this.h);
+        rect(this.x, this.y, this.w, this.h);
     }
 
     @Override
