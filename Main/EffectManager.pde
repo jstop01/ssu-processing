@@ -10,6 +10,10 @@ class EffectManager {
       for (int i = 0; i < 50; i++) {
         particles.add(new BloodParticle(x, y));
       }
+    } else if (type == EffectType.SLEEP) {
+      for (int i = 0; i < 1; i++) {
+        particles.add(new SleepParticle(x, y));
+      }
     }
   }
 
@@ -26,5 +30,6 @@ class EffectManager {
 }
 
 enum EffectType {
-  BLOOD
+  BLOOD,
+  SLEEP
 }

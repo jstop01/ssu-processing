@@ -13,6 +13,6 @@ public class Scene_208 extends BaseScene {
   }
   
   public void mousePressed() {
-     effectManager.addParticles(mouseX, mouseY, EffectType.BLOOD);
+     effectManager.addParticles(mouseX, mouseY, EffectType.SLEEP);
   }
 }
