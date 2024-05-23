@@ -24,10 +24,16 @@ public class Drawable {
     this.scale = new PVector(1, 1);
   }
 
+  public int getX() { return abstractX; }
+  public int getY() { return abstractY; }
+
   public void setPosition(int x, int y) {
     this.abstractX = x;
     this.abstractY = y;
   }
+
+  public float getScaleX() { return scale.x; }
+  public float getScaleY() { return scale.y; }
 
   public void setScale(float x, float y) {
     this.scale.x = x;
