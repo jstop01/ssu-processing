@@ -2,14 +2,19 @@
 // 전역 변수도 이 파일에서 정의한다.
 
 import static java.awt.event.KeyEvent.*;
+float deltaTime = 0;
+int lastMillis = 0;
 
 void setup() {
   size(1280, 720, P2D);
   println("setup");
   
+  //sceneManager.loadScene(new Scene_AnimationTest());
+  //sceneManager.loadScene(new Scene_SpriteAnimationTest());
   //sceneManager.loadScene(new Scene_ObjectTest());
-  sceneManager.loadScene(new Scene_CameraManagerTest());
-  // sceneManager.loadScene(new Scene_301());
+  //sceneManager.loadScene(new Scene_CameraManagerTest());
+  //sceneManager.loadScene(new Scene_105());
+  sceneManager.loadScene(new Scene_Intro());
 
   postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
 
@@ -20,6 +25,8 @@ void setup() {
 }
 
 void draw() {
+  updateDeltaTime();
+
   background(255);
   strokeWeight(20);
   circle(400, 400, 50);
@@ -33,6 +40,12 @@ void draw() {
 
   postProcessManager.draw();
   image(get(), 0, 0, width, height);
+}
+
+void updateDeltaTime() {
+  int currentMillis = millis();
+  deltaTime = (currentMillis - lastMillis) / 1000.0;
+  lastMillis = currentMillis;
 }
 
 void mousePressed() {

@@ -1,6 +1,7 @@
 public class Button {
   public String text;
   public color textColor = #000000;
+  public int fontSize = 15;
   // TODO: text font and size
   // Left top of the button 
   public PVector position;
@@ -29,6 +30,8 @@ public class Button {
       float textX = position.x + size.x / 2;
       float textY = position.y + size.y / 2;
       fill(textColor);
+      textSize(fontSize);
+      textAlign(CENTER, CENTER);
       text(text, textX, textY);
     }
   }

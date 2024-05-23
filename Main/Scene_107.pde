@@ -16,4 +16,3 @@ public class Scene_107 extends BaseScene {
     println("Scene_107 : mousePressed");
   }
 }
-
