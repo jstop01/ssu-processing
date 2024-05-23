@@ -12,10 +12,12 @@ void setup() {
   //sceneManager.loadScene(new Scene_AnimationTest());
   //sceneManager.loadScene(new Scene_SpriteAnimationTest());
   //sceneManager.loadScene(new Scene_ObjectTest());
+  //sceneManager.loadScene(new Scene_CameraManagerTest());
   //sceneManager.loadScene(new Scene_105());
   sceneManager.loadScene(new Scene_Intro());
 
   postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
+
   //postProcessManager.addShader(loadShader("blur.glsl"));
   //postProcessManager.addShader(loadShader("colorshift.glsl"));
   //postProcessManager.addShader(loadShader("jitter.glsl"));
@@ -29,11 +31,14 @@ void draw() {
   strokeWeight(20);
   circle(400, 400, 50);
   BaseScene scene = sceneManager.getCurrentScene();
+
+  cameraManager.draw(); 
+  
   if (scene != null) {
     scene.draw();
   }
-  
-  postProcessManager.draw(); 
+
+  postProcessManager.draw();
   image(get(), 0, 0, width, height);
 }
 
@@ -44,7 +49,6 @@ void updateDeltaTime() {
 }
 
 void mousePressed() {
-  println("mousePressed");
   BaseScene scene = sceneManager.getCurrentScene();
   if (scene != null) {
     scene.mousePressed();
@@ -52,6 +56,7 @@ void mousePressed() {
     println("scene is null!");
   }
 }
+
 
 void keyPressed() {
 
