@@ -1,8 +1,8 @@
 public class Drawable {
-  protected int abstractX;
-  protected int abstractY;
-  protected int w;
-  protected int h;
+  protected float x;
+  protected float y;
+  protected float w;
+  protected float h;
   protected float zAngle;
   protected int zIndex;
   protected PVector startPos;
@@ -10,9 +10,21 @@ public class Drawable {
   protected PVector center;
   protected PVector scale;
   
-  public void setup(int x, int y, int w, int h, int zIndex){
-    this.abstractX = x;
-    this.abstractY = y;
+  public Drawable() {
+    this.setup(0, 0, 0, 0, 0);
+  }
+
+  public Drawable(float x, float y, float w, float h) {
+    this.setup(x, y, w, h, 0);
+  }
+
+  public Drawable(float x, float y, float w, float h, int zIndex) {
+    this.setup(x, y, w, h, zIndex);
+  }
+  
+  public void setup(float x, float y, float w, float h, int zIndex){
+    this.x = x;
+    this.y = y;
     this.w = w;
     this.h = h;
     this.zAngle = 0;
@@ -24,12 +36,12 @@ public class Drawable {
     this.scale = new PVector(1, 1);
   }
 
-  public int getX() { return abstractX; }
-  public int getY() { return abstractY; }
+  public float getX() { return x; }
+  public float getY() { return y; }
 
-  public void setPosition(int x, int y) {
-    this.abstractX = x;
-    this.abstractY = y;
+  public void setPosition(float x, float y) {
+    this.x = x;
+    this.y = y;
   }
 
   public float getScaleX() { return scale.x; }
@@ -54,12 +66,11 @@ public class Drawable {
   }
   
   public boolean mousePressed(){
-    // System.out.println("Mouse Pressed"+ "||" + mouseX+ "||" + mouseY+ "||" + this.abstractX+ "||" + this.abstractY+ "||" + this.w+ "||" + this.h);
     if(
-      mouseX > this.abstractX 
-      && mouseX < this.abstractX + this.w
-      && mouseY > this.abstractY 
-      && mouseY < this.abstractY + this.h
+      mouseX > this.x 
+      && mouseX < this.x + this.w
+      && mouseY > this.y 
+      && mouseY < this.y + this.h
     ){
       this.onClick();
       return true;

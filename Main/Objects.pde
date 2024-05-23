@@ -102,7 +102,7 @@ public class ShapeObject extends Drawable {
     noStroke();
     shapeMode(CENTER);
     rotate(zAngle);
-    shape(shape, abstractX, abstractY, w, h);
+    shape(shape, x, y, w, h);
 
     popStyle();
   }
@@ -112,8 +112,7 @@ public class ShapeObject extends Drawable {
     
     imageMode(CENTER);
     rotate(zAngle);
-    //image(image, position.x, position.y, size.x, size.y);
-    image(image, abstractX, abstractY, image.width * scale.x, image.height * scale.y);
+    image(image, x, y, image.width * scale.x, image.height * scale.y);
 
     popStyle();
   }
