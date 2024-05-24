@@ -34,7 +34,8 @@ public enum BackgroundType {
 
 public enum ObjectPoseType {
   front("f"),
-  back("b");
+  back("b"),
+  lay("lay");
   
   public final String name;
 
