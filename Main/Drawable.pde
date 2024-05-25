@@ -52,7 +52,8 @@ public class Drawable {
     this.scale.y = y;
   }
 
-  public void rotate(float zAngle) {
+  // rotate 기본 함수랑 겹쳐서 이름 바꿈..
+  public void d_rotate(float zAngle) {
     this.zAngle = zAngle;
   }
 

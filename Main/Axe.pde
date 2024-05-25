@@ -1,34 +1,54 @@
 public class Axe extends Drawable {
+
+  public Axe(float x, float y) {
+    super(x, y, 100, 100);
+  }
+
   @Override
   public void draw() {
-    float axe = PI/3;
+  float abstractX = x;
+  float abstractY = y;
 
-    pushStyle();
-    fill(#DD9A5E);
-    noStroke();
-    translate(x+112, y+-581);
-    rotate(axe);
-    rectMode(CENTER);
-    rect(x+5, y+-78, 274, 44, 30);
-    popStyle();
+  // 손잡이
+  pushStyle();
+  pushMatrix();
+  fill(#DD9A5E);
+  noStroke();
+  translate(abstractX, abstractY);
+  rotate(radians(zAngle));
+  rectMode(CENTER);
+  rect(abstractX+5, abstractY+-78, 274, 44, 30);
+  popMatrix();
+  popStyle();
 
-    pushStyle();
-    fill(#6C6E6E);
-    noStroke();
-    quad(x-116, y+10, x-93, y-119, x-46, y-124, y+-12, y+1);
-    popStyle();
+// 도끼 머리
+  pushStyle();
+  pushMatrix();
+  fill(#6C6E6E);
+  noStroke();
+  translate(abstractX, abstractY);
+  rotate(radians(zAngle));
+  quad(abstractX-116, abstractY+10, abstractX-93, abstractY-119, abstractX-46, abstractY-124, abstractX+-12, abstractY+1);
+  popMatrix();
+  popStyle();
+  
 
-    pushStyle();
-    stroke(175, 173, 169);
-    strokeWeight(23);
-    noFill();
-    curveTightness(0.6);
-    beginShape();
-    curveVertex(x-494, y - 80);
-    curveVertex(x-107, y +10);
-    curveVertex(x-22, y + -2);
-    curveVertex(x+284, y -218);
-    endShape();
-    popStyle();
+  // 도끼 머리 하이라이트
+  pushStyle();
+  pushMatrix();
+  stroke(175, 173, 169);
+  strokeWeight(23);
+  noFill();
+  curveTightness(0.6);
+  translate(abstractX, abstractY);
+  rotate(radians(zAngle));
+  beginShape();
+  curveVertex(abstractX-494, abstractY - 80);
+  curveVertex(abstractX-107, abstractY +10);
+  curveVertex(abstractX-22, abstractY + -2);
+  curveVertex(abstractX+284, abstractY -218);
+  endShape();
+  popMatrix();
+  popStyle();
   }
 }
