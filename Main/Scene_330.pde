@@ -15,6 +15,6 @@ public class Scene_330 extends BaseScene {
   }
   
   public void mousePressed() {
-    println("Scene_330 : mousePressed");
+    sceneManager.loadScene(new Scene_Credit());
   }
 }

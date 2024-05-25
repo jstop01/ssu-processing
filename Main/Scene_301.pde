@@ -22,5 +22,7 @@ public class Scene_301 extends BaseScene {
     popStyle();
   }
   
-  public void mousePressed() {}
+  public void mousePressed() {
+    loadNextScene();
+  }
 }

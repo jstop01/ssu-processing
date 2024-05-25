@@ -15,6 +15,6 @@ public class Scene_209 extends BaseScene {
   }
   
   public void mousePressed() {
-    println("Scene_209 : mousePressed");
+    loadNextScene();
   }
 }

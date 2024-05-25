@@ -14,6 +14,12 @@ public abstract class BaseScene {
   public abstract void draw();
 
   public abstract int getNextScene();
+
+  public void loadNextScene() {
+    if (getNextScene() != -1) {
+      sceneManager.loadScene(scenes.createScene(getNextScene()));
+    }
+  }
   
   public void mousePressed() {
     println("BaseScene: mousePressed");

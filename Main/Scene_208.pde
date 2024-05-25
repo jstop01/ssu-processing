@@ -13,8 +13,15 @@ public class Scene_208 extends BaseScene {
     
     popStyle();
   }
+
+  int clickCount = 0;
   
   public void mousePressed() {
-     effectManager.addParticles(mouseX, mouseY, EffectType.SLEEP);
+    if (clickCount == 0) {
+      effectManager.addParticles(mouseX, mouseY, EffectType.SLEEP);
+      clickCount++;
+    } else {
+     loadNextScene();
+    }
   }
 }
