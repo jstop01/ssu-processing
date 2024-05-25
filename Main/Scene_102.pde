@@ -1,5 +1,16 @@
 public class Scene_102 extends BaseScene {
   public void setup() {
+
+    var 구름1 = new Cloud_Normal(600, -100);
+    drawManager.addDrawable(구름1);
+
+    var 구름2 = new Cloud_Small(300, -150);
+    drawManager.addDrawable(구름2);
+
+
+    var 구름3 = new Cloud_VerySmall(100, 100);
+    drawManager.addDrawable(구름3);
+
     var 초가집 = objectFactory.create(BackgroundType.초가집);
     초가집.setPosition(550, 300);
     초가집.scale.x = 0.15;
@@ -18,17 +29,7 @@ public class Scene_102 extends BaseScene {
     나무2.scale.y = 0.04;
     drawManager.addDrawable(나무2);
 
-    var 구름1 = objectFactory.create(BackgroundType.구름1); // 고쳐야 함
-    구름1.setPosition(200, 50);
-    구름1.scale.x = 0.08;
-    구름1.scale.y = 0.08;
-    drawManager.addDrawable(구름1);
 
-    var 구름2 = objectFactory.create(BackgroundType.구름2); // 고쳐야 함
-    구름2.setPosition(100, 150);
-    구름2.scale.x = 0.06;
-    구름2.scale.y = 0.06;
-    drawManager.addDrawable(구름2);
   }
  
   public void draw() {
