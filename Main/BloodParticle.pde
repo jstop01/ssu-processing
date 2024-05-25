@@ -15,7 +15,8 @@ class BloodParticle extends Particle {
   void update() {
     velocity.y += gravity;
     velocity.mult(friction);
-    position.add(velocity);
+    x += velocity.x;
+    y += velocity.y;
     lifespan -= 20.0;
   }
 
@@ -24,7 +25,7 @@ class BloodParticle extends Particle {
     pushStyle();
     noStroke();
     fill(255, 0, 0, lifespan);
-    ellipse(position.x, position.y, diameter, diameter);
+    ellipse(x, y, diameter, diameter);
     popStyle();
   }
 }

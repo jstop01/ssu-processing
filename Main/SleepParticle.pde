@@ -14,7 +14,8 @@ class SleepParticle extends Particle {
   void update() {
     velocity.y += gravity;
     velocity.mult(friction);
-    position.add(velocity);
+    x += velocity.x;
+    y += velocity.y;
     lifespan -= 20.0;
   }
 
@@ -24,7 +25,7 @@ class SleepParticle extends Particle {
     fill(0, lifespan);
     textSize(32);
     textAlign(CENTER, CENTER);
-    text(text, position.x, position.y);
+    text(text, x, y);
     popStyle();
   }
 }

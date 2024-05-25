@@ -1,5 +1,4 @@
 class Particle extends Drawable {
-  PVector position;
   float lifespan;
 
    Particle(PVector position) {
@@ -8,7 +7,6 @@ class Particle extends Drawable {
 
   Particle(PVector position, float lifespan) {
     super(position.x, position.y, 0, 0);
-    this.position = position;
     this.lifespan = lifespan;
   }
 
