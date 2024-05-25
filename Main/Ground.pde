@@ -2,7 +2,7 @@ public class Ground extends Drawable {
     color c;
 
     public Ground(int zIndex, color c) {
-      super(0, height / 5 * 4, width, height / 5, zIndex);
+      super(0, height / 3 * 2, width, height / 3, zIndex);
       this.c = c;
     }
 
