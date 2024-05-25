@@ -1,4 +1,6 @@
 public class Scene_CameraManagerTest extends BaseScene {
+  @Override
+  public int getNextScene() { return -1; }
   ShapeObject tiger;
   public void setup() {
     println("Scene_CameraManagerTest : setup");

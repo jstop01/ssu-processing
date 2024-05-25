@@ -1,4 +1,6 @@
 public class Scene_Intro extends BaseScene {
+  @Override
+  public int getNextScene() { return -1; }
   private Button[] sceneButtons;
 
   private Button sceneButton1;

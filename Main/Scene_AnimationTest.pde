@@ -1,4 +1,6 @@
 public class Scene_AnimationTest extends BaseScene {
+  @Override
+  public int getNextScene() { return -1; }
   private SpriteAnimation testAnim;
   public void setup() {
     var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.front);
