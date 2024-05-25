@@ -1,4 +1,6 @@
 public class Scene_103 extends BaseScene {
+  @Override
+  public int getNextScene() { return 104; }
   public void setup() {
     var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.front);
     boy.setPosition(500, 400);

@@ -12,6 +12,8 @@ public abstract class BaseScene {
   public abstract void setup();
   
   public abstract void draw();
+
+  public abstract int getNextScene();
   
   public void mousePressed() {
     println("BaseScene: mousePressed");

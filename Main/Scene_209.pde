@@ -1,4 +1,6 @@
 public class Scene_209 extends BaseScene {
+  @Override
+  public int getNextScene() { return 210; }
   public void setup() {
     println("Scene_209 : setup");
   }

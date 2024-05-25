@@ -1,4 +1,6 @@
 public class Scene_311 extends BaseScene {
+  @Override
+  public int getNextScene() { return 312; }
    ShapeObject branch;
    ShapeObject branch2; // 나중엔 차피 하나의 이미지로 퉁칠거라 지금만 대충 가라처리합니다
   

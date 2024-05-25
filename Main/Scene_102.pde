@@ -1,4 +1,7 @@
 public class Scene_102 extends BaseScene {
+  @Override
+  public int getNextScene() { return 103; }
+
   public void setup() {
 
     var 구름1 = new Cloud_Normal(600, -100);

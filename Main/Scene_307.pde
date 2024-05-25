@@ -1,4 +1,6 @@
 public class Scene_307 extends BaseScene {
+  @Override
+  public int getNextScene() { return 308; }
   public void setup() {
     var axe = new Axe(200, 200);
     axe.d_rotate(0);

@@ -1,4 +1,6 @@
 public class Scene_202 extends BaseScene {
+  @Override
+  public int getNextScene() { return 203; }
   public void setup() {
     println("Scene_202 : setup");
     drawManager.addDrawable(new TornWindow(100, 100, 180, 300, 0));

@@ -1,4 +1,7 @@
 public class Scene_101 extends BaseScene {
+  @Override
+  public int getNextScene() { return 102; }
+
   public void setup() {
     var door = objectFactory.create(BackgroundType.대문);
     door.setPosition(800, 300);
