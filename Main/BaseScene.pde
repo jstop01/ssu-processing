@@ -1,5 +1,4 @@
 public abstract class BaseScene {
-
   public DrawManager drawManager = new DrawManager();
   public AnimationManager animationManager = new AnimationManager();
   public EffectManager effectManager = new EffectManager();
@@ -15,10 +14,17 @@ public abstract class BaseScene {
   public abstract void draw();
 
   public abstract int getNextScene();
-
   public void loadNextScene() {
-    if (getNextScene() != -1) {
-      sceneManager.loadScene(scenes.createScene(getNextScene()));
+    int sceneNumber = getNextScene();
+    if (sceneNumber != -1) {
+      sceneManager.loadScene(scenes.createScene(sceneNumber));
+    }
+  }
+  public abstract int getPreviousScene();
+  public void loadPreviousScene() {
+    int sceneNumber = getPreviousScene();
+    if (sceneNumber != -1) {
+      sceneManager.loadScene(scenes.createScene(sceneNumber));
     }
   }
   

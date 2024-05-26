@@ -2,6 +2,9 @@
 // 참기름 선택시 현재 씬으로 다시 돌아옴
 public class Scene_308 extends BaseScene {
   @Override
+  public int getPreviousScene() { return -1; }
+
+  @Override
   public int getNextScene() { return 309; }
   public void setup() {
     uiManager.dialogUi.push(uiManager.getDialogDataById("308001"));

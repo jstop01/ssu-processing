@@ -44,8 +44,8 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  // Temporal test code for return to IntroScene
-  if (keyCode == VK_F1) {
+  int backspace = 8;
+  if (keyCode == backspace) {
     sceneManager.loadScene(new Scene_Intro());
   }
 }

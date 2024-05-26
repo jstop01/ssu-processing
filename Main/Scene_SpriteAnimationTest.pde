@@ -1,5 +1,8 @@
 public class Scene_SpriteAnimationTest extends BaseScene {
   @Override
+  public int getPreviousScene() { return -1; }
+
+  @Override
   public int getNextScene() { return -1; }
   private SpriteAnimation testAnim;
   public void setup() {

@@ -6,6 +6,9 @@ public class Scene_204 extends BaseScene {
 
   //쑥 떡 분기
   @Override
+  public int getPreviousScene() { return 203; }
+
+  @Override
   public int getNextScene() { return 218; }
   public void setup() {
     uiManager.dialogUi.push(uiManager.getDialogDataById("204001"));

@@ -6,6 +6,9 @@ public class Scene_313 extends BaseScene {
 
   // 새 동아줄 분기
   @Override
+  public int getPreviousScene() { return -1; }
+
+  @Override
   public int getNextScene() { return 319; }
   
   public void setup() {

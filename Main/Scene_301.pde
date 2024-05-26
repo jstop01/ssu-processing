@@ -1,5 +1,8 @@
 public class Scene_301 extends BaseScene {
   @Override
+  public int getPreviousScene() { return -1; }
+
+  @Override
   public int getNextScene() { return 302; }
   ShapeObject tiger;
 

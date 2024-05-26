@@ -1,5 +1,8 @@
 public class Scene_105 extends BaseScene {
   @Override
+  public int getPreviousScene() { return 105; }
+
+  @Override
   public int getNextScene() { return 106; }
   public void setup() {
     var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.front);

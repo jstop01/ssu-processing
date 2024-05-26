@@ -1,5 +1,8 @@
 public class Scene_305 extends BaseScene {
   @Override
+  public int getPreviousScene() { return -1; }
+
+  @Override
   public int getNextScene() { return 306; }
   public void setup() {
     var mountain = new Mountain(600, 300);

@@ -1,5 +1,8 @@
 public class Scene_307 extends BaseScene {
   @Override
+  public int getPreviousScene() { return -1; }
+
+  @Override
   public int getNextScene() { return 308; }
   public void setup() {
     var axe = new Axe(200, 200);
