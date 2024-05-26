@@ -8,7 +8,6 @@ public class Scene_Intro extends BaseScene {
   private Button sceneButton3;
   
   public void setup() {
-    println("Scene_Intro : setup");
     sceneButtons = createGridButtons(scenes.getSceneNames(), 20, 3, 0, 0, 500, height);
 
     sceneButton1 = new Button();
@@ -45,7 +44,6 @@ public class Scene_Intro extends BaseScene {
     if (sceneButton3.drawAndCheckClick()) {
       sceneManager.loadScene(new Scene_301());
     }
-    println("Scene_Intro : draw");
     
     popStyle();
 
@@ -53,9 +51,6 @@ public class Scene_Intro extends BaseScene {
   }
   
   public void mousePressed() {
-    println("Scene_Intro : mousePressed");
-    //sceneManager.loadScene(new Scene_1());
-    // DrawManager
     drawManager.mousePressed();
   }
 }
