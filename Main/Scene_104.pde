@@ -6,13 +6,16 @@ public class Scene_104 extends BaseScene {
   public int getNextScene() { return 105; }
 
   public void setup() {
+    var hammer = new Hammer(200, 200);
+    drawManager.addDrawable(hammer);
+    var hpBar = new HPBar(20, 20);
+    drawManager.addDrawable(hpBar);
     uiManager.dialogUi.push(uiManager.getDialogDataById("104001"));
     
   }
  
   public void draw() {
     pushStyle();
-    
     
     drawManager.drawing();
     uiManager.drawing();
@@ -21,6 +24,6 @@ public class Scene_104 extends BaseScene {
   }
   
   public void mousePressed() {
-    loadNextScene();
   }
+  
 }
