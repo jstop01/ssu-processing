@@ -10,7 +10,7 @@ public class Scene_104 extends BaseScene {
   public int getNextScene() { return 105; }
 
   public void setup() {
-  drawManager.addDrawable(hammer);
+    drawManager.addDrawable(hammer);
     hammer.d_rotate(hammerZAngle);
     drawManager.addDrawable(hpBar);
     uiManager.dialogUi.set(uiManager.getDialogDataById("104001"));

@@ -142,6 +142,8 @@ public class ShapeObject extends Drawable {
   public ShapeObject(PImage image) {
     this.image = image;
     this.scale = new PVector(1, 1, 1);
+    this.w = image.width * scale.x;
+    this.h = image.height * scale.y;
   }
   
   @Override
@@ -168,7 +170,7 @@ public class ShapeObject extends Drawable {
     
     imageMode(CENTER);
     rotate(zAngle);
-    image(image, x, y, image.width * scale.x, image.height * scale.y);
+    image(image, x, y, w, h);
 
     popStyle();
   }

@@ -19,8 +19,6 @@ public class Scene_301 extends BaseScene {
     jar1.setScale(0.2, 0.2);
     drawManager.addDrawable(jar1);
 
-
-
     drawManager.addDrawable(new Ground(-1, #BF763E));
   }
 
