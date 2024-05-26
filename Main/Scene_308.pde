@@ -8,6 +8,19 @@ public class Scene_308 extends BaseScene {
   public int getNextScene() { return 309; }
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("308001"));
+
+    var oil = objectFactory.create("res/objects/oil.png");
+    oil.setPosition(200, 200);
+    drawManager.addDrawable(oil);
+
+    var axe = new Axe(700, -350);
+    axe.d_rotate(90);
+    drawManager.addDrawable(axe);
+
+    var tiger = objectFactory.create(ObjectType.tiger_mom, ObjectPoseType.back);
+    tiger.setPosition(600, 500);
+    tiger.setScale(0.3, 0.3);
+    drawManager.addDrawable(tiger);
   }
  
   public void draw() {

@@ -14,7 +14,7 @@ public class Scene_311 extends BaseScene {
     branch.scale.y = 0.2f;
     drawManager.addDrawable(branch);
 
-    branch2 = objectFactory.create(ObjectType.tiger,ObjectPoseType.lay);
+    branch2 = objectFactory.create(ObjectType.tiger,ObjectPoseType.lay_01);
     branch2.setPosition(640,700);
     branch2.scale.x = 1f;
     branch2.scale.y = 0.4f;

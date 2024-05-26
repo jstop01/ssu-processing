@@ -100,8 +100,7 @@ public class ObjectFactory {
     throw new UnsupportedOperationException("Not implemented : " + path);
   }
 
-  public ShapeObject create(String name) {
-    String path = "res/objects/" + name + ".png";
+  public ShapeObject create(String path) {
     var image = loadImage(path);
     if (image == null) {
       println("Failed to load image : " + path);
