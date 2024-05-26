@@ -20,7 +20,7 @@ public class Scene_311 extends BaseScene {
     branch2.scale.y = 0.4f;
     drawManager.addDrawable(branch2);
 
-    uiManager.dialogUi.push(uiManager.getDialogDataById("311001"));
+    uiManager.dialogUi.set(uiManager.getDialogDataById("311001"));
   }
  
   public void draw() {

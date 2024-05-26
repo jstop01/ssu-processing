@@ -10,7 +10,7 @@ public class Scene_104 extends BaseScene {
     drawManager.addDrawable(hammer);
     var hpBar = new HPBar(20, 20);
     drawManager.addDrawable(hpBar);
-    uiManager.dialogUi.push(uiManager.getDialogDataById("104001"));
+    uiManager.dialogUi.set(uiManager.getDialogDataById("104001"));
     
   }
  

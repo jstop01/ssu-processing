@@ -12,7 +12,7 @@ public class Scene_313 extends BaseScene {
   public int getNextScene() { return 319; }
   
   public void setup() {
-    uiManager.dialogUi.push(uiManager.getDialogDataById("313001"));
+    uiManager.dialogUi.set(uiManager.getDialogDataById("313001"));
   }
  
   public void draw() {

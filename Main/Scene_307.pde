@@ -13,7 +13,7 @@ public class Scene_307 extends BaseScene {
     axe.d_rotate(90);
     drawManager.addDrawable(axe);
 
-    uiManager.dialogUi.push(uiManager.getDialogDataById("307001"));
+    uiManager.dialogUi.set(uiManager.getDialogDataById("307001"));
   }
  
   public void draw() {

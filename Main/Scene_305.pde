@@ -8,7 +8,7 @@ public class Scene_305 extends BaseScene {
     var mountain = new Mountain(600, 300);
     drawManager.addDrawable(mountain);
 
-    uiManager.dialogUi.push(uiManager.getDialogDataById("305001"));
+    uiManager.dialogUi.set(uiManager.getDialogDataById("305001"));
   }
  
   public void draw() {
