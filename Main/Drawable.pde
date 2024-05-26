@@ -50,6 +50,8 @@ public class Drawable {
   public void setScale(float x, float y) {
     this.scale.x = x;
     this.scale.y = y;
+    this.w = this.w * x;
+    this.h = this.h * y;
   }
 
   // rotate 기본 함수랑 겹쳐서 이름 바꿈..
@@ -67,11 +69,13 @@ public class Drawable {
   }
   
   public boolean mousePressed(){
+    var modX = this.x - this.w / 2;
+    var modY = this.y - this.h / 2;
     if(
-      mouseX > this.x 
-      && mouseX < this.x + this.w
-      && mouseY > this.y 
-      && mouseY < this.y + this.h
+      mouseX > modX 
+      && mouseX < modX + this.w
+      && mouseY > modY 
+      && mouseY < modY + this.h
     ){
       this.onClick();
       return true;
