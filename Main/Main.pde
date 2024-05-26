@@ -55,4 +55,11 @@ void keyPressed() {
   if (keyCode == minusKeycode) {   
     sceneManager.getCurrentScene().loadPreviousScene();
   }
+
+  BaseScene scene = sceneManager.getCurrentScene();
+  if (scene != null) {
+    scene.keyPressed();
+  } else {
+    println("scene is null!");
+  }
 }
