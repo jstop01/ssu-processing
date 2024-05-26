@@ -7,7 +7,6 @@ int lastMillis = 0;
 
 void setup() {
   size(1280, 720, P2D);
-  println("setup");
   sceneManager.loadScene(new Scene_Intro());
   postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
 }
