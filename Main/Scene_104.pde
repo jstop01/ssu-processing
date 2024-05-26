@@ -2,6 +2,10 @@ public class Scene_104 extends BaseScene {
   public float hammerZAngle = 0;
   public Hammer hammer = new Hammer(200, 200);
   public HPBar hpBar = new HPBar(20, 20);
+  public Rock1 rock1 = new Rock1(300, 340);
+  public float rock1X = 300;
+  public float rock1XDirection = 1;
+  public float rock1ZAngle = 0;
 
   @Override
   public int getPreviousScene() { return 104; }
@@ -13,10 +17,19 @@ public class Scene_104 extends BaseScene {
     drawManager.addDrawable(hammer);
     hammer.d_rotate(hammerZAngle);
     drawManager.addDrawable(hpBar);
+    drawManager.addDrawable(rock1);
     uiManager.dialogUi.set(uiManager.getDialogDataById("104001"));
   }
  
   public void draw() {
+    var xBuffer = 5;
+    if (rock1X + xBuffer > 600 || rock1X - xBuffer < 250) {
+      rock1XDirection *= -1;
+    }
+    rock1ZAngle = rock1ZAngle + 1 % 360;
+    rock1X = rock1X + xBuffer * rock1XDirection;
+    rock1.setPosition(rock1X, rock1.getY());
+    rock1.d_rotate(rock1ZAngle);
     pushStyle();
     if (keyPressed) {
       boolean left = keyCode == 37;
