@@ -135,15 +135,15 @@ public class ShapeObject extends Drawable {
   private PImage image;
 
   public ShapeObject(PShape shape) {
+    super(0, 0, shape.width, shape.height);
     this.shape = shape;
     this.scale = new PVector(1, 1, 1);
   }
 
   public ShapeObject(PImage image) {
+    super(0, 0, image.width, image.height);
     this.image = image;
     this.scale = new PVector(1, 1, 1);
-    this.w = image.width * scale.x;
-    this.h = image.height * scale.y;
   }
   
   @Override
