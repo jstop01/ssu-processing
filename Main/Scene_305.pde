@@ -4,6 +4,8 @@ public class Scene_305 extends BaseScene {
   public void setup() {
     var mountain = new Mountain(600, 300);
     drawManager.addDrawable(mountain);
+
+    uiManager.dialogUi.push(uiManager.getDialogDataById("305001"));
   }
  
   public void draw() {
@@ -11,6 +13,7 @@ public class Scene_305 extends BaseScene {
     
     background(255, 0, 0);
     drawManager.drawing();
+    uiManager.drawing();
     
     popStyle();
   }

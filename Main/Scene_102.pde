@@ -19,6 +19,7 @@ public class Scene_102 extends BaseScene {
     drawManager.addDrawable(cloud);
 
     // TODO: 배경 - 나무, 산, 짚신 추가
+    uiManager.dialogUi.push(uiManager.getDialogDataById("102001"));
   }
  
   public void draw() {
@@ -26,6 +27,8 @@ public class Scene_102 extends BaseScene {
 
     background(#C1E7F5);
     drawManager.drawing();
+
+    uiManager.drawing();
     
     popStyle();
   }

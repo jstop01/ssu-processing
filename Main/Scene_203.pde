@@ -3,14 +3,15 @@ public class Scene_203 extends BaseScene {
   @Override
   public int getNextScene() { return 204; }
   public void setup() {
-    println("Scene_203 : setup");
+    uiManager.dialogUi.push(uiManager.getDialogDataById("203001"));
   }
  
   public void draw() {
     pushStyle();
     
     background(255, 0, 0);
-    println("Scene_203 : draw");
+    drawManager.drawing();
+    uiManager.drawing();
     
     popStyle();
   }

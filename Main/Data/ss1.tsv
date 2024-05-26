@@ -15,12 +15,7 @@ id	comment	character	yes	no	voice	scene	참고
 108002	떡 하나 주면 안 잡아 먹지!	TIGER				108	
 109001	[떡 주는 미니게임]		110001			109	
 110001	모든 떡을 다 주었지만 호랑이는 아직도 배가 고팠고, 결국에는 어머니까지 잡아 먹고 말았습니다.	NARR				110	
-111002	으음 아직 배가 고프네.	TIGER				111	
+111001	으음 아직 배가 고프네.	TIGER				111	
 113001	집으로 한 번 가볼까?	TIGER				113	
 113002	오누이를 잡아 먹기 위해 어머니의 옷을 훔쳐 입은 호랑이는	NARR				113	
-114001	어머니처럼 변장을 하고 오누이의 집을 향해 걸어갔습니다.	NARR				114	
-							
-							
-							
-스토리보드	https://docs.google.com/presentation/d/1o29dg4fn5LoPN8DTv4s1dN_o7XS5M3ZY4ECQRuR_UoM/edit#slide=id.g2dafba39d13_1_0						
-1조 시나리오	https://docs.google.com/document/d/1gi1TkLiw7D1Hybc0WSj2FefSEX9DynTNrOGsxJ2VjJs/edit						
+114001	어머니처럼 변장을 하고 오누이의 집을 향해 걸어갔습니다.	NARR				114			

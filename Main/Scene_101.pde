@@ -15,6 +15,7 @@ public class Scene_101 extends BaseScene {
     pushStyle();
     
     drawManager.drawing();
+    uiManager.drawing();
     
     popStyle();
   }

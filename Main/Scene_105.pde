@@ -11,6 +11,10 @@ public class Scene_105 extends BaseScene {
     girl.setPosition(400, 800);
     girl.setScale(2f, 2f);
     drawManager.addDrawable(girl);
+
+    uiManager.dialogUi.push(uiManager.getDialogDataById("105001"));
+    uiManager.dialogUi.push(uiManager.getDialogDataById("105002"));
+    uiManager.dialogUi.push(uiManager.getDialogDataById("105003"));
   }
  
   public void draw() {
@@ -18,6 +22,7 @@ public class Scene_105 extends BaseScene {
     
     background(255, 0, 0);
     drawManager.drawing();
+    uiManager.drawing();
     
     popStyle();
   }

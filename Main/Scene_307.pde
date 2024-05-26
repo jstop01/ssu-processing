@@ -9,6 +9,8 @@ public class Scene_307 extends BaseScene {
     axe = new Axe(200, 200);
     axe.d_rotate(90);
     drawManager.addDrawable(axe);
+
+    uiManager.dialogUi.push(uiManager.getDialogDataById("307001"));
   }
  
   public void draw() {
@@ -16,6 +18,7 @@ public class Scene_307 extends BaseScene {
     
     background(255, 0, 0);
     drawManager.drawing();
+    uiManager.drawing();
     
     popStyle();
   }

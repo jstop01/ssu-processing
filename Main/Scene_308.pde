@@ -4,14 +4,15 @@ public class Scene_308 extends BaseScene {
   @Override
   public int getNextScene() { return 309; }
   public void setup() {
-    println("Scene_308 : setup");
+    uiManager.dialogUi.push(uiManager.getDialogDataById("308001"));
   }
  
   public void draw() {
     pushStyle();
     
     background(255, 0, 0);
-    println("Scene_308 : draw");
+    drawManager.drawing();
+    uiManager.drawing();
     
     popStyle();
   }
