@@ -44,8 +44,40 @@ public enum BackgroundType {
 
 public enum ObjectPoseType {
   front("f"),
+  left("left"),
+  climb("climb"),
+  climb_rope("climb_rope"),
+  black("black"),
+  fall("fall"),
+  point("point"),
+  pray("pray"),
+  seat("seat"),
+  smile("smile"),
+  front_ricecake("front_ricecake"),
+  back_ricecake("back_ricecake"),
+  hand("hand"),
   back("b"),
-  lay("lay");
+  lay("lay"),
+
+  // tiger only
+  hungry("hungry"),
+  knock("knock"),
+  lay_01("lay_01"),
+  lay_02("lay_02"),
+  lay_03("lay_03"),
+  angry("angry"),
+  big("big"),
+  mouth("mouth"),
+  ricecake_01("ricecake_01"),
+  ricecake_02("ricecake_02"),
+  ricecake_03_1("ricecake_03_1"),
+  ricecake_03_2("ricecake_03_2"),
+  scream("scream"),
+  thirsty("thirsty"),
+  threat("threat"),
+  well("well");
+
+
   
   public final String name;
 
@@ -68,6 +100,17 @@ public class ObjectFactory {
     throw new UnsupportedOperationException("Not implemented : " + path);
   }
 
+  public ShapeObject create(String name) {
+    String path = "res/objects/" + name + ".png";
+    var image = loadImage(path);
+    if (image == null) {
+      println("Failed to load image : " + path);
+      return null;
+    }
+
+    return new ShapeObject(image);
+  }
+
   public ShapeObject create(BackgroundType type) {
     String path = "res/bg/" + type.name + ".png";
       return new ShapeObject(loadImage(path));
@@ -77,9 +120,11 @@ public class ObjectFactory {
     if (!(type instanceof ObjectType) || !(pose instanceof ObjectPoseType))
       throw new UnsupportedOperationException("Not implemented : " + type + " " + pose);
     
-    boolean useSvg = false;
-    String prefix = "res/characters/" + (useSvg ? "svg/" : "png/");
-    String extension = useSvg ? ".svg" : ".png";
+    //boolean useSvg = false;
+    //String prefix = "res/objects/" + (useSvg ? "svg/" : "png/");
+    String prefix = "res/objects/";
+    String extension = ".png";
+    //String extension = useSvg ? ".svg" : ".png";
     
     return prefix + type.name + "_" + pose.name + extension;
   }
