@@ -1,26 +1,8 @@
-public class DialogContent {
-    public String id;
-    public String text;
-    public String teller;
-
-    public DialogContent(String id, String text) {
-        this.id = id;
-        this.text = text;
-        this.teller = null;
-    }
-
-    public DialogContent(String id, String text, String teller) {
-        this.id = id;
-        this.text = text;
-        this.teller = teller;
-    }
-}
-
 int DIALOG_HEIGHT = 200;
 int DIALOG_PADDING = 16;
 int DIALOG_MARGIN = 10;
 int TELLER_TEXT_SIZE = 24;
-int MSG_TEXT_SIZE = 32;
+int MSG_TEXT_SIZE = 28;
 
 public class DialogUi {
     private boolean visible;
@@ -47,11 +29,11 @@ public class DialogUi {
             textSize(TELLER_TEXT_SIZE);
             fill(0, 0, 255);
             text(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2);
-            textAnchor = this.y + DIALOG_PADDING * 2 + TELLER_TEXT_SIZE;
+            textAnchor = this.y + DIALOG_PADDING * 2 + TELLER_TEXT_SIZE + 10;
         }
         textSize(MSG_TEXT_SIZE);
         fill(0, 0, 0);
-        text(this.current.text, x + DIALOG_PADDING, textAnchor);
+        text(this.current.text, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING * 2, 1000);
     }
 
     private void draw() {
