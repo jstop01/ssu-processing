@@ -1,6 +1,8 @@
 public class Drawable {
   protected float x;
   protected float y;
+  protected float initialW;
+  protected float initialH;
   protected float w;
   protected float h;
   protected float zAngle;
@@ -27,6 +29,8 @@ public class Drawable {
     this.y = y;
     this.w = w;
     this.h = h;
+    this.initialW = w;
+    this.initialH = h;
     this.zAngle = 0;
     this.zIndex = zIndex;
 
@@ -50,8 +54,8 @@ public class Drawable {
   public void setScale(float x, float y) {
     this.scale.x = x;
     this.scale.y = y;
-    this.w = this.w * x;
-    this.h = this.h * y;
+    this.w = this.initialW * x;
+    this.h = this.initialH * y;
   }
 
   // rotate 기본 함수랑 겹쳐서 이름 바꿈..
