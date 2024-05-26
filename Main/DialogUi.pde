@@ -26,14 +26,21 @@ public class DialogUi {
     private void drawText() {
         int textAnchor = this.y + DIALOG_PADDING * 2;
         if (this.current.teller != null) {
-            textSize(TELLER_TEXT_SIZE);
+            //textSize(TELLER_TEXT_SIZE);
             fill(0, 0, 255);
-            text(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2);
+            fontManager.drawText(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2, TELLER_TEXT_SIZE);
+            //text(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2);
             textAnchor = this.y + DIALOG_PADDING * 2 + TELLER_TEXT_SIZE + 10;
         }
-        textSize(MSG_TEXT_SIZE);
+        //textSize(MSG_TEXT_SIZE);
         fill(0, 0, 0);
-        text(this.current.text, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING * 2, 1000);
+        
+        fontManager.drawText(this.current.text, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING*2, 1000, MSG_TEXT_SIZE);
+        //text(this.current.text,
+        //x + DIALOG_PADDING,
+        //textAnchor,
+        //width/2 - DIALOG_PADDING * 2,
+        //1000);
     }
 
     private void draw() {

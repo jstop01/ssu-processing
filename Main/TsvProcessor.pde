@@ -1,4 +1,6 @@
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
@@ -6,6 +8,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
+
+
 
 class TsvProcessor {
   String filePath;
@@ -16,7 +24,8 @@ class TsvProcessor {
     List<Map<String, String>> readTsvFile() {
         List<Map<String, String>> list = new ArrayList<>();
         String absolutePath = sketchPath(filePath);
-        try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(absolutePath), "utf-8"))) {
             String line;
             String[] headers = br.readLine().split("\t"); 
 

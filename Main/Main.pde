@@ -9,6 +9,7 @@ void setup() {
   size(1280, 720, P2D);
   sceneManager.loadScene(new Scene_Intro());
   postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
+  fontManager.setup();
 }
 
 void draw() {
