@@ -4,9 +4,13 @@ int DIALOG_MARGIN = 10;
 int TELLER_TEXT_SIZE = 24;
 int MSG_TEXT_SIZE = 28;
 
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class DialogUi {
     private boolean visible;
     private DialogContent current;
+    private Queue<DialogContent> queue = new LinkedList<>();
 
     private int x;
     private int y;
@@ -59,13 +63,27 @@ public class DialogUi {
         this.visible = false;
     }
 
-    public void push(DialogContent content) {
+    public void set(DialogContent content) {
         this.current = content;
+        this.queue.clear();
+    }
+
+    public void enqueue(DialogContent content) {
+        this.queue.add(content);
+    }
+
+    // true : 대화 표시 성공, false : 대화 표시 실패
+    public boolean next() {
+        if (this.queue.size() > 0) {
+            this.current = this.queue.poll();
+            return true;
+        }
+
+        return false;
     }
 
     public void push(String msg, String teller) {
-        this.current.text = msg;
-        this.current.teller = teller;
+        this.queue.add(new DialogContent("0", msg, teller));
     }
 
     public String getCurrentId() {
