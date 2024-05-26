@@ -19,7 +19,25 @@ public class Scene_102 extends BaseScene {
     cloud.setScale(0.04, 0.04);
     drawManager.addDrawable(cloud);
 
-    // TODO: 배경 - 나무, 산, 짚신 추가
+    Drawable mountain = new Mountain(600, 250, -2);
+    drawManager.addDrawable(mountain);
+
+    Drawable shoes1 = objectFactory.create(BackgroundType.짚신);
+    shoes1.setPosition(698, 592);
+    shoes1.setScale(0.4, 0.4);
+    drawManager.addDrawable(shoes1);
+
+    Drawable shoes2 = objectFactory.create(BackgroundType.짚신);
+    shoes2.setPosition(774, 587);
+    shoes2.setScale(-0.25, 0.25);
+    drawManager.addDrawable(shoes2);
+
+    Drawable shoes3 = objectFactory.create(BackgroundType.짚신);
+    shoes3.setPosition(846, 583);
+    shoes3.setScale(0.3, 0.3);
+    drawManager.addDrawable(shoes3);
+
+    // TODO: 배경 - 나무 추가
     uiManager.dialogUi.set(uiManager.getDialogDataById("102001"));
   }
  

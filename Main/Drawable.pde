@@ -54,8 +54,8 @@ public class Drawable {
   public void setScale(float x, float y) {
     this.scale.x = x;
     this.scale.y = y;
-    this.w = this.initialW * x;
-    this.h = this.initialH * y;
+    this.w = this.initialW * abs(x);
+    this.h = this.initialH * abs(y);
   }
 
   // rotate 기본 함수랑 겹쳐서 이름 바꿈..

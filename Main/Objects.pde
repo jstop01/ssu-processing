@@ -33,7 +33,8 @@ public enum BackgroundType {
   밤_숲길5("밤_숲길5"),
   밤_풀숲("밤_풀숲"),
   집안1("집안1"),
-  집안2("집안2");
+  집안2("집안2"),
+  짚신("짚신");
 
   public final String name;
 
@@ -170,8 +171,17 @@ public class ShapeObject extends Drawable {
     
     imageMode(CENTER);
     rotate(zAngle);
-    image(image, x, y, w, h);
 
+    if (scale.x < 0) {
+      pushMatrix();
+      translate(x, y); 
+      scale(-1, 1);
+      image(image, 0, 0, w, h);
+      popMatrix();
+    } else {
+      image(image, x, y, w, h);
+    }
+    
     popStyle();
   }
 }

@@ -4,6 +4,10 @@ public class Mountain extends Drawable {
     super(x, y, 100, 100);
   }
 
+  public Mountain(float x, float y, int zIndex) {
+    super(x, y, 100, 100, zIndex);
+  }
+
   @Override
   public void draw() {
   float abstractX = x;
