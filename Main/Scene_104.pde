@@ -21,12 +21,11 @@ public class Scene_104 extends BaseScene {
     if (keyPressed) {
       boolean left = keyCode == 37;
       boolean right = keyCode == 39;
-      float count = 5;
       if (left) {
-        hammerZAngle = min(hammerZAngle + count, 90);
+        hammerZAngle = min(hammerZAngle + 5, 90);
       }
       if (right) {
-        hammerZAngle = max(hammerZAngle = hammerZAngle - count, 0);
+        hammerZAngle = max(hammerZAngle = hammerZAngle - 10, 0);
         if (hammerZAngle == 0) {
           hpBar.hp = min(hpBar.hp + 10, 100);
         }
@@ -39,5 +38,6 @@ public class Scene_104 extends BaseScene {
     
     popStyle();
   }
+  
   
 }
