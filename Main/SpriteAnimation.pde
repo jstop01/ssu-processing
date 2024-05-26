@@ -44,11 +44,11 @@ public class SpriteAnimation extends Drawable {
     }
 
     imageMode(CENTER);
-    rotate(zAngle);
+    rotate(radians(zAngle));
     if (image == null) {
       println("image is null");
     } else {
-      image(image, abstractX, abstractY, image.width * scale.x, image.height * scale.y);
+      image(image, x, y, image.width * scale.x, image.height * scale.y);
     }
 
     popStyle();

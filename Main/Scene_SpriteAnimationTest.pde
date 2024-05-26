@@ -1,4 +1,6 @@
 public class Scene_SpriteAnimationTest extends BaseScene {
+  @Override
+  public int getNextScene() { return -1; }
   private SpriteAnimation testAnim;
   public void setup() {
     var images = new PImage[] {

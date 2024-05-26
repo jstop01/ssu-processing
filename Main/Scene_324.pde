@@ -1,4 +1,7 @@
+// 호랑이가 썩은 동아줄을 고르는 미니게임
 public class Scene_324 extends BaseScene {
+  @Override
+  public int getNextScene() { return 325; }
   public void setup() {
     println("Scene_324 : setup");
   }
@@ -13,7 +16,6 @@ public class Scene_324 extends BaseScene {
   }
   
   public void mousePressed() {
-    println("Scene_324 : mousePressed");
+    loadNextScene();
   }
 }
-

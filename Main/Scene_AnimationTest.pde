@@ -1,4 +1,6 @@
 public class Scene_AnimationTest extends BaseScene {
+  @Override
+  public int getNextScene() { return -1; }
   private SpriteAnimation testAnim;
   public void setup() {
     var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.front);
@@ -8,8 +10,8 @@ public class Scene_AnimationTest extends BaseScene {
 
     var moveAnim = new MoveAnimation(boy);
     moveAnim.easeType = EaseType.InOutQuad;
-    moveAnim.destX = boy.abstractX + 500;
-    moveAnim.destY = boy.abstractY + 300;
+    moveAnim.destX = boy.x + 500;
+    moveAnim.destY = boy.y + 300;
     moveAnim.duration = 3;
     moveAnim.repeatCount = 2;
     startAnimation(moveAnim);

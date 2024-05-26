@@ -17,13 +17,23 @@ public enum BackgroundType {
   구름2("구름2"),
   달("달"),
   대문("대문"),
+  대문2("대문2"),
   돌과풀("돌과풀"),
   무서운나무("무서운나무"),
   반짝1("반짝1"),
   반짝2("반짝2"),
   반짝3("반짝3"),
   초가집("초가집"),
-  해("해");
+  해("해"),
+  밤_나무("밤_나무"),
+  밤_숲길1("밤_숲길1"),
+  밤_숲길2("밤_숲길2"),
+  밤_숲길3("밤_숲길3"),
+  밤_숲길4("밤_숲길4"),
+  밤_숲길5("밤_숲길5"),
+  밤_풀숲("밤_풀숲"),
+  집안1("집안1"),
+  집안2("집안2");
 
   public final String name;
 
@@ -34,7 +44,8 @@ public enum BackgroundType {
 
 public enum ObjectPoseType {
   front("f"),
-  back("b");
+  back("b"),
+  lay("lay");
   
   public final String name;
 
@@ -102,7 +113,7 @@ public class ShapeObject extends Drawable {
     noStroke();
     shapeMode(CENTER);
     rotate(zAngle);
-    shape(shape, abstractX, abstractY, w, h);
+    shape(shape, x, y, w, h);
 
     popStyle();
   }
@@ -112,8 +123,7 @@ public class ShapeObject extends Drawable {
     
     imageMode(CENTER);
     rotate(zAngle);
-    //image(image, position.x, position.y, size.x, size.y);
-    image(image, abstractX, abstractY, image.width * scale.x, image.height * scale.y);
+    image(image, x, y, image.width * scale.x, image.height * scale.y);
 
     popStyle();
   }

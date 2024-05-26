@@ -2,6 +2,8 @@ public abstract class BaseScene {
 
   public DrawManager drawManager = new DrawManager();
   public AnimationManager animationManager = new AnimationManager();
+  public EffectManager effectManager = new EffectManager();
+  public UiManager uiManager = new UiManager();
 
   public void startAnimation(BaseAnimation animation) {
     animationManager.startAnimation(animation);
@@ -11,6 +13,14 @@ public abstract class BaseScene {
   public abstract void setup();
   
   public abstract void draw();
+
+  public abstract int getNextScene();
+
+  public void loadNextScene() {
+    if (getNextScene() != -1) {
+      sceneManager.loadScene(scenes.createScene(getNextScene()));
+    }
+  }
   
   public void mousePressed() {
     println("BaseScene: mousePressed");

@@ -1,4 +1,6 @@
 public class Scene_302 extends BaseScene {
+  @Override
+  public int getNextScene() { return 303; }
   public void setup() {
     println("Scene_302 : setup");
   }
@@ -13,7 +15,6 @@ public class Scene_302 extends BaseScene {
   }
   
   public void mousePressed() {
-    println("Scene_302 : mousePressed");
+    loadNextScene();
   }
 }
-

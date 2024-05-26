@@ -1,4 +1,6 @@
 public class Scene_208 extends BaseScene {
+  @Override
+  public int getNextScene() { return 209; }
   public void setup() {
     println("Scene_208 : setup");
   }
@@ -6,14 +8,20 @@ public class Scene_208 extends BaseScene {
   public void draw() {
     pushStyle();
     
-    background(255, 0, 0);
-    println("Scene_208 : draw");
+    background(#FFFFFF);
+    effectManager.updateAndDraw();
     
     popStyle();
   }
+
+  int clickCount = 0;
   
   public void mousePressed() {
-    println("Scene_208 : mousePressed");
+    if (clickCount == 0) {
+      effectManager.addParticles(mouseX, mouseY, EffectType.SLEEP);
+      clickCount++;
+    } else {
+     loadNextScene();
+    }
   }
 }
-

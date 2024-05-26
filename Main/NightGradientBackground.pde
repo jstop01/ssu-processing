@@ -1,11 +1,11 @@
 int 검은색부분= 130;
-void setup() {
-  size(800, 400); 
-}
+//void setup() {
+//  size(800, 400); 
+//}
 
-void draw() {
-  drawGradientBackground();  
-}
+//void draw() {
+//  drawGradientBackground();  
+//}
 
 void drawGradientBackground() {
   for (int y = 0; y < height; y++) {

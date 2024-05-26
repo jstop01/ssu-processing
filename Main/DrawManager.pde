@@ -7,7 +7,7 @@ public class DrawManager {
 
   public void addDrawable(Drawable drawable){
     drawables.add(drawable);
-    // sort by drawable zIndex
+      // sort by drawable zIndex
     drawables.sort((o1, o2) -> o1.zIndex - o2.zIndex);
   }
 
@@ -16,8 +16,7 @@ public class DrawManager {
   }
 
   public void drawing (){
-    for(int i = drawables.size() - 1; i >= 0; i--){
-      Drawable drawable = drawables.get(i);
+    for(Drawable drawable : drawables){
       drawable.draw();
     }
   }

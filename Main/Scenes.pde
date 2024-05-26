@@ -8,12 +8,11 @@ public class Scenes {
 
     201, 202, 203, 204, 205, 206, 207, 208, 209,
     210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220,
-    221, 222, 223,
+    221, 222,
 
     301, 302, 303, 304, 305, 306, 307, 308, 309, 310,
     311, 312, 313, 314, 315, 316, 317, 318, 319, 320,
-    321, 322, 323, 324, 325, 326, 327, 328, 329, 330,
-    331, 332, 333
+    321, 322, 323, 324, 325, 326, 327, 328, 329, 330
   };
 
   public String[] getSceneNames() {
@@ -109,8 +108,6 @@ public class Scenes {
       return new Scene_221();
     if (sceneNumber == 222)
       return new Scene_222();
-    if (sceneNumber == 223)
-      return new Scene_223();
 
     if (sceneNumber == 301)
       return new Scene_301();
@@ -172,12 +169,6 @@ public class Scenes {
       return new Scene_329();
     if (sceneNumber == 330)
       return new Scene_330();
-    if (sceneNumber == 331)
-      return new Scene_331();
-    if (sceneNumber == 332)
-      return new Scene_332();
-    if (sceneNumber == 333)
-      return new Scene_333();
 
     throw new IllegalArgumentException("Not handled scene number : " + sceneNumber);
   }
