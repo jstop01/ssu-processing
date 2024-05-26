@@ -17,7 +17,7 @@ public class Scene_ObjectTest extends BaseScene {
   public void draw() {
     pushStyle();
     
-    background(255, 0, 0);
+    
     //println("Scene_ObjectTest : draw");
     drawManager.drawing();
     

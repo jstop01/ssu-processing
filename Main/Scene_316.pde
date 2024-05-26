@@ -11,7 +11,7 @@ public class Scene_316 extends BaseScene {
   public void draw() {
     pushStyle();
     
-    background(255, 0, 0);
+    
     drawManager.drawing();
     uiManager.drawing();
     

@@ -12,7 +12,7 @@ public class Scene_206 extends BaseScene {
   public void draw() {
     pushStyle();
     
-    background(255, 0, 0);
+    
     drawManager.drawing();
     uiManager.drawing();
     
