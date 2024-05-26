@@ -15,9 +15,11 @@ public class Scene_105 extends BaseScene {
     girl.setScale(2f, 2f);
     drawManager.addDrawable(girl);
 
-    uiManager.dialogUi.push(uiManager.getDialogDataById("105001"));
-    uiManager.dialogUi.push(uiManager.getDialogDataById("105002"));
-    uiManager.dialogUi.push(uiManager.getDialogDataById("105003"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("105001"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("105002"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("105003"));
+
+    uiManager.dialogUi.next();
   }
  
   public void draw() {
@@ -31,6 +33,10 @@ public class Scene_105 extends BaseScene {
   }
   
   public void mousePressed() {
+    if (uiManager.dialogUi.next()) {
+      return;
+    }
+
     loadNextScene();
   }
 }

@@ -7,8 +7,10 @@ public class Scene_106 extends BaseScene {
   public void setup() {
     println("Scene_106 : setup");
 
-    uiManager.dialogUi.push(uiManager.getDialogDataById("106001"));
-    uiManager.dialogUi.push(uiManager.getDialogDataById("106002"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("106001"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("106002"));
+
+    uiManager.dialogUi.next();
   }
  
   public void draw() {
@@ -22,6 +24,9 @@ public class Scene_106 extends BaseScene {
   }
   
   public void mousePressed() {
+    if (uiManager.dialogUi.next()) {
+      return;
+    }
     loadNextScene();
   }
 }

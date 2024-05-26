@@ -5,7 +5,7 @@ public class Scene_328 extends BaseScene {
   @Override
   public int getNextScene() { return 329; }
   public void setup() {
-    uiManager.dialogUi.push(uiManager.getDialogDataById("328001"));
+    uiManager.dialogUi.set(uiManager.getDialogDataById("328001"));
   }
  
   public void draw() {

@@ -11,10 +11,12 @@ public class Scene_204 extends BaseScene {
   @Override
   public int getNextScene() { return 218; }
   public void setup() {
+
     uiManager.dialogUi.push(uiManager.getDialogDataById("204001"));
     uiManager.dialogUi.push(uiManager.getDialogDataById("204002"));
     uiManager.dialogUi.push(uiManager.getDialogDataById("204003"));
-    println("Scene_204 : setup");
+    uiManager.dialogUi.next();
+    
     var objA = objectFactory.create(ObjectType.tiger, ObjectPoseType.front);
     objA.setPosition(100, 200);
     objA.setScale(0.2, 0.2);
@@ -29,6 +31,7 @@ public class Scene_204 extends BaseScene {
     drawManager.addDrawable(objC);
 
     gameManager = new GhostLegGameManager(3, new int[] {205,206,207}, new Drawable[]{objA,objB,objC});
+
   }
  
   public void draw() {
@@ -42,8 +45,10 @@ public class Scene_204 extends BaseScene {
   }
   
   public void mousePressed() {
-    // loadNextScene();
     gameManager.update();
-    System.out.println("Scene_204 : mousePressed" + mouseX + " , " + mouseY);
+    if (uiManager.dialogUi.next()) {
+      return;
+    }
+    loadNextScene();
   }
 }

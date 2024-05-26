@@ -20,9 +20,11 @@ public class Scene_103 extends BaseScene {
     mom.setScale(0.3f, 0.3f);
     drawManager.addDrawable(mom);
 
-    uiManager.dialogUi.push(uiManager.getDialogDataById("103001"));
-    uiManager.dialogUi.push(uiManager.getDialogDataById("103002"));
-    uiManager.dialogUi.push(uiManager.getDialogDataById("103003"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("103001"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("103002"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("103003"));
+
+    uiManager.dialogUi.next();
   }
  
   public void draw() {
@@ -36,6 +38,10 @@ public class Scene_103 extends BaseScene {
   }
   
   public void mousePressed() {
+    if (uiManager.dialogUi.next()) {
+      return;
+    }
+
     loadNextScene();
   }
 }

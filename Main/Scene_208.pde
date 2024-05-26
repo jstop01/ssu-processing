@@ -6,10 +6,10 @@ public class Scene_208 extends BaseScene {
   public int getNextScene() { return 209; }
   public void setup() {
     println("Scene_208 : setup");
-    uiManager.dialogUi.push(uiManager.getDialogDataById("208001"));
-    uiManager.dialogUi.push(uiManager.getDialogDataById("208002"));
-    uiManager.dialogUi.push(uiManager.getDialogDataById("208003"));
-
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("208001"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("208002"));
+    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("208003"));
+    uiManager.dialogUi.next();
   }
  
   public void draw() {
@@ -29,7 +29,10 @@ public class Scene_208 extends BaseScene {
       effectManager.addParticles(mouseX, mouseY, EffectType.SLEEP);
       clickCount++;
     } else {
-     loadNextScene();
+      if (uiManager.dialogUi.next()) {
+        return;
+      }
+      loadNextScene();
     }
   }
 }
