@@ -44,7 +44,15 @@ void mousePressed() {
 
 void keyPressed() {
   int backspace = 8;
-  if (keyCode == backspace) {
+  int plusKeycode = 61;
+  int minusKeycode = 45;
+  if (keyCode == backspace) {   
     sceneManager.loadScene(new Scene_Intro());
+  }
+  if (keyCode == plusKeycode) {   
+    sceneManager.getCurrentScene().loadNextScene();
+  }
+  if (keyCode == minusKeycode) {   
+    sceneManager.getCurrentScene().loadPreviousScene();
   }
 }

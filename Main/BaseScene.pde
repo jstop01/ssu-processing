@@ -18,6 +18,8 @@ public abstract class BaseScene {
     int sceneNumber = getNextScene();
     if (sceneNumber != -1) {
       sceneManager.loadScene(scenes.createScene(sceneNumber));
+    } else {
+      println("다음 씬이 없거나 매핑이 안되어있습니다.");
     }
   }
   public abstract int getPreviousScene();
@@ -25,6 +27,8 @@ public abstract class BaseScene {
     int sceneNumber = getPreviousScene();
     if (sceneNumber != -1) {
       sceneManager.loadScene(scenes.createScene(sceneNumber));
+    } else {
+      println("이전 씬이 없거나 매핑이 안되어있습니다.");
     }
   }
   
