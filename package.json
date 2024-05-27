@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"compress": "pnpm zx scripts/compressImage.mjs"
+	},
+	"dependencies": {
+		"sharp": "^0.33.4",
+		"zx": "^8.1.1"
+	}
+}
