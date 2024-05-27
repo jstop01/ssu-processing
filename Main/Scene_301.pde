@@ -11,12 +11,12 @@ void setup_Scene_301_BG(DrawManager drawManager) {
   drawManager.addDrawable(구름);
   // 구름 몇개 더 해야 될 듯
 
-  var jar2 = objectFactory.create("compressedRes/objects/Jar_2.png");
+  var jar2 = objectFactory.create("compressedRes/images/objects/Jar_2.png");
   jar2.setPosition(1170, 500);
   jar2.setScale(0.2, 0.2);
   drawManager.addDrawable(jar2);
 
-  var jar1 = objectFactory.create("compressedRes/objects/Jar_1.png");
+  var jar1 = objectFactory.create("compressedRes/images/objects/Jar_1.png");
   jar1.setPosition(1230, 500);
   jar1.setScale(0.2, 0.2);
   drawManager.addDrawable(jar1);

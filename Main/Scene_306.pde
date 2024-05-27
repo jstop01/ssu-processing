@@ -7,7 +7,7 @@ public class Scene_306 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("306001"));
 
-    var speechBubble = objectFactory.create("compressedRes/ui/speech-bubble_3.png");
+    var speechBubble = objectFactory.create("compressedRes/images/ui/speech-bubble_3.png");
     speechBubble.setPosition(300, 100);
     speechBubble.setScale(0.7, 0.7);
     drawManager.addDrawable(speechBubble);

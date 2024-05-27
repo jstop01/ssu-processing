@@ -7,7 +7,7 @@ public class Scene_307 extends BaseScene {
   public void setup() {
 
     // 나무 리소스 교체해야 할듯
-    var tree = objectFactory.create("compressedRes/objects/the_base_of_a_tree.png");
+    var tree = objectFactory.create("compressedRes/images/objects/the_base_of_a_tree.png");
     tree.setPosition(600, 400);
     drawManager.addDrawable(tree);
 
@@ -19,7 +19,7 @@ public class Scene_307 extends BaseScene {
     axe.d_rotate(90);
     drawManager.addDrawable(axe);
 
-    var oil = objectFactory.create("compressedRes/objects/oil.png");
+    var oil = objectFactory.create("compressedRes/images/objects/oil.png");
     oil.setPosition(400, 400);
     drawManager.addDrawable(oil);
 

@@ -4,7 +4,7 @@ import { globby } from 'zx';
 
 
 const compressImage = async (filePath) => {
-  const outputPath = filePath.replace('/res/', '/compressedRes/');
+  const outputPath = filePath.replace('/res/images', '/compressedRes/images');
   console.log({filePath, outputPath});
   sharp(filePath)
     .png({ compressionLevel: 9, adaptiveFiltering: true, force: true })

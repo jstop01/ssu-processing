@@ -9,7 +9,7 @@ public class Scene_212 extends BaseScene {
     drawManager.addDrawable(openDoor);
     uiManager.dialogUi.set(uiManager.getDialogDataById("212001"));
 
-    var storyboard = objectFactory.create("compressedRes/storyboard/212.png");
+    var storyboard = objectFactory.create("compressedRes/images/storyboard/212.png");
     storyboard.setPosition(width / 2, height / 2);
     drawManager.addDrawable(storyboard);
   }

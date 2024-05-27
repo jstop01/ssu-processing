@@ -9,7 +9,7 @@ public class Scene_308 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("308001"));
 
-    var oil = objectFactory.create("compressedRes/objects/oil.png");
+    var oil = objectFactory.create("compressedRes/images/objects/oil.png");
     oil.setPosition(200, 200);
     drawManager.addDrawable(oil);
 

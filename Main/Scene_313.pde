@@ -17,13 +17,13 @@ public class Scene_313 extends BaseScene {
     uiManager.dialogUi.set(uiManager.getDialogDataById("313001"));
 
     PVector ropeScale = new PVector(0.15, 0.15);
-    var newRope = objectFactory.create("compressedRes/objects/rope_new.png");
+    var newRope = objectFactory.create("compressedRes/images/objects/rope_new.png");
     newRope.setPosition(250, 000);
     newRope.setScale(ropeScale.x, ropeScale.y);
     startAnimation(new MoveAnimation(newRope, 350, 200, 2));
     drawManager.addDrawable(newRope);
 
-    var oldRope = objectFactory.create("compressedRes/objects/rope_old.png");
+    var oldRope = objectFactory.create("compressedRes/images/objects/rope_old.png");
     oldRope.setPosition(width - 250, 000);
     oldRope.setScale(ropeScale.x, ropeScale.y);
     startAnimation(new MoveAnimation(oldRope, width - 350, 200, 2));

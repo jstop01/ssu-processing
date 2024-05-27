@@ -7,7 +7,7 @@ public class Scene_329 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("329001"));
 
-    var newRope = objectFactory.create("compressedRes/objects/rope_new.png");
+    var newRope = objectFactory.create("compressedRes/images/objects/rope_new.png");
     newRope.setPosition(400, 50);
     newRope.setScale(0.2, 0.2);
     drawManager.addDrawable(newRope);

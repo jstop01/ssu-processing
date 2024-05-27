@@ -11,7 +11,7 @@ public class Scene_107 extends BaseScene {
 
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/storyboard/107.png");
+    var storyboard = objectFactory.create("compressedRes/images/storyboard/107.png");
     storyboard.setPosition(width / 2, height / 2);
     drawManager.addDrawable(storyboard);
   }
