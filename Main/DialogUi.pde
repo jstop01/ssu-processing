@@ -2,7 +2,7 @@ int DIALOG_HEIGHT = 200;
 int DIALOG_PADDING = 16;
 int DIALOG_MARGIN = 10;
 int TELLER_TEXT_SIZE = 24;
-int MSG_TEXT_SIZE = 28;
+int MSG_TEXT_SIZE = 16;
 
 import java.util.Queue;
 import java.util.LinkedList;
@@ -38,8 +38,8 @@ public class DialogUi {
         }
         //textSize(MSG_TEXT_SIZE);
         fill(0, 0, 0);
-        
-        fontManager.drawText(this.current.text, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING*2, 1000, MSG_TEXT_SIZE);
+        String msg = this.current.text.replace("\\n","\n");
+        fontManager.drawText(msg, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING*2, 1000, MSG_TEXT_SIZE);
         //text(this.current.text,
         //x + DIALOG_PADDING,
         //textAnchor,
