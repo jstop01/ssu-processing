@@ -1,65 +1,58 @@
-// 돌멩이 그리는 코드
-void setup() {
-  size(1280, 720);
-}
+public class Sky extends Drawable {
 
-void draw() {
-  background(255);
-  noStroke(); // 1st
-  beginShape();
-  fill(249, 252, 158, 180);
-  vertex(396, 56);
-  vertex(284,126);
-  vertex(292,166);
-  vertex(417, 74);
-  endShape(CLOSE);
-  
-   noStroke(); // 2st
-  beginShape();
-  fill(249, 252, 158, 180);
-  vertex(462,109);
-  vertex(417,176);
-  vertex(441,198);
-  vertex(492,133);
-  endShape(CLOSE);
-  
-   noStroke(); // 3st
-  beginShape();
-  fill(249, 252, 158, 180);
-  vertex(556,152);
-  vertex(532,307);
-  vertex(563,313);
-  vertex(586,158);
-  endShape(CLOSE);
-  
-   noStroke();  // 4st
-  beginShape();
-  fill(249, 252, 158, 180);
-  vertex(666,144);
-  vertex(704,266);
-  vertex(740,235);
-  vertex(692,134);
-  endShape(CLOSE);
-  
-   noStroke(); // 5st
-  beginShape();
-  fill(249, 252, 158, 180);
-  vertex(750,91);
-  vertex(864,261);
-  vertex(906,248);
-  vertex(778,74);
-  endShape(CLOSE);
-  
-   noStroke(); // 6st
-  beginShape();
-  fill(249, 252, 158, 180);
-  vertex(818, 57);
-  vertex(909,133);
-  vertex(938,114);
-  vertex(838,34);
-  endShape(CLOSE);
-  
-  
-  
-  
+  public Sky(float x, float y, float w, float h) {
+    super(x, y, w, h);
+  }
+
+  @Override
+  public void draw() {
+    noStroke();
+    beginShape();
+    fill(249, 252, 158, 180);
+    vertex(x + 396, y + 56);
+    vertex(x + 284, y + 126);
+    vertex(x + 292, y + 166);
+    vertex(x + 417, y + 74);
+    endShape(CLOSE);
+    
+    beginShape();
+    fill(249, 252, 158, 180);
+    vertex(x + 462, y + 109);
+    vertex(x + 417, y + 176);
+    vertex(x + 441, y + 198);
+    vertex(x + 492, y + 133);
+    endShape(CLOSE);
+    
+    beginShape();
+    fill(249, 252, 158, 180);
+    vertex(x + 556, y + 152);
+    vertex(x + 532, y + 307);
+    vertex(x + 563, y + 313);
+    vertex(x + 586, y + 158);
+    endShape(CLOSE);
+    
+    beginShape();
+    fill(249, 252, 158, 180);
+    vertex(x + 666, y + 144);
+    vertex(x + 704, y + 266);
+    vertex(x + 740, y + 235);
+    vertex(x + 692, y + 134);
+    endShape(CLOSE);
+    
+    beginShape();
+    fill(249, 252, 158, 180);
+    vertex(x + 750, y + 91);
+    vertex(x + 864, y + 261);
+    vertex(x + 906, y + 248);
+    vertex(x + 778, y + 74);
+    endShape(CLOSE);
+    
+    beginShape();
+    fill(249, 252, 158, 180);
+    vertex(x + 818, y + 57);
+    vertex(x + 909, y + 133);
+    vertex(x + 938, y + 114);
+    vertex(x + 838, y + 34);
+    endShape(CLOSE);
+  }
 }
