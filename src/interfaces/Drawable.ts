@@ -1,18 +1,18 @@
 import { PVector } from "./PVector";
 
 export class Drawable {
-  protected x = 0;
-  protected y = 0;
-  protected initialW = 0;
-  protected initialH = 0;
-  protected w = 0;
-  protected h = 0;
-  protected zAngle = 0;
-  protected zIndex = 0;
-  protected startPos!: PVector;
-  protected endPos!: PVector;
-  protected center!: PVector;
-  protected scale!: PVector;
+  public x = 0;
+  public y = 0;
+  public initialW = 0;
+  public initialH = 0;
+  public w = 0;
+  public h = 0;
+  public zAngle = 0;
+  public zIndex = 0;
+  public startPos!: PVector;
+  public endPos!: PVector;
+  public center!: PVector;
+  public scale!: PVector;
 
   public constructor(x = 1, y = 1, w = 1, h = 1, zIndex = 1) {
     this.setup(x, y, w, h, zIndex);
