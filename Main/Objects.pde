@@ -100,8 +100,7 @@ public class ObjectFactory {
     throw new UnsupportedOperationException("Not implemented : " + path);
   }
 
-  public ShapeObject create(String name) {
-    String path = "res/objects/" + name + ".png";
+  public ShapeObject create(String path) {
     var image = loadImage(path);
     if (image == null) {
       println("Failed to load image : " + path);
@@ -135,15 +134,15 @@ public class ShapeObject extends Drawable {
   private PImage image;
 
   public ShapeObject(PShape shape) {
+    super(0, 0, shape.width, shape.height);
     this.shape = shape;
     this.scale = new PVector(1, 1, 1);
   }
 
   public ShapeObject(PImage image) {
+    super(0, 0, image.width, image.height);
     this.image = image;
     this.scale = new PVector(1, 1, 1);
-    this.w = image.width * scale.x;
-    this.h = image.height * scale.y;
   }
   
   @Override

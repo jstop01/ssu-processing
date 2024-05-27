@@ -8,9 +8,7 @@ public class Scene_101 extends BaseScene {
   public void setup() {
     var door = objectFactory.create(BackgroundType.대문2);
     door.setPosition(width / 2, height / 2);
-    door.scale.x = 0.15625;
-    door.scale.y = 0.15625;
-    
+    door.setScale(0.15625, 0.15625);
     drawManager.addDrawable(door);
   }
  

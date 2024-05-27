@@ -6,12 +6,19 @@ public class Scene_304 extends BaseScene {
   public int getNextScene() { return 305; }
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("304001"));
+
+    setup_Scene_301_BG(drawManager);
+
+    var tiger = objectFactory.create(ObjectType.tiger_mom, ObjectPoseType.back);
+    tiger.setPosition(600, 500);
+    tiger.setScale(0.3, 0.3);
+    drawManager.addDrawable(tiger);
   }
  
   public void draw() {
     pushStyle();
     
-    
+    drawGradientBackground();
     drawManager.drawing();
     uiManager.drawing();
     

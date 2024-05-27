@@ -11,14 +11,12 @@ public class Scene_102 extends BaseScene {
 
     Drawable house = objectFactory.create(BackgroundType.초가집);
     house.setPosition(width / 2, height / 2 - 20);
-    house.scale.x = 0.15;
-    house.scale.y = 0.15;
+    house.setScale(0.15, 0.15);
     drawManager.addDrawable(house);
 
     Drawable cloud = objectFactory.create(BackgroundType.구름2);
     cloud.setPosition(250, 80);
-    cloud.scale.x = 0.04;
-    cloud.scale.y = 0.04;
+    cloud.setScale(0.04, 0.04);
     drawManager.addDrawable(cloud);
 
     // TODO: 배경 - 나무, 산, 짚신 추가
