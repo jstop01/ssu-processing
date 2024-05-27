@@ -112,7 +112,7 @@ public class ObjectFactory {
   }
 
   public ShapeObject create(BackgroundType type) {
-    String path = "res/bg/" + type.name + ".png";
+    String path = "res/images/bg/" + type.name + ".png";
       return new ShapeObject(loadImage(path));
   }
   
@@ -121,8 +121,8 @@ public class ObjectFactory {
       throw new UnsupportedOperationException("Not implemented : " + type + " " + pose);
     
     //boolean useSvg = false;
-    //String prefix = "res/objects/" + (useSvg ? "svg/" : "png/");
-    String prefix = "res/objects/";
+    //String prefix = "res/images/objects/" + (useSvg ? "svg/" : "png/");
+    String prefix = "res/images/objects/";
     String extension = ".png";
     //String extension = useSvg ? ".svg" : ".png";
     
