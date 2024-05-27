@@ -1,5 +1,6 @@
 public abstract class BaseScene {
   public DrawManager drawManager = new DrawManager();
+  public SoundManager soundManager = new SoundManager();
   public AnimationManager animationManager = new AnimationManager();
   public EffectManager effectManager = new EffectManager();
   public UiManager uiManager = new UiManager();
@@ -7,7 +8,7 @@ public abstract class BaseScene {
   public void startAnimation(BaseAnimation animation) {
     animationManager.startAnimation(animation);
   }
-
+  
   // 씬이 최초로 생성되는 시점에 1회 호출됨.
   public abstract void setup();
   
