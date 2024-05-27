@@ -8,6 +8,10 @@ public class Scene_211 extends BaseScene {
     uiManager.dialogUi.enqueue(uiManager.getDialogDataById("211001"));
     uiManager.dialogUi.enqueue(uiManager.getDialogDataById("211002"));
     uiManager.dialogUi.next();
+
+    var storyboard = objectFactory.create("res/storyboard/211.png");
+    storyboard.setPosition(width / 2, height / 2);
+    drawManager.addDrawable(storyboard);
   }
  
   public void draw() {
