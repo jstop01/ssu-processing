@@ -6,7 +6,8 @@
     "source.fixAll": "explicit"
   },
   "search.exclude": {
-    "**/node_modules": true
+    "**/node_modules": true,
+    "**/libraries": true
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }
