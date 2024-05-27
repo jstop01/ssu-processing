@@ -1,9 +1,9 @@
-public class PointsAndLines extends Drawable {
+public class Sill extends Drawable {
   private int numPoints;
   private float[] xList;
   private float[] yList;
 
-  public PointsAndLines(float x, float y, float w, float h, int numPoints, float[] xList, float[] yList) {
+  public Sill(float x, float y, float w, float h, int numPoints, float[] xList, float[] yList) {
     super(x, y, w, h);
     this.numPoints = numPoints;
     this.xList = xList;
