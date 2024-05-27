@@ -14,15 +14,7 @@ export class Drawable {
   protected center!: PVector;
   protected scale!: PVector;
 
-  public Drawable() {
-    this.setup(0, 0, 0, 0, 0);
-  }
-
-  public Drawable(x: number, y: number, w: number, h: number) {
-    this.setup(x, y, w, h, 0);
-  }
-
-  public Drawable(x: number, y: number, w: number, h: number, zIndex: number) {
+  public constructor(x = 1, y = 1, w = 1, h = 1, zIndex = 1) {
     this.setup(x, y, w, h, zIndex);
   }
 
@@ -86,10 +78,10 @@ export class Drawable {
     var modX = this.x - this.w / 2;
     var modY = this.y - this.h / 2;
     if (
-      window.p.mouseX > modX &&
-      window.p.mouseX < modX + this.w &&
-      window.p.mouseY > modY &&
-      window.p.mouseY < modY + this.h
+      p.mouseX > modX &&
+      p.mouseX < modX + this.w &&
+      p.mouseY > modY &&
+      p.mouseY < modY + this.h
     ) {
       this.onClick();
       return true;

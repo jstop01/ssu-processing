@@ -1,18 +1,17 @@
 import p5 from "p5";
+import { Hammer } from "./objects/Hammer";
 import "./style.css";
 
-new p5((p5Instance) => {
-  const p = p5Instance as unknown as p5;
-  window.p = p;
-  const x = 100;
-  const y = 100;
+export const main = (p: p5) => {
+  const hammer = new Hammer(250, 100);
+  console.log("debug", { hammer });
+
   p.AUDIO;
   p.setup = function setup() {
     p.createCanvas(1280, 720);
   };
   p.draw = function draw() {
-    window.p.background(0);
-    window.p.fill(205);
-    window.p.rect(x, y, 50, 50);
+    p.background(0);
+    hammer.draw();
   };
-}, document.getElementById("app")!);
+};
