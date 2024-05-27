@@ -32,6 +32,13 @@ public class Scene_104 extends BaseScene {
     rock1.d_rotate(rock1ZAngle);
     pushStyle();
     if (keyPressed) {
+      // test: up 키로 씬 넘어가기
+      if (keyCode == 38) {
+        println("space");
+        loadNextScene();
+      }
+
+
       boolean left = keyCode == 37;
       boolean right = keyCode == 39;
       if (left) {
