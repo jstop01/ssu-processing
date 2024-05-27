@@ -97,12 +97,12 @@ public class Scene_Ending extends BaseScene {
 
     int backgroundScrollSpeed = 2;
     int objectScrollSpeed = 5;
-    int textScrollSpeed = 1;
+    float textScrollSpeed = 0.1f;
     
     int headLineSize = 32;
     int textSize = 16;
 
-    int curScrollPos = 0;
+    float curScrollPos = 0;
 
     Text text = new Text();
     
@@ -110,10 +110,17 @@ public class Scene_Ending extends BaseScene {
         new CreditInfo("작업 정보"),
         new CreditInfo("방정혁", new String[]{"시나리오 팀장", "크레딧 제작"})
     };
+
+      @Override
+  public int getPreviousScene() { return -1; }
+
+  @Override
+  public int getNextScene() { return -1; }
     
     public void setup()
     {
         println("Scene_Ending : setup");
+        curScrollPos = height;
     }
 
     private void DrawEnding()
@@ -126,8 +133,8 @@ public class Scene_Ending extends BaseScene {
             var pos = info.pos + curScrollPos;
             var isOverTop =  pos < -screenEdgeBuffer;
             var isOverBottom = pos >= height + screenEdgeBuffer;
-
-            text.Draw(info.GetText(), 0, pos);
+            fill(0);
+            fontManager.drawText(info.GetText(),width/2,curScrollPos,40);
 
             if(isOverTop)
                 firstIdx = i;
@@ -146,7 +153,7 @@ public class Scene_Ending extends BaseScene {
         
         println("Scene_Ending : draw");
         background(255, 255, 255);
-        //DrawEnding();
+        DrawEnding();
         
         popStyle();
     }
