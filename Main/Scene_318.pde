@@ -5,8 +5,18 @@ public class Scene_318 extends BaseScene {
 
   @Override
   public int getNextScene() { return 313; }
+
+  private Button retryButton;
+
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("318001"));
+
+    setup_Scene_301_BG(drawManager);
+
+    retryButton = new Button();
+    retryButton.text = "되돌아가시겠습니까?";
+    retryButton.position = new PVector(1000, 500);
+    retryButton.size = new PVector(300, 100);
   }
  
   public void draw() {
@@ -15,11 +25,14 @@ public class Scene_318 extends BaseScene {
     
     drawManager.drawing();
     uiManager.drawing();
+
+    if (retryButton.drawAndCheckClick()) {
+      loadNextScene();
+    }
     
     popStyle();
   }
   
   public void mousePressed() {
-    loadNextScene();
   }
 }

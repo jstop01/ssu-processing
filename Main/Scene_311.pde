@@ -4,21 +4,11 @@ public class Scene_311 extends BaseScene {
 
   @Override
   public int getNextScene() { return 312; }
-   ShapeObject branch;
-   ShapeObject branch2; // 나중엔 차피 하나의 이미지로 퉁칠거라 지금만 대충 가라처리합니다
   
   public void setup() {
-    branch = objectFactory.create(BackgroundType.무서운나무);
-    branch.setPosition(1700,0);
-    branch.scale.x = 0.2f;
-    branch.scale.y = 0.2f;
-    drawManager.addDrawable(branch);
-
-    branch2 = objectFactory.create(ObjectType.tiger,ObjectPoseType.lay_01);
-    branch2.setPosition(640,700);
-    branch2.scale.x = 1f;
-    branch2.scale.y = 0.4f;
-    drawManager.addDrawable(branch2);
+    var speechBubble = objectFactory.create("res/ui/speech-bubble_2.png");
+    speechBubble.setPosition(600, 400);
+    drawManager.addDrawable(speechBubble);
 
     uiManager.dialogUi.set(uiManager.getDialogDataById("311001"));
   }
@@ -31,6 +21,18 @@ public class Scene_311 extends BaseScene {
 
     drawManager.drawing();
     uiManager.drawing();
+    // TODO: localize
+    fontManager.drawText(
+      "하늘님,",
+      600, 250, 30);
+
+      fontManager.drawText(
+      "저희를 살리시려거든 새 동아줄을 내려주시고",
+      350, 300, 30);
+
+      fontManager.drawText(
+      "죽이시려거든 썩은 동아줄을 내려주세요!",
+      350, 350, 30);
 
     popStyle();
   }

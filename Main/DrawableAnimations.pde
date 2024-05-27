@@ -7,9 +7,9 @@ public class BaseAnimation {
   public EaseType easeType = EaseType.Linear;
   public boolean isDone;
 
-  // -1 for infinite
-  // 0 for one direciton
-  // > 0 for repeat
+  // repeatCount == -1 for infinite
+  // repeatCount == 0  for one direciton
+  // repeatCount > 0   for repeat
   public int repeatCount = 0;
   
   protected boolean reverse;
@@ -24,6 +24,15 @@ public class MoveAnimation extends BaseAnimation {
       super(target);
       startX = target.getX();
       startY = target.getY();
+  }
+
+  public MoveAnimation(Drawable target, float destX, float destY, float duration) {
+      super(target);
+      startX = target.getX();
+      startY = target.getY();
+      this.destX = destX;
+      this.destY = destY;
+      this.duration = duration;
   }
 
   public float destX;
@@ -79,6 +88,15 @@ public class ScaleAnimation extends BaseAnimation {
       super(target);
       startX = target.getScaleX();
       startY = target.getScaleY();
+  }
+
+  public ScaleAnimation(Drawable target, float destX, float destY, float duration) {
+      super(target);
+      startX = target.getScaleX();
+      startY = target.getScaleY();
+      this.destX = destX;
+      this.destY = destY;
+      this.duration = duration;
   }
 
   public float destX;

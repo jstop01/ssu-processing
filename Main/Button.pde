@@ -1,5 +1,6 @@
 public class Button {
   public String text;
+  public color buttonColor = #FFFFFF;
   public color textColor = #000000;
   public int fontSize = 15;
   // TODO: text font and size
@@ -23,8 +24,10 @@ public class Button {
   }
   
   public void draw() {
-    setMouseOverStyle(isMouseOver());  
+    pushStyle();
     
+    setMouseOverStyle(isMouseOver());  
+    fill(buttonColor);
     rect(position.x, position.y, size.x, size.y);
     if (text != null) {
       float textX = position.x + size.x / 2;
@@ -34,6 +37,7 @@ public class Button {
       textAlign(CENTER, CENTER);
       text(text, textX, textY);
     }
+    popStyle();
   }
   
   // Can be overriden in the derived class

@@ -2,13 +2,14 @@
 // 전역 변수도 이 파일에서 정의한다.
 
 import static java.awt.event.KeyEvent.*;
+import processing.javafx.*;
 float deltaTime = 0;
 int lastMillis = 0;
 
 void setup() {
-  size(1280, 720, P2D);
+  size(1280, 720, FX2D);
   sceneManager.loadScene(new Scene_Intro());
-  postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
+  //postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
   fontManager.setup();
 }
 

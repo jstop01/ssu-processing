@@ -6,12 +6,23 @@ public class Scene_309 extends BaseScene {
   public int getNextScene() { return 310; }
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("309001"));
+
+    // 나무 필요
+
+    // 땅 필요
+
+    // 구름 필요
+
+    var tiger = objectFactory.create(ObjectType.tiger, ObjectPoseType.climb);
+    tiger.setPosition(500, 500);
+    tiger.setScale(0.3, 0.3);
+    drawManager.addDrawable(tiger);
   }
  
   public void draw() {
     pushStyle();
     
-    
+    drawGradientBackground();
     drawManager.drawing();
     uiManager.drawing();
     
