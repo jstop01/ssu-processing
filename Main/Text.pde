@@ -1,27 +1,28 @@
-public static class Text
+public class Text
 {
-    private static string font = "Arial.ttf";
-    private static color defaultColor = color(0,0,0);
+    private String font = "Arial.ttf";
+    private int defaultSize = 24;
+    private color defaultColor = #000000;
     
-    public static void Draw(string text, int x, int y)
+    public void Draw(String text, int x, int y)
     {
-        Draw(x,y,text);
+        Draw(text,x,y,defaultSize);
     }
     
-    public static void Draw(string text, int x, int y, int size)
+    public void Draw(String text, int x, int y, int size)
     {
-        Draw(x,y,text,size,font);
+        Draw(text,x,y,size,font);
     }
     
-    public static void Draw(string text, int x, int y, int size, int font)
+    public void Draw(String text, int x, int y, int size, String font)
     {
-        Draw(x,y,text,size,font, defaultColor);
+        Draw(text,x,y,size,font, defaultColor);
     }
     
-    public static void Draw(string text, int x, int y, int size, int font, color textColor)
+    public void Draw(String text, int x, int y, int size, String font, color textColor)
     {
-        PFont font = createFont(font,size); // 이거 이렇게 쓰는게 제대로 동작하는건지 봐야할듯 (https://processing.org/reference/createFont_.html)
-        textFont(font);
+        PFont pFont = createFont(font,size); // 이거 이렇게 쓰는게 제대로 동작하는건지 봐야할듯 (https://processing.org/reference/createFont_.html)
+        textFont(pFont);
         fill(textColor);
         text(text, x,y);
     }
