@@ -7,10 +7,10 @@ public class Scene_SpriteAnimationTest extends BaseScene {
   private SpriteAnimation testAnim;
   public void setup() {
     var images = new PImage[] {
-      loadImage("res/test/SpriteAnim_1.png"),
-      loadImage("res/test/SpriteAnim_2.png"),
-      loadImage("res/test/SpriteAnim_3.png"),
-      loadImage("res/test/SpriteAnim_4.png")
+      loadImage("compressedRes/test/SpriteAnim_1.png"),
+      loadImage("compressedRes/test/SpriteAnim_2.png"),
+      loadImage("compressedRes/test/SpriteAnim_3.png"),
+      loadImage("compressedRes/test/SpriteAnim_4.png")
     };
     testAnim = new SpriteAnimation(images);
     testAnim.setPosition(500, 500);

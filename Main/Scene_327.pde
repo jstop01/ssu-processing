@@ -8,7 +8,7 @@ public class Scene_327 extends BaseScene {
     uiManager.dialogUi.set(uiManager.getDialogDataById("327001"));
 
     // 리소스 교체 필요
-    var oldRope = objectFactory.create("res/objects/rope_old.png");
+    var oldRope = objectFactory.create("compressedRes/objects/rope_old.png");
     oldRope.setPosition(800, 200);
     oldRope.setScale(0.03, 0.03);
     drawManager.addDrawable(oldRope);

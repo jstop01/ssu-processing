@@ -5,7 +5,7 @@ public class Scene_322 extends BaseScene {
   @Override
   public int getNextScene() { return 323; }
   public void setup() {
-    var speechBubble = objectFactory.create("res/ui/speech-bubble_2.png");
+    var speechBubble = objectFactory.create("compressedRes/ui/speech-bubble_2.png");
     speechBubble.setPosition(600, 400);
     drawManager.addDrawable(speechBubble);
 

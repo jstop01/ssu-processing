@@ -8,7 +8,7 @@ public class Scene_325 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("325001"));
 
-    var newRope = objectFactory.create("res/objects/rope_new.png");
+    var newRope = objectFactory.create("compressedRes/objects/rope_new.png");
     newRope.setPosition(400, 50);
     newRope.setScale(0.05, 0.05);
     drawManager.addDrawable(newRope);
@@ -23,7 +23,7 @@ public class Scene_325 extends BaseScene {
     girl.setScale(-0.2, 0.2);
     drawManager.addDrawable(girl);
 
-    var oldRope = objectFactory.create("res/objects/rope_old.png");
+    var oldRope = objectFactory.create("compressedRes/objects/rope_old.png");
     oldRope.setPosition(1000, 50);
     oldRope.setScale(0.05, 0.05);
     drawManager.addDrawable(oldRope);
