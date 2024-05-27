@@ -1,6 +1,5 @@
 import p5 from "p5";
 import { Hammer } from "./objects/Hammer";
-import "./style.css";
 
 export const main = (p: p5) => {
   const hammer = new Hammer(250, 100);
