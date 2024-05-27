@@ -86,10 +86,10 @@ export class Drawable {
     var modX = this.x - this.w / 2;
     var modY = this.y - this.h / 2;
     if (
-      window.p5.mouseX > modX &&
-      window.p5.mouseX < modX + this.w &&
-      window.p5.mouseY > modY &&
-      window.p5.mouseY < modY + this.h
+      window.p.mouseX > modX &&
+      window.p.mouseX < modX + this.w &&
+      window.p.mouseY > modY &&
+      window.p.mouseY < modY + this.h
     ) {
       this.onClick();
       return true;
