@@ -24,9 +24,15 @@ public class Scene_ParticleTest extends BaseScene {
   }
   
   public void mousePressed() {
+    
   }
 
   public void keyPressed() {
-    effectManager.addParticles(mouseX, mouseY, EffectType.BLOOD);
+    if (keyCode == 37) {
+      effectManager.addParticles(mouseX, mouseY, EffectType.BLOOD);
+    }
+    if (keyCode == 39) {
+      effectManager.addParticles(mouseX, mouseY, EffectType.SLEEP);
+    }
   }
 }
