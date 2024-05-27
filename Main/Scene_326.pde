@@ -6,6 +6,12 @@ public class Scene_326 extends BaseScene {
   public int getNextScene() { return 327; }
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("326001"));
+
+    // 리소스 교체 필요
+    var oldRope = objectFactory.create("res/objects/rope_old.png");
+    oldRope.setPosition(width / 2, -50);
+    oldRope.setScale(0.3, 0.3);
+    drawManager.addDrawable(oldRope);
   }
  
   public void draw() {

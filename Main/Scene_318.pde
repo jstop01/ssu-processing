@@ -22,7 +22,7 @@ public class Scene_318 extends BaseScene {
   public void draw() {
     pushStyle();
     
-    
+    drawGradientBackground();
     drawManager.drawing();
     uiManager.drawing();
 

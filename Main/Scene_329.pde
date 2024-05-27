@@ -6,12 +6,29 @@ public class Scene_329 extends BaseScene {
   public int getNextScene() { return 330; }
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("329001"));
+
+    var newRope = objectFactory.create("res/objects/rope_new.png");
+    newRope.setPosition(400, 50);
+    newRope.setScale(0.2, 0.2);
+    drawManager.addDrawable(newRope);
+
+    var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.climb_rope);
+    boy.setPosition(310, 300);
+    boy.setScale(0.6, 0.6);
+    drawManager.addDrawable(boy);
+
+    var girl = objectFactory.create(ObjectType.girl, ObjectPoseType.climb_rope);
+    girl.setPosition(490, 300);
+    girl.setScale(-0.6, 0.6);
+    drawManager.addDrawable(girl);
+
+    // 구름 필요
   }
  
   public void draw() {
     pushStyle();
     
-    
+    drawGradientBackground();
     drawManager.drawing();
     uiManager.drawing();
     
