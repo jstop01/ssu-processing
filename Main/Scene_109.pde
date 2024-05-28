@@ -27,8 +27,7 @@ public class Scene_109 extends BaseScene {
     uiManager.dialogUi.set(uiManager.getDialogDataById("109001"));
     random = new Random();
 
-    Ground ground = new Ground(-1, #BF763E);
-    drawManager.addDrawable(ground);
+    Scene_108_background_setup(drawManager);
 
     REDBEAN_ITEM_COUNT = 10;
     REDBEAN_RICECAKE_COUNT = 5;
@@ -39,11 +38,15 @@ public class Scene_109 extends BaseScene {
     tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.front);
     tiger.setPosition(width/2, height-250);
     tiger.setScale(0.7, 0.7);
+    drawManager.addDrawable(tiger);
+
+    Scene_108_background_setup2(drawManager);
 
     // basket = objectFactory.create(BackgroundType.소쿠리);
     basket = objectFactory.create("res/images/object/basket_01_01.png");
     basket.setPosition(250, height - 100);
     basket.setScale(0.85, 2);
+    drawManager.addDrawable(basket);
     
     redbeanRicecakeCount = new ArrayList<>();
     items = new ArrayList<>();
@@ -107,8 +110,6 @@ public class Scene_109 extends BaseScene {
 
     drawManager.drawing();
     uiManager.drawing();
-    tiger.draw();
-    basket.draw();
     ellipse(TIGER_MOUSE_X, TIGER_MOUSE_Y, TIGER_MOUSE_SIZE, TIGER_MOUSE_SIZE);
 
     for (Item item : items) {

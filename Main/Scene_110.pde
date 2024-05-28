@@ -7,14 +7,21 @@ public class Scene_110 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("110001"));
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/110.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.scream);
+    tiger.setPosition(width/2, height / 2);
+    tiger.setScale(2.3, 2.3);
+    drawManager.addDrawable(tiger);
+
+    var mom = objectFactory.create(CharacterType.mom, CharacterPoseType.back);
+    mom.setPosition(width / 2, 650);
+    mom.setScale(0.35, 0.35);
+    drawManager.addDrawable(mom);
   }
  
   public void draw() {
     pushStyle();
     
+    background(#606060);
     
     drawManager.drawing();
     uiManager.drawing();

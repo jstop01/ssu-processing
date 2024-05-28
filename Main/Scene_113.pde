@@ -10,9 +10,13 @@ public class Scene_113 extends BaseScene {
 
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/113.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    Scene_108_background_setup(drawManager);
+    Scene_108_background_setup2(drawManager);
+
+    var tiger = objectFactory.create(CharacterType.tiger_mom, CharacterPoseType.front);
+    tiger.setPosition(width/2, height / 2 + 250);
+    tiger.setScale(0.7, 0.7);
+    drawManager.addDrawable(tiger);
   }
  
   public void draw() {

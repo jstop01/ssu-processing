@@ -1,3 +1,17 @@
+void Scene_108_background_setup(DrawManager drawManager) {
+  var bg = objectFactory.create("res/images/object/tiger_in_the_dark_bg_4.png");
+  bg.setPosition(width / 2, height / 2);
+  bg.setScale(0.26, 0.26);
+  drawManager.addDrawable(bg);
+}
+
+void Scene_108_background_setup2(DrawManager drawManager) {
+  var bg2 = objectFactory.create("res/images/object/tiger_in_the_dark_bg_5.png");
+  bg2.setPosition(width / 2, height / 2);
+  bg2.setScale(0.26, 0.26);
+  drawManager.addDrawable(bg2);
+}
+
 public class Scene_108 extends BaseScene {
   @Override
   public int getPreviousScene() { return 108; }
@@ -11,9 +25,19 @@ public class Scene_108 extends BaseScene {
 
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/108.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    Scene_108_background_setup(drawManager);
+
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.threat);
+    tiger.setPosition(250, 500);
+    tiger.setScale(0.5, 0.5);
+    drawManager.addDrawable(tiger);
+
+    Scene_108_background_setup2(drawManager);
+
+    var mom = objectFactory.create(CharacterType.mom, CharacterPoseType.back_ricecake);
+    mom.setPosition(950, 650);
+    mom.setScale(0.7, 0.7);
+    drawManager.addDrawable(mom);
   }
  
   public void draw() {
