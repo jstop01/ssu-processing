@@ -40,6 +40,10 @@ public abstract class BaseScene {
     println("BaseScene: mousePressed");
   }
 
+  public void mouseReleased() {
+    println("BaseScene: mouseReleased");
+  }
+
   public void keyPressed() {
     println("BaseScene: mousePressed");
   }
