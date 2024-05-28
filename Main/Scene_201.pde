@@ -14,14 +14,24 @@ public class Scene_201 extends BaseScene {
     uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201007"));
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/201.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    var ground = new Ground(0, 500, width, height, 0, #DAC4A2);
+    drawManager.addDrawable(ground);
+
+
+    var house = objectFactory.create("res/images/object/hut_front.png");
+    house.setPosition(1000, 50);
+    house.setScale(0.4, 0.4);
+    drawManager.addDrawable(house);
+
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.knock);
+    tiger.setPosition(800, 500);
+    tiger.setScale(0.52, 0.52);
+    drawManager.addDrawable(tiger);
   }
  
   public void draw() {
     pushStyle();
-    
+    background(#cfe2f3);
     
     drawManager.drawing();
     uiManager.drawing();
