@@ -14,17 +14,17 @@ public class Scene_317 extends BaseScene {
     oldRope.setScale(0.03, 0.03);
     drawManager.addDrawable(oldRope);
 
-    var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.back);
+    var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.back);
     boy.setPosition(200, 500);
     boy.setScale(0.3, 0.3);
     drawManager.addDrawable(boy);
 
-    var girl = objectFactory.create(ObjectType.girl, ObjectPoseType.back);
+    var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.back);
     girl.setPosition(400, 500);
     girl.setScale(-0.3, 0.3);
     drawManager.addDrawable(girl);
 
-    var tiger = objectFactory.create(ObjectType.tiger, ObjectPoseType.climb);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.climb);
     tiger.setPosition(1000, 300);
     tiger.setScale(0.3, 0.3);
     drawManager.addDrawable(tiger);

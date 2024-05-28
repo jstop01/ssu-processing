@@ -30,12 +30,12 @@ public class Scene_313 extends BaseScene {
     drawManager.addDrawable(oldRope);
 
 
-    var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.back);
+    var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.back);
     boy.setPosition(500, 500);
     boy.setScale(0.3, 0.3);
     drawManager.addDrawable(boy);
 
-    var girl = objectFactory.create(ObjectType.girl, ObjectPoseType.back);
+    var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.back);
     girl.setPosition(800, 500);
     girl.setScale(0.3, 0.3);
     drawManager.addDrawable(girl);

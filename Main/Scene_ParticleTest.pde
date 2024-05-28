@@ -6,7 +6,7 @@ public class Scene_ParticleTest extends BaseScene {
   public int getNextScene() { return -1; }
   ShapeObject tiger;
   public void setup() {
-    tiger = objectFactory.create(ObjectType.tiger_mom, ObjectPoseType.back);
+    tiger = objectFactory.create(CharacterType.tiger_mom, CharacterPoseType.back);
     tiger.setPosition(700, 500);
     tiger.scale.x = 0.4;
     tiger.scale.y = 0.4;

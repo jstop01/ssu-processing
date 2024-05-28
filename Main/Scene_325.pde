@@ -13,12 +13,12 @@ public class Scene_325 extends BaseScene {
     newRope.setScale(0.05, 0.05);
     drawManager.addDrawable(newRope);
 
-    var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.climb_rope);
+    var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.climb_rope);
     boy.setPosition(380, 100);
     boy.setScale(0.2, 0.2);
     drawManager.addDrawable(boy);
 
-    var girl = objectFactory.create(ObjectType.girl, ObjectPoseType.climb_rope);
+    var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.climb_rope);
     girl.setPosition(420, 100);
     girl.setScale(-0.2, 0.2);
     drawManager.addDrawable(girl);
@@ -28,7 +28,7 @@ public class Scene_325 extends BaseScene {
     oldRope.setScale(0.05, 0.05);
     drawManager.addDrawable(oldRope);
 
-    var tiger = objectFactory.create(ObjectType.tiger, ObjectPoseType.climb);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.climb);
     tiger.setPosition(1000, 300);
     tiger.setScale(0.15, 0.15);
     drawManager.addDrawable(tiger);

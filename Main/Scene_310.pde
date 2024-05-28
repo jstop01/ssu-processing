@@ -7,12 +7,12 @@ public class Scene_310 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("310001"));
 
-    var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.pray);
+    var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.pray);
     boy.setPosition(400, 500);
     boy.setScale(0.7, 0.7);
     drawManager.addDrawable(boy);
 
-    var girl = objectFactory.create(ObjectType.girl, ObjectPoseType.pray);
+    var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.pray);
     girl.setPosition(600, 500);
     girl.setScale(0.7, 0.7);
     drawManager.addDrawable(girl);

@@ -13,7 +13,7 @@ public class Scene_309 extends BaseScene {
 
     // 구름 필요
 
-    var tiger = objectFactory.create(ObjectType.tiger, ObjectPoseType.climb);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.climb);
     tiger.setPosition(500, 500);
     tiger.setScale(0.3, 0.3);
     drawManager.addDrawable(tiger);

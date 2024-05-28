@@ -13,7 +13,7 @@ public class Scene_327 extends BaseScene {
     oldRope.setScale(0.03, 0.03);
     drawManager.addDrawable(oldRope);
 
-    var tiger = objectFactory.create(ObjectType.tiger, ObjectPoseType.climb);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.climb);
     tiger.setPosition(500, 300);
     tiger.setScale(0.2, 0.2);
     drawManager.addDrawable(tiger);

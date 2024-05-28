@@ -17,7 +17,7 @@ public class Scene_308 extends BaseScene {
     axe.d_rotate(90);
     drawManager.addDrawable(axe);
 
-    var tiger = objectFactory.create(ObjectType.tiger_mom, ObjectPoseType.back);
+    var tiger = objectFactory.create(CharacterType.tiger_mom, CharacterPoseType.back);
     tiger.setPosition(600, 500);
     tiger.setScale(0.3, 0.3);
     drawManager.addDrawable(tiger);

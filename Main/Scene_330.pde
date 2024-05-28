@@ -14,12 +14,12 @@ public class Scene_330 extends BaseScene {
     var cloud2 = new Cloud_Normal(width / 2 + 200, 500);
     drawManager.addDrawable(cloud2);
     
-    var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.seat);
+    var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.seat);
     boy.setPosition(width / 2 - 300, 500);
     boy.setScale(0.6, 0.6);
     drawManager.addDrawable(boy);
 
-    var girl = objectFactory.create(ObjectType.girl, ObjectPoseType.seat);
+    var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.seat);
     girl.setPosition(width / 2 + 300, 500);
     girl.setScale(-0.6, 0.6);
     drawManager.addDrawable(girl);

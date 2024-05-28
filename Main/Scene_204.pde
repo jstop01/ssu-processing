@@ -20,15 +20,15 @@ public class Scene_204 extends BaseScene {
     storyboard.setPosition(width / 2, height / 2);
     drawManager.addDrawable(storyboard);
     
-    var objA = objectFactory.create(ObjectType.tiger, ObjectPoseType.front);
+    var objA = objectFactory.create(CharacterType.tiger, CharacterPoseType.front);
     objA.setPosition(100, 200);
     objA.setScale(0.2, 0.2);
     drawManager.addDrawable(objA);
-    var objB = objectFactory.create(ObjectType.tiger, ObjectPoseType.front);
+    var objB = objectFactory.create(CharacterType.tiger, CharacterPoseType.front);
     objB.setPosition(300, 80);
     objB.setScale(0.1, 0.1);
     drawManager.addDrawable(objB);
-    var objC = objectFactory.create(ObjectType.tiger, ObjectPoseType.front);
+    var objC = objectFactory.create(CharacterType.tiger, CharacterPoseType.front);
     objC.setPosition(500, 300);
     objC.setScale(0.1, 0.1);
     drawManager.addDrawable(objC);

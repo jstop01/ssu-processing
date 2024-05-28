@@ -5,17 +5,17 @@ public class Scene_103 extends BaseScene {
   @Override
   public int getNextScene() { return 104; }
   public void setup() {
-    var boy = objectFactory.create(ObjectType.boy, ObjectPoseType.front);
+    var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.front);
     boy.setPosition(500, 400);
     boy.setScale(0.3f, 0.3f);
     drawManager.addDrawable(boy);
     
-    var girl = objectFactory.create(ObjectType.girl, ObjectPoseType.front);
+    var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.front);
     girl.setPosition(350, 450);
     girl.setScale(0.3f, 0.3f);
     drawManager.addDrawable(girl);
     
-    var mom = objectFactory.create(ObjectType.mom, ObjectPoseType.front);
+    var mom = objectFactory.create(CharacterType.mom, CharacterPoseType.front);
     mom.setPosition(650, 450);
     mom.setScale(0.3f, 0.3f);
     drawManager.addDrawable(mom);
