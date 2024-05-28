@@ -1,3 +1,4 @@
+// 떡 만들기 미니게임
 public class Scene_104 extends BaseScene {
   public float hammerZAngle = 0;
   public Hammer hammer = new Hammer(200, 200);

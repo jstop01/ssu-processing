@@ -44,7 +44,7 @@ public class Scene_102 extends BaseScene {
   public void draw() {
     pushStyle();
 
-    background(#C1E7F5);
+    background(colors.day_sky);
     drawManager.drawing();
 
     uiManager.drawing();
