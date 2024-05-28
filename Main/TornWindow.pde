@@ -31,7 +31,7 @@ public class TornWindow extends Drawable {
         vertex(scaleX(114), scaleY(106));
         endShape();
 
-        fill(0xF5F5F5);
+        fill(#F5F5F5)
         beginShape();
         vertex(scaleX(222), scaleY(67));
         vertex(scaleX(219), scaleY(54));
