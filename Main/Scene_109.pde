@@ -103,6 +103,16 @@ public class Scene_109 extends BaseScene {
     }
     return false;
   }
+
+  private boolean isGameComplete() {
+    for (Item item : items) {
+      if (item.getItemObjectType() == "ricecake_02_01") {
+        return false;
+      }
+    }
+
+    return true;
+  }
   
   public void draw() {
     pushStyle();
@@ -131,6 +141,11 @@ public class Scene_109 extends BaseScene {
       if (item.isAtTarget() && item.getItemObjectType() == "ricecake_02_01") {
         iterator.remove();
         redbeanRicecakeCount.remove(0);
+
+        boolean isComplete = isGameComplete();
+        if (isComplete) {
+          loadNextScene();
+        }
       } else if ((item.isAtBasket() || item.isCanvasOut()) && item.getItemObjectType() == "ricecake_02_01") {
         Point position = randomPosition(items, item);
         item.initItem(position); 
@@ -146,7 +161,6 @@ public class Scene_109 extends BaseScene {
   }
 
   public void mousePressed() {
-    // loadNextScene();
     for (Item item : items) {
       if (item.mousePressed()) {
         float w = item.getW();
