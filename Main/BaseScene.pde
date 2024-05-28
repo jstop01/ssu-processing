@@ -15,9 +15,12 @@ public abstract class BaseScene {
 
   public abstract int getNextScene();
   public void loadNextScene() {
+    loadNextScene(true);
+  }
+  public void loadNextScene(boolean doFade) {
     int sceneNumber = getNextScene();
     if (sceneNumber != -1) {
-      sceneManager.loadScene(scenes.createScene(sceneNumber));
+      sceneManager.loadScene(scenes.createScene(sceneNumber), doFade);
     } else {
       println("다음 씬이 없거나 매핑이 안되어있습니다.");
     }

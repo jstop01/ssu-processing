@@ -23,10 +23,7 @@ void draw() {
   BaseScene scene = sceneManager.getCurrentScene();
 
   cameraManager.draw(); 
-  
-  if (scene != null) {
-    scene.draw();
-  }
+  sceneManager.Draw();
 
   postProcessManager.draw();
   image(get(), 0, 0, width, height);
