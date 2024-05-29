@@ -9,6 +9,7 @@ public class Scene_Intro extends BaseScene {
   private Button sceneButton1;
   private Button sceneButton2;
   private Button sceneButton3;
+  private Button sceneButton4;
   
   public void setup() {
     sceneButtons = createGridButtons(scenes.getSceneNames(), 20, 3, 0, 0, 500, height);
@@ -27,6 +28,11 @@ public class Scene_Intro extends BaseScene {
     sceneButton3.text = "Scene3";
     sceneButton3.position = new PVector(600, 300);
     sceneButton3.size = new PVector(200, 100);
+
+    sceneButton4 = new Button();
+    sceneButton4.text = "Scene_Ending";
+    sceneButton4.position = new PVector(600, 400);
+    sceneButton4.size = new PVector(200, 100);
   }
  
   public void draw() {
@@ -47,6 +53,12 @@ public class Scene_Intro extends BaseScene {
     if (sceneButton3.drawAndCheckClick()) {
       sceneManager.loadScene(new Scene_301());
     }
+
+
+    if (sceneButton4.drawAndCheckClick()) {
+      sceneManager.loadScene(new Scene_Ending());
+    }
+    println("Scene_Intro : draw");
     
     popStyle();
 
