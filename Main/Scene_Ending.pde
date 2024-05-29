@@ -11,41 +11,44 @@ public class CreditInfo
     private boolean IsSingleText;
     private String SingleText;
 
-    public int pos;
+    public int Size;
+    public int Pos;
     
-    public CreditInfo(String name, String[] tasks)
+    public CreditInfo(String name, String[] tasks, int size)
     {
         Name = name;
         Tasks = tasks;
+        Size = size;
     }
     
-    public CreditInfo(String name, String[] tasks, int frontSpace)
+    public CreditInfo(String name, String[] tasks, int size, int frontSpace)
     {
         Name = name;
         Tasks = tasks;
         NeedFrontSpace = true;
         FrontSpace = frontSpace;
+        Size = size;
     }
     
-    public CreditInfo(String singleText)
+    public CreditInfo(String singleText, int size)
     {
         IsSingleText = true;
-        SingleText = singleText;   
+        SingleText = singleText;
+        Size = size; 
     }
     
-    public CreditInfo(String singleText, int frontSpace)
+    public CreditInfo(String singleText, int size, int frontSpace)
     {
         IsSingleText = true;
         NeedFrontSpace = true;
         SingleText = singleText;
+        Size = size;
     }
     
-    public String GetText()
-    {
+    public String GetText(){
         String result = "";
         
-        if (IsSingleText)
-        {
+        if (IsSingleText){
             result += SingleText;
             return result;
         }
@@ -93,25 +96,28 @@ public class Scene_Ending extends BaseScene {
     private final int screenEdgeBuffer = 30;
 
     private int firstIdx;
-    private int lastIdx;
 
-    int backgroundScrollSpeed = 2;
-    int objectScrollSpeed = 5;
-    float textScrollSpeed = 0.1f;
+    int backgroundScrollSpeed = 0.1f;
+    int objectScrollSpeed = 0.5f;
+    float textScrollSpeed = 1f;
     
     int headLineSize = 32;
     int textSize = 16;
+    int defaultBuffer = 20;
 
     float curScrollPos = 0;
 
     Text text = new Text();
     
     CreditInfo[] infos = {
-        new CreditInfo("작업 정보"),
-        new CreditInfo("방정혁", new String[]{"시나리오 팀장", "크레딧 제작"})
+        new CreditInfo("작업 정보", headLineSize),
+        new CreditInfo("방정혁", new String[]{"시나리오 팀장", "크레딧 제작"},textSize),
+        new CreditInfo("방정혁2", new String[]{"하이", "네"},textSize),
+        new CreditInfo("방정혁3", new String[]{"하이23", "네23"},textSize),
+
     };
 
-      @Override
+    @Override
   public int getPreviousScene() { return -1; }
 
   @Override
@@ -121,29 +127,49 @@ public class Scene_Ending extends BaseScene {
     {
         println("Scene_Ending : setup");
         curScrollPos = height;
+        SetPos();
+    }
+
+    private void SetPos() // y만
+    {
+        int curPos = 0;
+        for(int i = 0; i < infos.length; i++)
+        {
+            infos[i].Pos = curPos;
+            curPos += infos[i].Size + defaultBuffer;
+        }
     }
 
     private void DrawEnding()
     {
-        curScrollPos -= textScrollSpeed;
+        //적당히 뒷배경 그리면 됨
 
+        curScrollPos -= textScrollSpeed;
+        var isLastRanged = firstIdx;
         for(int i = firstIdx; i < infos.length; i++)
         {
             var info = infos[i];
-            var pos = info.pos + curScrollPos;
-            var isOverTop =  pos < -screenEdgeBuffer;
-            var isOverBottom = pos >= height + screenEdgeBuffer;
+            var pos = info.Pos + curScrollPos; // 이거 때매 문제
+            var isOverTop = pos < -screenEdgeBuffer;
+            var isIntoScreen = pos <= height + screenEdgeBuffer;
+            if(isIntoScreen)
+                isLastRanged = i;
+
             fill(0);
-            fontManager.drawText(info.GetText(),width/2,curScrollPos,40);
+            fontManager.drawText(info.GetText(),width/2,(int)pos, info.Size);
 
             if(isOverTop)
                 firstIdx = i;
 
-            if(isOverBottom)
-                lastIdx = i;
-
-            if(i >= lastIdx)
+            var isOverLast = i > isLastRanged; // 굳이 맨뒤 +1 이후까지 연산할 이유가 없어서
+            if(isOverLast)
                 break;
+
+            var isOver = firstIdx == infos.length-1; //가장 마지막까지 끝난 상태
+            if(isOver)
+            {
+                //여기서 끝내는 처리 넣으면 될듯
+            }
         }
     }
     
@@ -159,7 +185,7 @@ public class Scene_Ending extends BaseScene {
     }
     
     public void mousePressed()
-        {
+    {
         println("Scene_Ending : mousePressed");
     }
 }
