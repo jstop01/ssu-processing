@@ -10,9 +10,14 @@ public class Scene_207 extends BaseScene {
     uiManager.dialogUi.enqueue(uiManager.getDialogDataById("207003"));
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/207.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    Scene_202_bg_setup(drawManager);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.lay_01);
+    tiger.setPosition(width / 2, 600);
+    tiger.setScale(-0.6f, 0.6f);
+    drawManager.addDrawable(tiger);
+
+    var candle = new Candle(900, 450);
+    drawManager.addDrawable(candle);
   }
  
   public void draw() {

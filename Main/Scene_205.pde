@@ -9,9 +9,15 @@ public class Scene_205 extends BaseScene {
     uiManager.dialogUi.enqueue(uiManager.getDialogDataById("205002"));
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/205.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.ricecake_03_02);
+    tiger.setPosition(width / 2, 800);
+    tiger.setScale(1.3f, 1.3f);
+    drawManager.addDrawable(tiger);
+
+    var 팥떡 = objectFactory.create("res/images/object/ricecake_02_02.png");
+    팥떡.setPosition(width / 2, 400);
+    팥떡.setScale(1.2, 1.2);
+    drawManager.addDrawable(팥떡);
   }
  
   public void draw() {
