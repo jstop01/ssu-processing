@@ -40,8 +40,8 @@ public enum CharacterPoseType {
   mouth("mouth"),
   ricecake_01("ricecake_01"),
   ricecake_02("ricecake_02"),
-  ricecake_03_1("ricecake_03_1"),
-  ricecake_03_2("ricecake_03_2"),
+  ricecake_03_01("ricecake_03_01"),
+  ricecake_03_02("ricecake_03_02"),
   scream("scream"),
   thirsty("thirsty"),
   threat("threat"),
@@ -131,6 +131,7 @@ public class ShapeObject extends Drawable {
 
   private void drawImage() {
     pushStyle();
+    pushMatrix();
     
     imageMode(CENTER);
     rotate(zAngle);
@@ -145,6 +146,7 @@ public class ShapeObject extends Drawable {
       image(image, x, y, w, h);
     }
     
+    popMatrix();
     popStyle();
   }
 }
