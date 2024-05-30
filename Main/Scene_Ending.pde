@@ -97,8 +97,8 @@ public class Scene_Ending extends BaseScene {
 
     private int firstIdx;
 
-    int backgroundScrollSpeed = 0.1f;
-    int objectScrollSpeed = 0.5f;
+    float backgroundScrollSpeed = 0.1f;
+    float objectScrollSpeed = 0.5f;
     float textScrollSpeed = 1f;
     
     int headLineSize = 32;
@@ -107,7 +107,6 @@ public class Scene_Ending extends BaseScene {
 
     float curScrollPos = 0;
 
-    Text text = new Text();
     
     CreditInfo[] infos = {
         new CreditInfo("작업 정보", headLineSize),
