@@ -7,9 +7,17 @@ public class Scene_214 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("214001"));
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/214.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    Drawable house = objectFactory.create("res/images/object/hut_front.png");
+    house.setPosition(width / 2 + 200, height / 2 - 40);
+    house.setScale(0.13, 0.13);
+    drawManager.addDrawable(house);
+
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.thirsty);
+    tiger.setPosition(width / 2 - 200, 600);
+    tiger.setScale(0.5f, 0.5f);
+    drawManager.addDrawable(tiger);
+
+    // 배경 나중에
   }
  
   public void draw() {

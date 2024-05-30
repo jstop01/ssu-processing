@@ -7,9 +7,21 @@ public class Scene_215 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.set(uiManager.getDialogDataById("215001"));
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/215.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.thirsty);
+    tiger.setPosition(width / 2 + 100, 500);
+    tiger.setScale(0.6f, 0.6f);
+    drawManager.addDrawable(tiger);
+
+
+    var 우물 = objectFactory.create("res/images/object/well.png");
+    우물.setPosition(200, 500);
+    우물.setScale(0.4, 0.4);
+    drawManager.addDrawable(우물);
+
+    // 배경 나중에
+
+
   }
  
   public void draw() {

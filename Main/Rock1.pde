@@ -1,8 +1,10 @@
 public class Rock1 extends Drawable {
   public float hp = 10;
   private float borderWith = 4;
-  public Rock1(float x, float y) {
+  private color c;
+  public Rock1(float x, float y, color c) {
     super(x, y, 60, 60);
+    this.c = c;
   }
 
   @Override
@@ -17,7 +19,7 @@ public class Rock1 extends Drawable {
     translate(abstractX, abstractY);
     rotate(radians(zAngle));
     beginShape();
-    fill(255, 255, 255);
+    fill(c);
     vertex(
       w / 100 * 20, 
       h / 100 * 15

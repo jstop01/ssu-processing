@@ -3,7 +3,7 @@ public class Scene_104 extends BaseScene {
   public float hammerZAngle = 0;
   public Hammer hammer = new Hammer(200, 200);
   public HPBar hpBar = new HPBar(20, 20);
-  public Rock1 rock1 = new Rock1(300, 340);
+  public Rock1 rock1 = new Rock1(300, 340, #c0c0c0);
   public float rock1X = 300;
   public float rock1XDirection = 1;
   public float rock1ZAngle = 0;

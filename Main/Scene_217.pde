@@ -5,9 +5,12 @@ public class Scene_217 extends BaseScene {
   @Override
   public int getNextScene() { return -1; }
   public void setup() {
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/217.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    Drawable house = objectFactory.create("res/images/object/hut_front.png");
+    house.setPosition(width / 2 + 200, height / 2 - 40);
+    house.setScale(0.13, 0.13);
+    drawManager.addDrawable(house);
+
+    // 배경 나중에
   }
  
   public void draw() {

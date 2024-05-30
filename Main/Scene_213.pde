@@ -9,9 +9,10 @@ public class Scene_213 extends BaseScene {
     uiManager.dialogUi.enqueue(uiManager.getDialogDataById("213002"));
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/213.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.thirsty);
+    tiger.setPosition(width / 2, 900);
+    tiger.setScale(1.2f, 1.2f);
+    drawManager.addDrawable(tiger);
   }
  
   public void draw() {
