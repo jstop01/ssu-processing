@@ -5,18 +5,21 @@ public class Scene_219 extends BaseScene {
   @Override
   public int getNextScene() { return 220; }
   public void setup() {
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("219001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("219002"));
-    uiManager.dialogUi.next();
+    uiManager.dialogUi.set(uiManager.getDialogDataById("206001"));
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/219.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.ricecake_01);
+    tiger.setPosition(width / 2, height);
+    tiger.setScale(1, 1);
+    drawManager.addDrawable(tiger);
+
+    var riceCake = objectFactory.create("res/images/object/ricecake_01_02.png");
+    riceCake.setPosition(width / 2, height - 120);
+    riceCake.setScale(2f, 2f);
+    drawManager.addDrawable(riceCake);
   }
  
   public void draw() {
     pushStyle();
-    
     
     drawManager.drawing();
     uiManager.drawing();
