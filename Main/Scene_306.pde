@@ -5,7 +5,8 @@ public class Scene_306 extends BaseScene {
   @Override
   public int getNextScene() { return 307; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("306001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var speechBubble = objectFactory.create("compressedRes/images/ui/speech-bubble_3.png");
     speechBubble.setPosition(300, 100);

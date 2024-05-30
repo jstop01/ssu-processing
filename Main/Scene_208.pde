@@ -5,12 +5,8 @@ public class Scene_208 extends BaseScene {
   @Override
   public int getNextScene() { return 209; }
   public void setup() {
-    println("Scene_208 : setup");
-    uiManager.dialogUi.hide();
-    // uiManager.dialogUi.enqueue(uiManager.getDialogDataById("208001"));
-    // uiManager.dialogUi.enqueue(uiManager.getDialogDataById("208002"));
-    // uiManager.dialogUi.enqueue(uiManager.getDialogDataById("208003"));
-    // uiManager.dialogUi.next();
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     Scene_202_bg_setup(drawManager);
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.lay_02);

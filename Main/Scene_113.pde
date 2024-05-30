@@ -5,9 +5,7 @@ public class Scene_113 extends BaseScene {
   @Override
   public int getNextScene() { return 114; }
   public void setup() {
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("113001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("113002"));
-
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
     Scene_108_background_setup(drawManager);

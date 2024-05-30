@@ -5,7 +5,8 @@ public class Scene_316 extends BaseScene {
   @Override
   public int getNextScene() { return 317; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("316001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     // 리소스 교체 필요
     var oldRope = objectFactory.create("compressedRes/images/objects/rope_old.png");

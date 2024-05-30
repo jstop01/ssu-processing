@@ -5,7 +5,9 @@ public class Scene_328 extends BaseScene {
   @Override
   public int getNextScene() { return 329; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("328001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     var 풀1 = objectFactory.create("compressedRes/images/objects/sorghum.png");
     풀1.setPosition(0, 300);
     풀1.setScale(0.5, 0.5);

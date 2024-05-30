@@ -5,6 +5,8 @@ public class Scene_307 extends BaseScene {
   @Override
   public int getNextScene() { return 308; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     // 나무 리소스 교체해야 할듯
     var tree = objectFactory.create("compressedRes/images/objects/the_base_of_a_tree.png");
@@ -22,10 +24,6 @@ public class Scene_307 extends BaseScene {
     var oil = objectFactory.create("compressedRes/images/objects/oil.png");
     oil.setPosition(400, 400);
     drawManager.addDrawable(oil);
-
-
-
-    uiManager.dialogUi.set(uiManager.getDialogDataById("307001"));
   }
  
   public void draw() {

@@ -6,6 +6,9 @@ public class Scene_101 extends BaseScene {
   public int getNextScene() { return 102; }
 
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     var door = objectFactory.create("res/images/object/door_2.png");
     door.setPosition(width / 2, height / 2);
     door.setScale(0.15625, 0.15625);

@@ -5,6 +5,8 @@ public class Scene_303 extends BaseScene {
   @Override
   public int getNextScene() { return 304; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.climb);
     boy.setPosition(500, 300);
@@ -16,8 +18,6 @@ public class Scene_303 extends BaseScene {
     girl.setScale(0.4, 0.4);
     drawManager.addDrawable(girl);
 
-
-    uiManager.dialogUi.set(uiManager.getDialogDataById("303001"));
   }
  
   public void draw() {

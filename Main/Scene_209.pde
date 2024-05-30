@@ -5,8 +5,8 @@ public class Scene_209 extends BaseScene {
   @Override
   public int getNextScene() { return 210; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("209001"));
-
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.front);
     boy.setPosition(800, 750);

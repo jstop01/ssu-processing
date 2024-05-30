@@ -5,6 +5,8 @@ public class Scene_212 extends BaseScene {
   @Override
   public int getNextScene() { return 213; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     // 호랑이 배에 꼬매진 자국이 없는데?
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.lay_02);
@@ -14,7 +16,6 @@ public class Scene_212 extends BaseScene {
 
     Drawable openDoor = new OpenDoor(width / 2 + 300, height / 2);
     drawManager.addDrawable(openDoor);
-    uiManager.dialogUi.set(uiManager.getDialogDataById("212001"));
 
     Scene_211_Family_Setup(drawManager);
   }

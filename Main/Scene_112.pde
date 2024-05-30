@@ -12,6 +12,9 @@ public class Scene_112 extends BaseScene {
   @Override
   public int getNextScene() { return 113; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     Scene_112_background_setup(drawManager);
 
     var cloth = objectFactory.create("res/images/object/cloth_blood.png");

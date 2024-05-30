@@ -5,7 +5,8 @@ public class Scene_216 extends BaseScene {
   @Override
   public int getNextScene() { return 217; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("216001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var 우물 = objectFactory.create("res/images/object/well.png");
     우물.setPosition(450, 400);

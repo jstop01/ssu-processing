@@ -19,12 +19,9 @@ public class Scene_108 extends BaseScene {
   @Override
   public int getNextScene() { return 109; }
   public void setup() {
-    println("Scene_108 : setup");
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("108001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("108002"));
-
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
-
+    
     Scene_108_background_setup(drawManager);
 
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.threat);

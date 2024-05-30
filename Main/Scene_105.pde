@@ -5,6 +5,9 @@ public class Scene_105 extends BaseScene {
   @Override
   public int getNextScene() { return 106; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     Scene_103_mountain_and_ground_setup(drawManager);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.smile);
@@ -21,12 +24,6 @@ public class Scene_105 extends BaseScene {
     riceCake.setPosition(600, 500);
     riceCake.setScale(2f, 2f);
     drawManager.addDrawable(riceCake);
-
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("105001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("105002"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("105003"));
-
-    uiManager.dialogUi.next();
   }
  
   public void draw() {

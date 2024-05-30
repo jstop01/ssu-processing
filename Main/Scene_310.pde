@@ -5,7 +5,8 @@ public class Scene_310 extends BaseScene {
   @Override
   public int getNextScene() { return 311; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("310001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.pray);
     boy.setPosition(400, 500);

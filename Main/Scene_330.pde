@@ -5,7 +5,8 @@ public class Scene_330 extends BaseScene {
   @Override
   public int getNextScene() { return -1; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("330001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
 
     var cloud1 = new Cloud_Normal(width / 2 - 600, 500);

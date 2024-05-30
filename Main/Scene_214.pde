@@ -5,7 +5,8 @@ public class Scene_214 extends BaseScene {
   @Override
   public int getNextScene() { return 215; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("214001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     Drawable house = objectFactory.create("res/images/object/hut_front.png");
     house.setPosition(width / 2 + 200, height / 2 - 40);

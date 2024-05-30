@@ -8,6 +8,9 @@ public class Scene_302 extends BaseScene {
   @Override
   public int getNextScene() { return 303; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     b1 = color(#805955);
     b2 = color(#1c1a27);
 
@@ -66,8 +69,6 @@ public class Scene_302 extends BaseScene {
     // bigTree.setPosition(1200, 300);
     // bigTree.setScale(0.05, 0.05);
     // drawManager.addDrawable(bigTree);
-
-    uiManager.dialogUi.set(uiManager.getDialogDataById("302001"));
   }
  
   public void draw() {
@@ -82,6 +83,8 @@ public class Scene_302 extends BaseScene {
   }
   
   void setGradient(int x, int y, float w, float h, color c1, color c2, int axis ) {
+    pushStyle();
+
     noFill();
     if (axis == Y_AXIS) {  // Top to bottom gradient
       for (int i = y; i <= y+h; i++) {
@@ -98,6 +101,8 @@ public class Scene_302 extends BaseScene {
         line(i, y, i, y+h);
       }
     }
+
+    popStyle();
   }
 
   

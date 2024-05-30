@@ -22,8 +22,7 @@ public class Scene_211 extends BaseScene {
   @Override
   public int getNextScene() { return 212; }
   public void setup() {
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("211001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("211002"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
     // 호랑이 배에 꼬매진 자국이 없는데?

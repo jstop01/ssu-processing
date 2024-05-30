@@ -6,6 +6,10 @@ public class Scene_102 extends BaseScene {
   public int getNextScene() { return 103; }
 
   public void setup() {
+
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     Drawable ground = new Ground(-1, #DAC4A2);
     drawManager.addDrawable(ground);
 
@@ -38,7 +42,6 @@ public class Scene_102 extends BaseScene {
     drawManager.addDrawable(shoes3);
 
     // TODO: 배경 - 나무 추가
-    uiManager.dialogUi.set(uiManager.getDialogDataById("102001"));
   }
  
   public void draw() {

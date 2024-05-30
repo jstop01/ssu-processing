@@ -5,7 +5,8 @@ public class Scene_312 extends BaseScene {
   @Override
   public int getNextScene() { return 313; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("312001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
     
     PVector ropeScale = new PVector(0.1, 0.1);
     var newRope = objectFactory.create("compressedRes/images/objects/rope_new.png");

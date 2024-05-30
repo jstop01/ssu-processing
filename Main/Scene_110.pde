@@ -5,7 +5,8 @@ public class Scene_110 extends BaseScene {
   @Override
   public int getNextScene() { return 111; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("110001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.scream);
     tiger.setPosition(width/2, height / 2);

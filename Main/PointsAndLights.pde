@@ -15,6 +15,8 @@ public class PointsAndLines extends Drawable {
   public void draw() {
     float spacing = w / 8;
 
+    pushStyle();
+
     background(255);
     stroke(0);  
     fill(0);  
@@ -42,5 +44,7 @@ public class PointsAndLines extends Drawable {
       x + xList[xList.length - 1], 
       y + yList[yList.length - 1] - 3
     );  
+
+    popStyle();
   }
 }

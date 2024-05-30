@@ -5,8 +5,8 @@ public class Scene_114 extends BaseScene {
   @Override
   public int getNextScene() { return 201; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("114001"));
-
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var bg = objectFactory.create("res/images/object/tiger_in_the_dark_bg_3.png");
     bg.setPosition(width / 2, height / 2);

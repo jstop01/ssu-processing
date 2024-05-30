@@ -72,6 +72,11 @@ public class DialogUi {
         this.queue.add(content);
     }
 
+    public void enqueueAll(DialogContent[] contents) {
+        for (var content : contents)
+            this.queue.add(content);
+    }
+
     // true : 대화 표시 성공, false : 대화 표시 실패
     public boolean next() {
         if (this.queue.size() > 0) {

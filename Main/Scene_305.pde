@@ -5,6 +5,9 @@ public class Scene_305 extends BaseScene {
   @Override
   public int getNextScene() { return 306; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     var mountain = new Mountain(600, 300);
     drawManager.addDrawable(mountain);
     
@@ -29,9 +32,6 @@ public class Scene_305 extends BaseScene {
     // bigTree.setPosition(1000, 300);
     // bigTree.setScale(0.1, 0.1);
     // drawManager.addDrawable(bigTree);
-
-
-    uiManager.dialogUi.set(uiManager.getDialogDataById("305001"));
   }
  
   public void draw() {

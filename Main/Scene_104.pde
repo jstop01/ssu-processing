@@ -15,11 +15,14 @@ public class Scene_104 extends BaseScene {
   public int getNextScene() { return 105; }
 
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
+
     drawManager.addDrawable(hammer);
     hammer.d_rotate(hammerZAngle);
     drawManager.addDrawable(hpBar);
     drawManager.addDrawable(rock1);
-    uiManager.dialogUi.set(uiManager.getDialogDataById("104001"));
   }
  
   public void draw() {

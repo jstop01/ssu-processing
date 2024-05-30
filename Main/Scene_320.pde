@@ -6,7 +6,8 @@ public class Scene_320 extends BaseScene {
   @Override
   public int getNextScene() { return 321; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("320001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
 
     // 배경, 마을, 나무 필요

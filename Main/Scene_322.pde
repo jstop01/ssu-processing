@@ -5,11 +5,12 @@ public class Scene_322 extends BaseScene {
   @Override
   public int getNextScene() { return 323; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+    
     var speechBubble = objectFactory.create("compressedRes/images/ui/speech-bubble_2.png");
     speechBubble.setPosition(600, 400);
     drawManager.addDrawable(speechBubble);
-
-    uiManager.dialogUi.set(uiManager.getDialogDataById("322001"));
   }
  
   public void draw() {

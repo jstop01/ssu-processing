@@ -6,7 +6,8 @@ public class Scene_325 extends BaseScene {
   @Override
   public int getNextScene() { return 326; }
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("325001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     var newRope = objectFactory.create("compressedRes/images/objects/rope_new.png");
     newRope.setPosition(400, 50);

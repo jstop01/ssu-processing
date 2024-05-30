@@ -32,7 +32,8 @@ public class Scene_301 extends BaseScene {
   public int getNextScene() { return 302; }
 
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("301001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     setup_Scene_301_BG(drawManager);
 

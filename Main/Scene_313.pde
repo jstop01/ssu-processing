@@ -14,7 +14,8 @@ public class Scene_313 extends BaseScene {
   GhostLegGameManager gameManager;
   
   public void setup() {
-    uiManager.dialogUi.set(uiManager.getDialogDataById("313001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
 
     PVector ropeScale = new PVector(0.15, 0.15);
     var newRope = objectFactory.create("compressedRes/images/objects/rope_new.png");

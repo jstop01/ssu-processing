@@ -5,9 +5,7 @@ public class Scene_222 extends BaseScene {
   @Override
   public int getNextScene() { return 301; }
   public void setup() {
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("222001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("222002"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("222003"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
     var storyboard = objectFactory.create("compressedRes/images/storyboard/222.png");

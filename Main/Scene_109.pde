@@ -22,9 +22,9 @@ public class Scene_109 extends BaseScene {
   private List<ShapeObject> redbeanRicecakeCount;
 
   public void setup() {
-    println("Scene_109 : setup");
-
-    uiManager.dialogUi.set(uiManager.getDialogDataById("109001"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+    
     random = new Random();
 
     Scene_108_background_setup(drawManager);

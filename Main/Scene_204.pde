@@ -13,9 +13,7 @@ public class Scene_204 extends BaseScene {
   public int getPreviousScene() { return 203; }
 
   public void setup() {
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("204001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("204002"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("204003"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
     var bg = objectFactory.create("res/images/object/inside_house.png");

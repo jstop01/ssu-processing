@@ -41,4 +41,26 @@ public class UiManager {
   public void mousePressed(){
 
   }
+
+  public DialogContent[] getDialogForScene(BaseScene scene) {
+     String className = scene.getClass().getSimpleName();
+      // 클래스 이름이 "Scene_"으로 시작하는지 확인
+      if (className.startsWith("Scene_")) {
+        String sceneNumberStr = className.substring(6);
+          // 대사가 100개가 넘을 일은 없을거야..
+          ArrayList<DialogContent> contents = new ArrayList<DialogContent>();
+          for (int i = 0; i < 100; ++i) {
+            String id = sceneNumberStr + String.format("%03d", i);
+            Map<String, String> data = tsvProcessor.getDataById(currentDialogList, id);
+            if (data == null)
+              continue;
+            
+            contents.add(getDialogDataById(id));
+          }
+
+          return contents.toArray(new DialogContent[0]);
+      } else {
+          return new DialogContent[0];
+      }
+  }
 }

@@ -13,6 +13,9 @@ public class Scene_103 extends BaseScene {
   @Override
   public int getNextScene() { return 104; }
   public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
     Scene_103_mountain_and_ground_setup(drawManager);
 
     var 집 = objectFactory.create("res/images/object/hut_front.png");
@@ -40,12 +43,6 @@ public class Scene_103 extends BaseScene {
     절구.setPosition(width / 2, 450);
     절구.setScale(0.03f, 0.03f);
     drawManager.addDrawable(절구);
-
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("103001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("103002"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("103003"));
-
-    uiManager.dialogUi.next();
   }
  
   public void draw() {

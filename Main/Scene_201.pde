@@ -5,13 +5,7 @@ public class Scene_201 extends BaseScene {
   @Override
   public int getNextScene() { return 202; }
   public void setup() {
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201001"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201002"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201003"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201004"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201005"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201006"));
-    uiManager.dialogUi.enqueue(uiManager.getDialogDataById("201007"));
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
     var ground = new Ground(0, 500, width, height, 0, #DAC4A2);
