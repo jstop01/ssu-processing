@@ -25,7 +25,7 @@ public class Scene_221 extends BaseScene {
     pushStyle();
     
     drawManager.drawing();
-    // uiManager.drawing();
+    uiManager.drawing();
     
     popStyle();
   }

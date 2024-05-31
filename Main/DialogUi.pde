@@ -23,6 +23,11 @@ public class DialogUi {
     }
 
     private void drawDialogBox() {
+        String msg = this.current.text;
+        if (msg == null || msg == "") {
+            return;
+        }
+
         strokeWeight(1);
         rect(this.x, this.y, width/2, DIALOG_HEIGHT, 5);
     }
