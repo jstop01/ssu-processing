@@ -29,7 +29,7 @@ public class Scene_211 extends BaseScene {
 
 
     // 호랑이 배에 꼬매진 자국이 없는데?
-    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.lay_02);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.lay_03);
     tiger.setPosition(width / 2 + 150, 300);
     tiger.setScale(-0.6f, 0.6f);
     drawManager.addDrawable(tiger);
