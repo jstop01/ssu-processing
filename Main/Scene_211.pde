@@ -25,6 +25,9 @@ public class Scene_211 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("26", drawManager);
+
+
     // 호랑이 배에 꼬매진 자국이 없는데?
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.lay_02);
     tiger.setPosition(width / 2 + 150, 300);

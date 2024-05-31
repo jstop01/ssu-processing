@@ -1,15 +1,15 @@
 void Scene_108_background_setup(DrawManager drawManager) {
-  var bg = objectFactory.create("res/images/object/tiger_in_the_dark_bg_4.png");
-  bg.setPosition(width / 2, height / 2);
-  bg.setScale(0.26, 0.26);
-  drawManager.addDrawable(bg);
+  // var bg = objectFactory.create("res/images/object/tiger_in_the_dark_bg_4.png");
+  // bg.setPosition(width / 2, height / 2);
+  // bg.setScale(0.26, 0.26);
+  // drawManager.addDrawable(bg);
 }
 
 void Scene_108_background_setup2(DrawManager drawManager) {
-  var bg2 = objectFactory.create("res/images/object/tiger_in_the_dark_bg_5.png");
-  bg2.setPosition(width / 2, height / 2);
-  bg2.setScale(0.26, 0.26);
-  drawManager.addDrawable(bg2);
+  // var bg2 = objectFactory.create("res/images/object/tiger_in_the_dark_bg_5.png");
+  // bg2.setPosition(width / 2, height / 2);
+  // bg2.setScale(0.26, 0.26);
+  // drawManager.addDrawable(bg2);
 }
 
 public class Scene_108 extends BaseScene {
@@ -21,6 +21,8 @@ public class Scene_108 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
+
+    loadBackground("9-1", drawManager);
     
     Scene_108_background_setup(drawManager);
 
@@ -28,6 +30,8 @@ public class Scene_108 extends BaseScene {
     tiger.setPosition(250, 500);
     tiger.setScale(0.5, 0.5);
     drawManager.addDrawable(tiger);
+
+    loadBackground("9-2", drawManager);
 
     Scene_108_background_setup2(drawManager);
 

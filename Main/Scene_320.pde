@@ -8,16 +8,17 @@ public class Scene_320 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
+    loadBackground("57", drawManager);
 
 
     // 배경, 마을, 나무 필요
 
 
     // 리소스 교체 필요
-    var rope = objectFactory.create("compressedRes/images/objects/rope_new.png");
-    rope.setPosition(400, 50);
-    rope.setScale(0.03, 0.03);
-    drawManager.addDrawable(rope);
+    // var rope = objectFactory.create("compressedRes/images/objects/rope_new.png");
+    // rope.setPosition(400, 50);
+    // rope.setScale(0.03, 0.03);
+    // drawManager.addDrawable(rope);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.climb_rope);
     boy.setPosition(380, 100);

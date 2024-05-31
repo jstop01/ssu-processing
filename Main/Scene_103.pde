@@ -1,9 +1,9 @@
 void Scene_103_mountain_and_ground_setup(DrawManager drawManager) {
-  var mountain = new Mountain(width/2, 0);
-  drawManager.addDrawable(mountain);
+  // var mountain = new Mountain(width/2, 0);
+  // drawManager.addDrawable(mountain);
 
-  Drawable ground = new Ground(0, 300, width, height, 0, #DAC4A2);
-  drawManager.addDrawable(ground);
+  // Drawable ground = new Ground(0, 300, width, height, 0, #DAC4A2);
+  // drawManager.addDrawable(ground);
 }
 
 public class Scene_103 extends BaseScene {
@@ -15,6 +15,8 @@ public class Scene_103 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
+
+    loadBackground("4", drawManager);
 
     Scene_103_mountain_and_ground_setup(drawManager);
 

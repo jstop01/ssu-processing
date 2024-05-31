@@ -27,6 +27,7 @@ public class Scene_109 extends BaseScene {
     
     random = new Random();
 
+    loadBackground("10-1", drawManager);
     Scene_108_background_setup(drawManager);
 
     REDBEAN_ITEM_COUNT = 10;
@@ -40,6 +41,7 @@ public class Scene_109 extends BaseScene {
     tiger.setScale(0.7, 0.7);
     drawManager.addDrawable(tiger);
 
+    loadBackground("10-2", drawManager);
     Scene_108_background_setup2(drawManager);
 
     // basket = objectFactory.create(BackgroundType.소쿠리);

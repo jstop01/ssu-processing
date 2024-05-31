@@ -9,6 +9,9 @@ public class Scene_319 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("56", drawManager);
+
+
     // 리소스 교체 필요?
     var rope = objectFactory.create("compressedRes/images/objects/rope_new.png");
     rope.setPosition(width / 2, -650);

@@ -8,6 +8,8 @@ public class Scene_201 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("16", drawManager);
+
     var ground = new Ground(0, 500, width, height, 0, #DAC4A2);
     drawManager.addDrawable(ground);
 

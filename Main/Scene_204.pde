@@ -16,6 +16,8 @@ public class Scene_204 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("19", drawManager);
+
     var bg = objectFactory.create("res/images/object/inside_house.png");
     bg.setPosition(width / 2, height / 2);
     bg.setScale(0.25, 0.25);

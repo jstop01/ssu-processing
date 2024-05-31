@@ -8,6 +8,8 @@ public class Scene_105 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("6", drawManager);
+
     Scene_103_mountain_and_ground_setup(drawManager);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.smile);

@@ -17,6 +17,9 @@ public class Scene_313 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("50", drawManager);
+
+
     PVector ropeScale = new PVector(0.15, 0.15);
     var newRope = objectFactory.create("compressedRes/images/objects/rope_new.png");
     newRope.setPosition(250, 000);

@@ -8,6 +8,7 @@ public class Scene_330 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("67", drawManager);
 
     var cloud1 = new Cloud_Normal(width / 2 - 600, 500);
     drawManager.addDrawable(cloud1);

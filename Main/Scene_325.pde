@@ -9,6 +9,8 @@ public class Scene_325 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("62", drawManager);
+
     var newRope = objectFactory.create("compressedRes/images/objects/rope_new.png");
     newRope.setPosition(400, 50);
     newRope.setScale(0.05, 0.05);

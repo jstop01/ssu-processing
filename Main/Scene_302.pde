@@ -73,6 +73,9 @@ public class Scene_302 extends BaseScene {
  
   public void draw() {
     pushStyle();
+
+    loadBackground("39", drawManager);
+
     setGradient(0, 0, width, height, b2, b1, Y_AXIS);
    
     drawGradientBackground();

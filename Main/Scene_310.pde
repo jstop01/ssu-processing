@@ -8,6 +8,9 @@ public class Scene_310 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("47", drawManager);
+
+
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.pray);
     boy.setPosition(400, 500);
     boy.setScale(0.7, 0.7);

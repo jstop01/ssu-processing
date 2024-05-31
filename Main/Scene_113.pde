@@ -8,6 +8,7 @@ public class Scene_113 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("14", drawManager);
     Scene_108_background_setup(drawManager);
     Scene_108_background_setup2(drawManager);
 

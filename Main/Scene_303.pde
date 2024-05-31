@@ -8,6 +8,8 @@ public class Scene_303 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("40", drawManager);
+
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.climb);
     boy.setPosition(500, 300);
     boy.setScale(0.4, 0.4);

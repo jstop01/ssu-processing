@@ -8,6 +8,9 @@ public class Scene_216 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("31", drawManager);
+
+
     var 우물 = objectFactory.create("res/images/object/well.png");
     우물.setPosition(450, 400);
     우물.setScale(0.5, 0.5);

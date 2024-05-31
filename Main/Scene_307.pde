@@ -8,6 +8,9 @@ public class Scene_307 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("44", drawManager);
+
+
     // 나무 리소스 교체해야 할듯
     var tree = objectFactory.create("compressedRes/images/objects/the_base_of_a_tree.png");
     tree.setPosition(600, 400);

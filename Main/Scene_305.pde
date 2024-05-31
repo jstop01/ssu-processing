@@ -8,8 +8,11 @@ public class Scene_305 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
-    var mountain = new Mountain(600, 300);
-    drawManager.addDrawable(mountain);
+    loadBackground("42", drawManager);
+
+
+    // var mountain = new Mountain(600, 300);
+    // drawManager.addDrawable(mountain);
     
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.seat);
@@ -22,7 +25,7 @@ public class Scene_305 extends BaseScene {
     girl.setScale(0.3, 0.3);
     drawManager.addDrawable(girl);
 
-    var tiger = objectFactory.create(CharacterType.tiger_mom, CharacterPoseType.back);
+    var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.climb);
     tiger.setPosition(300, 600);
     tiger.setScale(0.5, 0.5);
     drawManager.addDrawable(tiger);

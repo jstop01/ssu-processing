@@ -8,10 +8,13 @@ public class Scene_315 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
-    var oldRope = objectFactory.create("compressedRes/images/objects/rope_old.png");
-    oldRope.setPosition(width / 2, 200);
-    oldRope.setScale(0.1, 0.1);
-    drawManager.addDrawable(oldRope);
+    loadBackground("52", drawManager);
+
+
+    // var oldRope = objectFactory.create("compressedRes/images/objects/rope_old.png");
+    // oldRope.setPosition(width / 2, 200);
+    // oldRope.setScale(0.1, 0.1);
+    // drawManager.addDrawable(oldRope);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.climb_rope);
     boy.setPosition(width / 2 - 50, 500);

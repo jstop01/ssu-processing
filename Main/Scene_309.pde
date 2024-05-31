@@ -8,6 +8,9 @@ public class Scene_309 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("46", drawManager);
+
+
     // 나무 필요
 
     // 땅 필요

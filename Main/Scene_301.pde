@@ -1,9 +1,9 @@
 
 void setup_Scene_301_BG(DrawManager drawManager) {
-  var 초가집 = objectFactory.create("res/images/object/hut_front.png");
-  초가집.setPosition(400, 300);
-  초가집.setScale(0.13, 0.13);
-  drawManager.addDrawable(초가집);
+  // var 초가집 = objectFactory.create("res/images/object/hut_front.png");
+  // 초가집.setPosition(400, 300);
+  // 초가집.setScale(0.13, 0.13);
+  // drawManager.addDrawable(초가집);
 
   var 구름 = objectFactory.create("res/images/object/cloud_1.png");
   구름.setPosition(100, 100);
@@ -35,6 +35,9 @@ public class Scene_301 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+
+    loadBackground("38", drawManager);
+  
     setup_Scene_301_BG(drawManager);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.back);

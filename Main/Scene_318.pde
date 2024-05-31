@@ -12,6 +12,8 @@ public class Scene_318 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("55", drawManager);
+
     setup_Scene_301_BG(drawManager);
 
     retryButton = new Button();

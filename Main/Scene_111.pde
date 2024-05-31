@@ -9,6 +9,7 @@ public class Scene_111 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("12-1", drawManager);
     Scene_108_background_setup(drawManager);
 
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.hungry);
@@ -16,6 +17,7 @@ public class Scene_111 extends BaseScene {
     tiger.setScale(0.5, 0.5);
     drawManager.addDrawable(tiger);
 
+    loadBackground("12-2", drawManager);
     Scene_108_background_setup2(drawManager);
   }
  

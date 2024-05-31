@@ -8,9 +8,7 @@ public class Scene_222 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
-    var storyboard = objectFactory.create("compressedRes/images/storyboard/222.png");
-    storyboard.setPosition(width / 2, height / 2);
-    drawManager.addDrawable(storyboard);
+    loadBackground("37", drawManager);
   }
  
   public void draw() {

@@ -8,6 +8,9 @@ public class Scene_209 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("24", drawManager);
+
+
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.front);
     boy.setPosition(800, 750);
     boy.setScale(1.2f, 1.2f);

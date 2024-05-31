@@ -7,6 +7,8 @@ public class Scene_322 extends BaseScene {
   public void setup() {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
+
+    loadBackground("59", drawManager);
     
     var speechBubble = objectFactory.create("compressedRes/images/ui/speech-bubble_2.png");
     speechBubble.setPosition(600, 400);

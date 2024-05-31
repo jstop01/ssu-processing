@@ -8,6 +8,8 @@ public class Scene_219 extends BaseScene {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
+    loadBackground("34", drawManager);
+
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.ricecake_01);
     tiger.setPosition(width / 2, height);
     tiger.setScale(1, 1);
