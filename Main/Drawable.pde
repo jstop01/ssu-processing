@@ -11,6 +11,7 @@ public class Drawable {
   protected PVector endPos;
   protected PVector center;
   protected PVector scale;
+  protected boolean isMouseOver;
   
   public Drawable() {
     this.setup(0, 0, 0, 0, 0);
@@ -33,6 +34,7 @@ public class Drawable {
     this.initialH = h;
     this.zAngle = 0;
     this.zIndex = zIndex;
+    this.isMouseOver = false;
 
     this.startPos = new PVector(x, y);
     this.endPos = new PVector(x + w, y + h);
@@ -71,7 +73,7 @@ public class Drawable {
   public void onClick(){
     System.out.println("Clicked");
   }
-  
+
   public boolean mousePressed(){
     var modX = this.x - this.w / 2;
     var modY = this.y - this.h / 2;
@@ -85,5 +87,33 @@ public class Drawable {
       return true;
     } 
     return false;
+  }
+
+  public boolean isMouseOver() {
+    var modX = this.x - this.w / 2;
+    var modY = this.y - this.h / 2;
+    if(
+      mouseX > modX 
+      && mouseX < modX + this.w
+      && mouseY > modY 
+      && mouseY < modY + this.h
+    ){
+      return true;
+    } 
+    return false;
+  }
+
+  public void update() {
+    if (isMouseOver()) {
+      if (!this.isMouseOver) {
+        setScale(getScaleX() * 1.2, getScaleY() * 1.2);
+        this.isMouseOver = true;
+      }
+    } else {
+      if (this.isMouseOver) {
+        setScale(getScaleX() / 1.2, getScaleY() / 1.2);
+        this.isMouseOver = false;
+      }
+    }
   }
 }
