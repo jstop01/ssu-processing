@@ -9,7 +9,7 @@ int lastMillis = 0;
 void setup() {
   //size(1280, 720, FX2D);
   size(1280, 720, P2D);
-  sceneManager.loadScene(new Scene_Intro());
+  sceneManager.loadScene(new Scene_222());
   //sceneManager.loadScene(new Scene_ParticleTest());
   //sceneManager.loadScene(new Scene_CameraManagerTest());
   //postProcessManager.addGrain(new PVector(0.3, 0.6, 0.3));
