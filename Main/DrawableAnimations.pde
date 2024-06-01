@@ -16,6 +16,11 @@ public class BaseAnimation {
 
   public void update() {
   }
+
+  public void setEaseType(EaseType ease)
+  {
+    easeType = ease;
+  }
 }
 
 
@@ -33,6 +38,16 @@ public class MoveAnimation extends BaseAnimation {
       this.destX = destX;
       this.destY = destY;
       this.duration = duration;
+  }
+
+    public MoveAnimation(Drawable target, float destX, float destY, float duration, EaseType ease) {
+      super(target);
+      startX = target.getX();
+      startY = target.getY();
+      this.destX = destX;
+      this.destY = destY;
+      this.duration = duration;
+      setEaseType(ease);
   }
 
   public float destX;
@@ -80,6 +95,15 @@ public class MoveAnimation extends BaseAnimation {
       isDone = false;
       elapsedTime = 0;
     }
+  }
+
+  public MoveAnimation reset() // 하나의 객체를 돌려쓸때 사용
+  {
+    elapsedTime = 0;
+    isDone = false;
+    startX = target.getX();
+    startY = target.getY();
+    return this;
   }
 }
 
@@ -144,5 +168,14 @@ public class ScaleAnimation extends BaseAnimation {
       isDone = false;
       elapsedTime = 0;
     }
+  }
+
+    public ScaleAnimation reset() // 하나의 객체를 돌려쓸때 사용
+  {
+    elapsedTime = 0;
+    isDone = false;
+    startX = target.getScaleX();
+    startY = target.getScaleY();
+    return this;
   }
 }
