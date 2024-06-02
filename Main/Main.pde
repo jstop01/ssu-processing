@@ -22,9 +22,14 @@ void draw() {
 
   background(255);
   BaseScene scene = sceneManager.getCurrentScene();
+  
+  pushMatrix();
+  resetMatrix();
 
   cameraManager.draw(); 
   sceneManager.Draw();
+  
+  popMatrix();
 
   postProcessManager.draw();
   image(get(), 0, 0, width, height);
