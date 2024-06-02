@@ -55,17 +55,24 @@ public class Button {
     
     setMouseOverStyle(isMouseOver());
     fill(buttonColor);
+    float sizeX = size != null ? size.x : image.width;
+    float sizeY = size != null ? size.y : image.height;
     if (image != null) {
-      float sizeX = size != null ? size.x : image.width;
-      float sizeY = size != null ? size.y : image.height;
-      //shapeMode(CENTER);
+      shapeMode(CENTER);
       image(image, position.x - sizeX / 2, position.y - sizeY / 2, sizeX, sizeY);
     } else {
       rect(position.x, position.y, size.x, size.y);
     }
     if (text != null) {
-      float textX = position.x + size.x / 2;
-      float textY = position.y + size.y / 2;
+      float textX;
+      float textY;
+      if (image != null) {
+        textX = position.x;
+        textY = position.y;
+      } else {
+        textX = position.x + sizeX / 2;
+        textY = position.y + sizeY / 2;
+      }
       textAlign(CENTER, CENTER);
       fontManager.drawText(text, (int)textX, (int)textY, fontSize);
     }

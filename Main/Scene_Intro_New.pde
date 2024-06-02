@@ -12,7 +12,7 @@ public class Scene_Intro_New extends BaseScene {
   private Button startButton;
   private Button sceneListButton;
   private Button creditButton;
-  private Button sceneButton4;
+  private Button localeButton;
 
 
   // 1
@@ -45,7 +45,8 @@ public class Scene_Intro_New extends BaseScene {
     startButton = new Button(new PVector(width / 2, 400), null, loadImage("res/images/UI/Opening_UI_01_01.png"));
     sceneListButton = new Button(new PVector(width / 2, 500), null, loadImage("res/images/UI/Opening_UI_01_02.png"));
     creditButton = new Button(new PVector(width / 2, 600), null, loadImage("res/images/UI/Opening_UI_01_03.png"));
-
+    localeButton = new Button(new PVector(width - 150, 200), null, loadImage("res/images/UI/2button.png"));
+    localeButton.text = locale;
     
     // 1
     도입버튼 = objectFactory.create("res/images/UI/Opening_UI_03_01.png");
@@ -97,6 +98,11 @@ public class Scene_Intro_New extends BaseScene {
       
       if (creditButton.drawAndCheckClick()) {
         sceneManager.loadScene(new Scene_Ending());
+      }
+
+      if (localeButton.drawAndCheckClick()) {
+        locale = locale == "en" ? "ko" : "en";
+        localeButton.text = locale;
       }
 
     }

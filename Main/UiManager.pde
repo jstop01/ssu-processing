@@ -1,3 +1,5 @@
+String locale = "en"; // or "ko"
+
 public class UiManager {
   public DialogUi dialogUi;
   List<Map<String, String>> currentDialogList;
@@ -5,14 +7,18 @@ public class UiManager {
 
   private UiManager(){
     super();
-    tsvProcessor = new TsvProcessor("Data/ScenarioScript.tsv");
+    reloadDialogs();
+
+    dialogUi = new DialogUi();
+    dialogUi.show();
+  }
+
+  public void reloadDialogs() {
+    tsvProcessor = new TsvProcessor("Data/ScenarioScript_" + locale + ".tsv");
     var s1 = tsvProcessor.readTsvFile();
 
     currentDialogList = new ArrayList<Map<String, String>>();
     currentDialogList.addAll(s1);
-
-    dialogUi = new DialogUi();
-    dialogUi.show();
   }
 
   public DialogContent getDialogDataById(String id) {
