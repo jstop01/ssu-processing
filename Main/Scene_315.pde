@@ -28,6 +28,8 @@ public class Scene_315 extends BaseScene {
 
 
     // 구름, 별, 마을 배경(초가집, 밭) 필요
+
+    soundManager.playOnce("res/sound/effect/315.325_밧줄투욱끊어지는소리.mp3");
   }
  
   public void draw() {
