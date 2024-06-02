@@ -1,6 +1,6 @@
 public class ShapeObject extends Drawable {
-  private PShape shape;
-  private PImage image;
+  protected PShape shape;
+  protected PImage image;
 
   public ShapeObject(PShape shape) {
     super(0, 0, shape.width, shape.height);
