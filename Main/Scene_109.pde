@@ -117,6 +117,12 @@ public class Scene_109 extends BaseScene {
   }
   
   public void draw() {
+    // test: up 키로 씬 넘어가기
+    if (keyPressed && keyCode == 38) {
+      loadNextScene();
+      return;
+    }
+
     pushStyle();
     background(255);
 
@@ -139,7 +145,7 @@ public class Scene_109 extends BaseScene {
     Iterator<Item> iterator = items.iterator();
     while (iterator.hasNext()) {
       Item item = iterator.next();
-      println("item.getItemObjectType()", item.getItemObjectType());
+      //println("item.getItemObjectType()", item.getItemObjectType());
       if (item.isAtTarget() && item.getItemObjectType() == "ricecake_02_01") {
         iterator.remove();
         redbeanRicecakeCount.remove(0);
