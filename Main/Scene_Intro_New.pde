@@ -36,6 +36,7 @@ public class Scene_Intro_New extends BaseScene {
 
   public void setup() {
 
+    Scene_103_Setup(drawManager);
     // 0
     title = objectFactory.create("res/images/UI/Opening_TItle.png");
     title.setPosition(width / 2, 100);
@@ -87,6 +88,7 @@ public class Scene_Intro_New extends BaseScene {
   public void draw() {
     //println("intronew draw");
     pushStyle();
+    drawManager.drawing();
     if (mode == 0) { // Main
       title.draw();
       if (startButton.drawAndCheckClick()) {
@@ -179,8 +181,6 @@ public class Scene_Intro_New extends BaseScene {
     }
 
     popStyle();
-
-    drawManager.drawing();
   }
   
   public void mousePressed() {

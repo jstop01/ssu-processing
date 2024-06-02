@@ -1,24 +1,5 @@
-void Scene_103_mountain_and_ground_setup(DrawManager drawManager) {
-  // var mountain = new Mountain(width/2, 0);
-  // drawManager.addDrawable(mountain);
-
-  // Drawable ground = new Ground(0, 300, width, height, 0, #DAC4A2);
-  // drawManager.addDrawable(ground);
-}
-
-public class Scene_103 extends BaseScene {
-  @Override
-  public int getPreviousScene() { return 103; }
-
-  @Override
-  public int getNextScene() { return 104; }
-  public void setup() {
-    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
-    uiManager.dialogUi.next();
-
+void Scene_103_Setup(DrawManager drawManager) {
     loadBackground("4", drawManager);
-
-    Scene_103_mountain_and_ground_setup(drawManager);
 
     var 집 = objectFactory.create("res/images/object/hut_front.png");
     집.setPosition(700, 200);
@@ -45,6 +26,19 @@ public class Scene_103 extends BaseScene {
     절구.setPosition(width / 2, 450);
     절구.setScale(0.03f, 0.03f);
     drawManager.addDrawable(절구);
+}
+
+public class Scene_103 extends BaseScene {
+  @Override
+  public int getPreviousScene() { return 103; }
+
+  @Override
+  public int getNextScene() { return 104; }
+  public void setup() {
+    uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
+    uiManager.dialogUi.next();
+
+    Scene_103_Setup(drawManager);
   }
  
   public void draw() {

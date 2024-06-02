@@ -10,8 +10,6 @@ public class Scene_105 extends BaseScene {
 
     loadBackground("6", drawManager);
 
-    Scene_103_mountain_and_ground_setup(drawManager);
-
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.smile);
     boy.setPosition(450, 600);
     //boy.setScale(2f, 2f);
