@@ -19,6 +19,8 @@ public class Scene_206 extends BaseScene {
     riceCake.setPosition(width / 2, height - 120);
     riceCake.setScale(2f, 2f);
     drawManager.addDrawable(riceCake);
+
+    soundManager.playOnce("res/sound/effect/206_먹는소리.mp3");
   }
  
   public void draw() {

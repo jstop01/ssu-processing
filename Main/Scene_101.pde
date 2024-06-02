@@ -15,6 +15,9 @@ public class Scene_101 extends BaseScene {
     hand.setPosition(width / 2 + 200, height / 2);
     hand.setScale(0.5, 0.5);
     drawManager.addDrawable(hand);
+
+    soundManager.playOnce("res/sound/effect/101_노크소리.mp3");
+    soundManager.playOnce("res/sound/effect/101_아침효과음.mp3");
   }
  
   public void draw() {

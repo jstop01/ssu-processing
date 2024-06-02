@@ -23,6 +23,10 @@ public class Scene_201 extends BaseScene {
     tiger.setPosition(800, 500);
     tiger.setScale(0.52, 0.52);
     drawManager.addDrawable(tiger);
+
+    // TODO: 타이밍 조절해야 할듯?
+    soundManager.playOnce("res/sound/effect/201_발자국소리.mp3");
+    soundManager.playOnce("res/sound/effect/201_노크소리.mp3");
   }
  
   public void draw() {

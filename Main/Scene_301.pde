@@ -22,6 +22,8 @@ void setup_Scene_301_BG(DrawManager drawManager) {
   drawManager.addDrawable(jar1);
 
   drawManager.addDrawable(new Ground(-1, #BF763E));
+
+  soundManager.playOnce("res/sound/effect/301.302.304_뛰는발걸음소리.mp3");
 }
 
 public class Scene_301 extends BaseScene {

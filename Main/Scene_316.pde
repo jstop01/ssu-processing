@@ -16,6 +16,8 @@ public class Scene_316 extends BaseScene {
     // oldRope.setPosition(width / 2, -50);
     // oldRope.setScale(0.3, 0.3);
     // drawManager.addDrawable(oldRope);
+
+    soundManager.playOnce("res/sound/effect/316.326_밧줄툭끊어지는소리.mp3");
   }
  
   public void draw() {

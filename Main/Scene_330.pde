@@ -25,6 +25,8 @@ public class Scene_330 extends BaseScene {
     girl.setPosition(width / 2 + 300, 500);
     girl.setScale(-0.6, 0.6);
     drawManager.addDrawable(girl);
+
+    soundManager.playOnce("res/sound/effect/330_빛내려오는효과음.mp3");
   }
  
   public void draw() {

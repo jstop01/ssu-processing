@@ -68,6 +68,9 @@ public class Scene_303 extends BaseScene {
     drawingGameOver();
 
     popStyle();
+
+    // TODO: 이 타이밍 아닐듯
+    soundManager.playOnce("res/sound/effect/303.308_미니게임클릭소리.mp3");
   }
 
   private void initGame() {

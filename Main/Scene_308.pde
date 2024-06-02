@@ -25,6 +25,9 @@ public class Scene_308 extends BaseScene {
     tiger.setPosition(600, 500);
     tiger.setScale(0.3, 0.3);
     drawManager.addDrawable(tiger);
+
+    // TODO: 이 타이밍 아닐 듯
+    soundManager.playOnce("res/sound/effect/303.308_미니게임클릭소리.mp3");
   }
  
   public void draw() {

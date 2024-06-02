@@ -19,6 +19,8 @@ public class Scene_207 extends BaseScene {
 
     var candle = new Candle(width / 2 + 5, 142);
     drawManager.addDrawable(candle);
+
+    soundManager.playOnce("res/sound/effect/207.210.212_잠자는소리.mp3");
   }
  
   public void draw() {

@@ -25,6 +25,8 @@ public class Scene_312 extends BaseScene {
     drawManager.addDrawable(oldRope);
 
     // 구름, 동앗줄 내려오는 효과
+
+    soundManager.playOnce("res/sound/312_따라란효과음.mp3");
   }
   
  

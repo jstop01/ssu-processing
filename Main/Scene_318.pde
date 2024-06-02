@@ -20,6 +20,8 @@ public class Scene_318 extends BaseScene {
     retryButton.text = "되돌아가시겠습니까?";
     retryButton.position = new PVector(1000, 500);
     retryButton.size = new PVector(300, 100);
+
+    soundManager.playOnce("res/sound/effect/318_바람소리.mp3");
   }
  
   public void draw() {

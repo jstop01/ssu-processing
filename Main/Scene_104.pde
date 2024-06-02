@@ -24,6 +24,9 @@ public class Scene_104 extends BaseScene {
     hammer.d_rotate(hammerZAngle);
     drawManager.addDrawable(hpBar);
     drawManager.addDrawable(rock1);
+
+    // TODO: 뭔가 다른식으로 재생해야 할듯??
+    soundManager.playOnce("res/sound/effect/104_미니게임효과음.mp3");
   }
  
   public void draw() {

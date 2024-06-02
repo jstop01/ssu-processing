@@ -24,6 +24,8 @@ public class Scene_106 extends BaseScene {
     mom.setPosition(700, 400);
     mom.setScale(0.4, 0.4);
     drawManager.addDrawable(mom);
+
+    soundManager.playOnce("res/sound/effect/106_부엉이아니고올빼미소리.mp3");
   }
  
   public void draw() {

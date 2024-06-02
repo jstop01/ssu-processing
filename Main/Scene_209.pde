@@ -25,6 +25,8 @@ public class Scene_209 extends BaseScene {
     tiger.setPosition(300, 200);
     tiger.setScale(0.26f, 0.26f);
     drawManager.addDrawable(tiger);
+
+    soundManager.playOnce("res/sound/effect/209_아이디어효과음.mp3");
   }
  
   public void draw() {

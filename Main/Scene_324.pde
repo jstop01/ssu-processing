@@ -19,6 +19,8 @@ public class Scene_324 extends BaseScene {
     drawManager.addDrawable(oldRope);
 
     // 호랑이 손 필요
+
+    soundManager.playOnce("res/sound/effect/324_호랑이가밧줄잡는소리.mp3");
   }
  
   public void draw() {

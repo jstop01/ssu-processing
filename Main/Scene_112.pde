@@ -22,6 +22,8 @@ public class Scene_112 extends BaseScene {
     cloth.setPosition(width / 2 - 100, height / 2);
     cloth.setScale(-1, 1);
     drawManager.addDrawable(cloth);
+
+    soundManager.playOnce("res/sound/effect/112_옷만지는소리.mp3");
   }
  
   public void draw() {

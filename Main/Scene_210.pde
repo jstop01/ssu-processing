@@ -22,7 +22,8 @@ public class Scene_210 extends BaseScene {
     drawManager.addDrawable(new Rock1(450f, 300f, #c0c0c0));
     drawManager.addDrawable(new Rock1(500f, 300f, #c0c0c0));
     drawManager.addDrawable(new Rock1(550f, 300f, #c0c0c0));
-    
+
+    soundManager.playOnce("res/sound/effect/207.210.212_잠자는소리.mp3");
   }
  
   float sleepEffectRemainSeconds = 0;

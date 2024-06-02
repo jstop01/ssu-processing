@@ -44,6 +44,8 @@ public class Scene_102 extends BaseScene {
     drawManager.addDrawable(shoes3);
 
     // TODO: 배경 - 나무 추가
+
+    soundManager.playOnce("res/sound/effect/102_웃음소리.mp3");
   }
  
   public void draw() {

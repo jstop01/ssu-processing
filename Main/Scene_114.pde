@@ -21,6 +21,8 @@ public class Scene_114 extends BaseScene {
     drawManager.addDrawable(tiger);
 
     loadBackground("15-2", drawManager);
+
+    soundManager.playOnce("res/sound/effect/114_발자국소리.mp3");
   }
  
   public void draw() {

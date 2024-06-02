@@ -18,6 +18,7 @@ public class Scene_323 extends BaseScene {
     drawManager.addDrawable(oldRope);
 
     // 동앗줄 내려오는 효과
+    soundManager.playOnce("res/sound/effect/323_천둥소리.mp3");
   }
  
   public void draw() {

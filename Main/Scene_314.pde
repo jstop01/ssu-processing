@@ -17,6 +17,8 @@ public class Scene_314 extends BaseScene {
     drawManager.addDrawable(oldRope);
 
     // 오누이손 리소스 필요
+
+    soundManager.playOnce("res/sound/effect/314.319_밧줄잡는소리.mp3");
   }
  
   public void draw() {

@@ -17,6 +17,8 @@ public class Scene_319 extends BaseScene {
     rope.setPosition(width / 2, -650);
     rope.setScale(0.3, 0.3);
     drawManager.addDrawable(rope);
+
+    soundManager.playOnce("res/sound/effect/314.319_밧줄잡는소리.mp3");
   }
  
   public void draw() {

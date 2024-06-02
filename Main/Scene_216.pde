@@ -23,6 +23,10 @@ public class Scene_216 extends BaseScene {
     drawManager.addDrawable(tiger);
 
     // 배경 나중에
+
+    // TODO: 타이밍 조절해야 할 듯?
+    soundManager.playOnce("res/sound/effect/216_으아아소리.mp3");
+    soundManager.playOnce("res/sound/effect/216_풍덩소리.mp3");
   }
  
   public void draw() {

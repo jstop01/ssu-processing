@@ -91,6 +91,8 @@ public class Scene_302 extends BaseScene {
     var upScale = treeDefaultScale + 0.0015f;
     treeScaleUpAnimation = new ScaleAnimation(tree, upScale,upScale,treeScaleDuration);
     treeScaleDownAnimation = new ScaleAnimation(tree, treeDefaultScale,treeDefaultScale,treeScaleDuration);
+
+    soundManager.playOnce("res/sound/effect/301.302.304_뛰는발걸음소리.mp3");
   }
  
   public void draw() {

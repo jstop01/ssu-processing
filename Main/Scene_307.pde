@@ -27,6 +27,9 @@ public class Scene_307 extends BaseScene {
     var oil = objectFactory.create("res/images/objects/oil.png");
     oil.setPosition(400, 400);
     drawManager.addDrawable(oil);
+
+    // TODO: 이 타이밍 아닐 듯?
+    soundManager.playOnce("res/sound/effect/307_띵효과음_Audio_Trimmer.mp3");
   }
  
   public void draw() {

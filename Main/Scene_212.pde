@@ -22,6 +22,8 @@ public class Scene_212 extends BaseScene {
     // drawManager.addDrawable(openDoor);
 
     Scene_211_Family_Setup(drawManager);
+
+    soundManager.playOnce("res/sound/effect/207.210.212_잠자는소리.mp3");
   }
  
   public void draw() {
