@@ -12,7 +12,7 @@ public class Scene_101 extends BaseScene {
     loadBackground("2", drawManager);
 
     var hand = objectFactory.create("res/images/character/knock_hand.png");
-    hand.setPosition(width / 2 + 200, height / 2);
+    hand.setPosition(width / 2 + 200, 450);
     hand.setScale(0.5, 0.5);
     drawManager.addDrawable(hand);
 
