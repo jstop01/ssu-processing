@@ -1,6 +1,6 @@
-int DIALOG_HEIGHT = 200;
-int DIALOG_PADDING = 16;
-int DIALOG_MARGIN = 10;
+//int DIALOG_HEIGHT = 200;
+//int DIALOG_PADDING = 16;
+//int DIALOG_MARGIN = 10;
 int TELLER_TEXT_SIZE = 24;
 int MSG_TEXT_SIZE = 16;
 
@@ -14,12 +14,20 @@ public class DialogUi {
 
     private int x;
     private int y;
+    private int imageWidth;
+    private int imageHeight;
+    private PImage uiImage;
 
     public DialogUi() {
         this.visible = false;
         current = new DialogContent("0", "", "", null);
-        this.x = width / 4;
-        this.y = height - DIALOG_HEIGHT - (DIALOG_MARGIN * 2); // 20 은 MARGIN
+        this.uiImage = loadImage("res/images/UI/subtitle_bar.png");
+        this.imageWidth = uiImage.width + 200;
+        this.imageHeight = uiImage.height;
+        this.x = width / 2 - imageWidth / 2;
+        this.y = 450;
+        //this.x = width / 4;
+        // this.y = height - DIALOG_HEIGHT - (DIALOG_MARGIN * 2); // 20 은 MARGIN
     }
 
     private void drawDialogBox() {
@@ -29,25 +37,29 @@ public class DialogUi {
         }
 
         pushStyle();
-        strokeWeight(1);
-        fill(255, 255, 255, 200);
-        rect(this.x, this.y, width/2, DIALOG_HEIGHT, 5);
+
+        // alpha
+        tint(255, 190);
+        image(uiImage, x, y, imageWidth, imageHeight);
+
         popStyle();
     }
 
     private void drawText() {
-        int textAnchor = this.y + DIALOG_PADDING * 2;
+        //int textAnchor = this.y + DIALOG_PADDING * 2;
         if (this.current.teller != null) {
             //textSize(TELLER_TEXT_SIZE);
             fill(0, 0, 255);
-            fontManager.drawText(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2, TELLER_TEXT_SIZE);
+            fontManager.drawText(this.current.teller, x + 50, y + 80, TELLER_TEXT_SIZE);
+            //fontManager.drawText(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2, TELLER_TEXT_SIZE);
             //text(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2);
-            textAnchor = this.y + DIALOG_PADDING * 2 + TELLER_TEXT_SIZE + 10;
+            //textAnchor = this.y + DIALOG_PADDING * 2 + TELLER_TEXT_SIZE + 10;
         }
         //textSize(MSG_TEXT_SIZE);
         fill(0, 0, 0);
         String msg = this.current.text.replace("\\n","\n");
-        fontManager.drawText(msg, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING*2, 1000, MSG_TEXT_SIZE);
+        fontManager.drawText(msg, x + 150, this.y + 100, imageWidth - 300, imageHeight - 100, MSG_TEXT_SIZE);
+        //fontManager.drawText(msg, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING*2, 1000, MSG_TEXT_SIZE);
         //text(this.current.text,
         //x + DIALOG_PADDING,
         //textAnchor,
