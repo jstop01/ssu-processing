@@ -20,6 +20,7 @@ public class Scene_109 extends BaseScene {
   private List<Item> items;
   private Item selected;
   private List<ShapeObject> redbeanRicecakeCount;
+  private float elapsedTime = 0;
 
   public void setup() {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
@@ -123,15 +124,21 @@ public class Scene_109 extends BaseScene {
       return;
     }
 
+    elapsedTime += deltaTime;
+    if (elapsedTime > 2f) {
+      uiManager.dialogUi.hide();
+    }
+
     pushStyle();
     background(255);
 
     drawManager.drawing();
-    uiManager.drawing();
     ellipse(TIGER_MOUSE_X, TIGER_MOUSE_Y, TIGER_MOUSE_SIZE, TIGER_MOUSE_SIZE);
 
     for (Item item : items) {
       item.draw();
+      if (!item.isMoving && !item.isDragging)
+      item.updateHover();
     }
 
     for (ShapeObject redbeanRicecake : redbeanRicecakeCount) {
@@ -165,6 +172,8 @@ public class Scene_109 extends BaseScene {
       } 
     }
 
+    uiManager.drawing();
+    
     popStyle();
   }
 
@@ -308,6 +317,10 @@ public class Item {
       }
     }
     itemObject.draw();
+  }
+
+  public void updateHover() {
+    itemObject.update();
   }
   
   public void onClick() {
