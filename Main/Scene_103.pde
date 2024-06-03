@@ -1,11 +1,6 @@
 void Scene_103_Setup(DrawManager drawManager) {
     loadBackground("4", drawManager);
 
-    var 집 = objectFactory.create("res/images/object/hut_front.png");
-    집.setPosition(700, 200);
-    집.setScale(0.1f, 0.1f);
-    drawManager.addDrawable(집);
-
     var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.smile);
     girl.setPosition(450, 550);
     girl.setScale(0.3f, 0.3f);
