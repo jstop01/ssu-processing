@@ -11,19 +11,24 @@ public class Scene_105 extends BaseScene {
     loadBackground("6", drawManager);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.smile);
-    boy.setPosition(450, 600);
+    boy.setPosition(450, 500);
     //boy.setScale(2f, 2f);
     drawManager.addDrawable(boy);
     
     var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.smile);
-    girl.setPosition(800, 700);
+    girl.setPosition(800, 600);
     //girl.setScale(2f, 2f);
     drawManager.addDrawable(girl);
 
-    var riceCake = objectFactory.create("res/images/object/ricecake_01_02.png");
-    riceCake.setPosition(width / 2, height - 100);
-    riceCake.setScale(1.5f, 1.5f);
-    drawManager.addDrawable(riceCake);
+    var riceCake1 = objectFactory.create("res/images/object/ricecake_01_02.png");
+    riceCake1.setPosition(width / 2 + 170, height - 200);
+    riceCake1.setScale(1.1f, 1.1f);
+    drawManager.addDrawable(riceCake1);
+
+    var riceCake2 = objectFactory.create("res/images/object/ricecake_02_02.png");
+    riceCake2.setPosition(width / 2 - 200, height - 230);
+    riceCake2.setScale(1.2f, 1.2f);
+    drawManager.addDrawable(riceCake2);
   }
  
   public void draw() {
