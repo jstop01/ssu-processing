@@ -1,3 +1,6 @@
+import { BaseScene } from "./BaseScene";
+import { Util } from "./Util";
+
 export class SceneManager {
   private currentScene: BaseScene | null;
   private nextScene: BaseScene | null;
@@ -53,7 +56,7 @@ export class SceneManager {
         }
 
         // stopPlayingVoice();
-        this.currentScene.setup();
+        this.currentScene?.setup();
         this.smoothFrame = true;
       }
     }
@@ -98,4 +101,4 @@ export class SceneManager {
   }
 }
 
-const sceneManager = new SceneManager();
+export const sceneManager = new SceneManager();
