@@ -29,8 +29,9 @@ id	comment	character	yes	no	voice	scene
 201006	Guys, Mom, open the door.	TIGER				201
 201007	the brother who thought the voice is strange asked to tiger				201007	
 201008	Then show me your hand through the doorstep.	BOY				201
-202001	What they could see below the doorstep was fluffy fur and thick, jelly-like hands. It was obviously tiger's hands but he thought her hands had "swelled up from the hard work" and that belief came from the strong anticipation and desire to be reunited with his beloved mother as soon as possible, so he let go and opened the door with confidence	NARR			202001	202
-202002	Mom, you did a great job. I missed you!	BOY				202
+202001	What they could see below the doorstep was fluffy fur and thick, jelly-like hands. It was obviously tiger's hands but he thought her hands had "swelled up from the hard work"	NARR			202001	202
+202002	and that belief came from the strong anticipation and desire to be reunited with his beloved mother as soon as possible, so he let go and opened the door with confidence	NARR			202001	202
+202003	Mom, you did a great job. I missed you!	BOY				202
 203001	Then, there was a huge tiger in his mother's clothes standing in front of his eyes. 	NARR			203001	203
 203002	roar!!	TIGER				
 203003	When they saw a tiger drooling and trying to devour them, they began to tremble and looking around.	NARR			203003	
@@ -48,7 +49,8 @@ id	comment	character	yes	no	voice	scene
 208003	the sibling and mother share the joyfulness of reunion briefly, but soon they were thinking how to handle with the tiger 	NARR			208003	208
 209001	let’s Fill up the tiger's belly with stones to make him feel full!	BOY				209
 210001	While the tiger was asleep, the sibling and mother walked around the house and collected the stones, and fill the tiger's big stomach with it	NARR			210001	210
-211001	My mother sewed the tiger's belly skillfully. After finishing everything, the sibling and mother quietly left the house, holding hands, and fled to the faraway place.	NARR			211001	211
+211001	My mother sewed the tiger's belly skillfully.
+ After finishing everything, the sibling and mother quietly left the house, holding hands, and fled to the faraway place.	NARR			211001	211
 212001	The tiger, who was asleep deeply without realizing his stomach had been split, woke up a few hours after sibling and mother had left.	NARR			212001	212
 213001	sighing...	TIGER				213
 213002	the tiger, who was Feeling something strange but full and thirsty at the same time, left the house, to search the well for quenching his thirst. 	TIGER				213
@@ -111,9 +113,14 @@ id	comment	character	yes	no	voice	scene
 325003	sibling, stop there! I'll never miss it this time!	TIGER				
 326001	at that moment. the rope that tiger was holding, made craking sound and start to cutting off	NARR TIGER			326001	326
 326002	Huh? It wasn't a new rope? It can't be cut off!	TIGER				
-327001	all of the sudden, the rotten rope that tiger was holding was starting to break.	NARR			327001	
-327002	Brother, the rope that the tiger is holding is cutting off! It seems that heaven gave him the rotten rope. Ohhhhhhh, please save me!	BOY TIGER				327
+327001	all of the sudden, the rotten rope that tiger was holding was starting to break.	NARR
+			327001	
+327002	Brother, the rope that the tiger is holding is cutting off! It seems that heaven gave him the rotten rope.
+ Ohhhhhhh, please save me!	BOY TIGER				327
 328001	The tiger fell into the sorghum field and turned the sorghum red.	NARR			328001	328
 329001	When the tiger fell, the sibling were relieved, and they continued to climb up the rope to the sky	NARR BOY GIRL			329001	329
 329002	brother, we really survived. I'm glad!  I'm so glad too. But where are we going?	GIRL				
-330001	After reaching heaven, the rope finally stopped, and the sibling asked god how to return the favor. Then, god began to talk. Welcome, sibling. I have some mission to leave it up to you guys. Why don't you become the sun and moon of the sky and protect the sky? You, the younger become the sun and you, the older, become the moon. In this way, sibling became the sun and the moon, shining bright lights all over the world during the day, and also giving the sole light to those who pass by the night road at the darkness so can make the world more brighter. And they lived happily together for a long time.	NARR GOD			330001	330
+330001	After reaching heaven, the rope finally stopped, and the sibling asked god how to return the favor. Then, god began to talk.
+ Welcome, sibling. I have some mission to leave it up to you guys. Why don't you become the sun and moon of the sky and protect the sky? You, the younger become the sun and you, the older, become the moon.
+ In this way, sibling became the sun and the moon, shining bright lights all over the world during the day, and also giving the sole light to those who pass by the night road at the darkness so can make the world more brighter.
+ And they lived happily together for a long time.	NARR GOD			330001	330
