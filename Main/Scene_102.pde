@@ -6,7 +6,6 @@ public class Scene_102 extends BaseScene {
   public int getNextScene() { return 103; }
 
   public void setup() {
-
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     uiManager.dialogUi.next();
 
