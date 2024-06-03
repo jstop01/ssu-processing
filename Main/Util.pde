@@ -33,4 +33,17 @@ public static class Util
 
     return true;
   }
+
+  public static int GetSceneNumber(BaseScene scene) {
+    String className = scene.getClass().getSimpleName();
+    if (className.startsWith("Scene_")) {
+        try {
+            String sceneNumberStr = className.substring(6);
+            return Integer.parseInt(sceneNumberStr);
+    } catch (NumberFormatException e) {
+        return -1;
+    }
+    }
+    return -1;
+  }
 }

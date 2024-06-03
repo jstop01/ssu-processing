@@ -22,6 +22,15 @@ public class SceneManager {
   public void Draw() {
     if (currentScene != null) {
         currentScene.draw();
+
+        // test: Scene number text
+        pushStyle();
+        fill(0);
+        Integer sceneNumber = Util.GetSceneNumber(currentScene);
+        if (sceneNumber != -1) {
+          text(sceneNumber.toString(), width - 50, 20, 25);
+        }
+        popStyle();
     }
 
     float smoothDt = deltaTime;
@@ -61,8 +70,10 @@ public class SceneManager {
     }
     
     pushStyle();
+
     fill(0, alpha);
     rect(0, 0, width, height);
+
     popStyle();
   }
 
