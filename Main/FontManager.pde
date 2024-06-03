@@ -9,7 +9,9 @@ public class FontManager {
   }
   
   public void setup() {
-    font = createFont("res/Font/NanumBarunGothic.otf", 50);
+    //font = createFont("res/Font/NanumBarunGothic.otf", 50);\
+    //font = createFont("res/Font/ChosunCentennial_ttf.ttf", 100);
+    font = createFont("res/Font/ChosunCentennial_otf.otf", 50);
     //font = loadFont("res/Font/NanumBarunGothic.otf");
   }
   

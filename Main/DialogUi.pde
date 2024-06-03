@@ -1,8 +1,8 @@
 //int DIALOG_HEIGHT = 200;
 //int DIALOG_PADDING = 16;
 //int DIALOG_MARGIN = 10;
-int TELLER_TEXT_SIZE = 24;
-int MSG_TEXT_SIZE = 16;
+int TELLER_TEXT_SIZE = 28;
+int MSG_TEXT_SIZE = 18;
 
 import java.util.Queue;
 import java.util.LinkedList;
@@ -50,7 +50,7 @@ public class DialogUi {
         if (this.current.teller != null) {
             //textSize(TELLER_TEXT_SIZE);
             fill(0, 0, 255);
-            fontManager.drawText(this.current.teller, x + 50, y + 80, TELLER_TEXT_SIZE);
+            fontManager.drawText(this.current.teller, x + 40, y + 85, TELLER_TEXT_SIZE);
             //fontManager.drawText(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2, TELLER_TEXT_SIZE);
             //text(this.current.teller, x + DIALOG_PADDING, y + DIALOG_PADDING * 2);
             //textAnchor = this.y + DIALOG_PADDING * 2 + TELLER_TEXT_SIZE + 10;
@@ -58,7 +58,7 @@ public class DialogUi {
         //textSize(MSG_TEXT_SIZE);
         fill(0, 0, 0);
         String msg = this.current.text.replace("\\n","\n");
-        fontManager.drawText(msg, x + 150, this.y + 100, imageWidth - 300, imageHeight - 100, MSG_TEXT_SIZE);
+        fontManager.drawText(msg, x + 150, this.y + 80, imageWidth - 300, imageHeight - 80, MSG_TEXT_SIZE);
         //fontManager.drawText(msg, x + DIALOG_PADDING, textAnchor, width/2 - DIALOG_PADDING*2, 1000, MSG_TEXT_SIZE);
         //text(this.current.text,
         //x + DIALOG_PADDING,
