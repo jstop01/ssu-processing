@@ -12,23 +12,23 @@ public class Scene_321 extends BaseScene {
 
     // 배경, 나무, 도끼 필요
     
-    // var rope = objectFactory.create("res/images/object/rope_strong.png");
-    // rope.setPosition(100, 50);
-    // rope.setScale(0.03, 0.03);
-    // drawManager.addDrawable(rope);
+    var rope = objectFactory.create("res/images/object/rope_strong.png");
+    rope.setPosition(255, -240);
+    rope.setScale(0.125, 0.125);
+    drawManager.addDrawable(rope);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.climb_rope);
-    boy.setPosition(80, 100);
-    boy.setScale(0.1, 0.1);
+    boy.setPosition(225, 100);
+    boy.setScale(0.15, 0.15);
     drawManager.addDrawable(boy);
 
     var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.climb_rope);
-    girl.setPosition(120, 100);
-    girl.setScale(-0.1, 0.1);
+    girl.setPosition(285, 100);
+    girl.setScale(-0.15, 0.15);
     drawManager.addDrawable(girl);
 
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.pray);
-    tiger.setPosition(500, 500);
+    tiger.setPosition(580, 390);
     tiger.setScale(0.3, 0.3);
     drawManager.addDrawable(tiger);
   }

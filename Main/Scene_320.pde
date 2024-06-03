@@ -10,28 +10,24 @@ public class Scene_320 extends BaseScene {
     uiManager.dialogUi.next();
     loadBackground("57", drawManager);
 
-
-    // 배경, 마을, 나무 필요
-
-
     // 리소스 교체 필요
-    // var rope = objectFactory.create("res/images/object/rope_strong.png");
-    // rope.setPosition(400, 50);
-    // rope.setScale(0.03, 0.03);
-    // drawManager.addDrawable(rope);
+    var rope = objectFactory.create("res/images/object/rope_strong.png");
+    rope.setPosition(255, -240);
+    rope.setScale(0.125, 0.125);
+    drawManager.addDrawable(rope);
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.climb_rope);
-    boy.setPosition(380, 100);
-    boy.setScale(0.1, 0.1);
+    boy.setPosition(225, 100);
+    boy.setScale(0.15, 0.15);
     drawManager.addDrawable(boy);
 
     var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.climb_rope);
-    girl.setPosition(420, 100);
-    girl.setScale(-0.1, 0.1);
+    girl.setPosition(285, 100);
+    girl.setScale(-0.15, 0.15);
     drawManager.addDrawable(girl);
 
     var tiger = objectFactory.create(CharacterType.tiger, CharacterPoseType.climb);
-    tiger.setPosition(1000, 300);
+    tiger.setPosition(1200, 400);
     tiger.setScale(0.3, 0.3);
     drawManager.addDrawable(tiger);
   }
