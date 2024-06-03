@@ -36,8 +36,6 @@ public class Scene_325 extends BaseScene {
     tiger.setScale(0.15, 0.15);
     drawManager.addDrawable(tiger);
 
-    // 배경 필요
-
     soundManager.playOnce("res/sound/effect/315.325_밧줄투욱끊어지는소리.mp3");
   }
  
