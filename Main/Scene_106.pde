@@ -8,7 +8,7 @@ void Scene_106_background_setup(DrawManager drawManager) {
 // 어머니가 밤길에 떡을 지고 돌아가는 장면
 public class Scene_106 extends BaseScene {
   @Override
-  public int getPreviousScene() { return 106; }
+  public int getPreviousScene() { return 105; }
 
   @Override
   public int getNextScene() { return 107; }

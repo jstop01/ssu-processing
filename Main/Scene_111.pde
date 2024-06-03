@@ -1,7 +1,7 @@
 // 엄마를 먹고도 아직 배고픈 호랑이
 public class Scene_111 extends BaseScene {
   @Override
-  public int getPreviousScene() { return 111; }
+  public int getPreviousScene() { return 110; }
 
   @Override
   public int getNextScene() { return 112; }

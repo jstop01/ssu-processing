@@ -9,7 +9,7 @@ float TIGER_MOUSE_SIZE;
 
 public class Scene_109 extends BaseScene {
   @Override
-  public int getPreviousScene() { return 109; }
+  public int getPreviousScene() { return 108; }
 
   @Override
   public int getNextScene() { return 110; }

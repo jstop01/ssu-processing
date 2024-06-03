@@ -28,7 +28,7 @@ void setup_Scene_301_BG(DrawManager drawManager) {
 
 public class Scene_301 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 222; }
 
   @Override
   public int getNextScene() { return 302; }

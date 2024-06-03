@@ -1,6 +1,10 @@
 // 호랑이에게 팥떡이나 쑥떡을 주는 게임
 public class Scene_204 extends BaseScene {
   GhostLegGameManager gameManager;
+
+  @Override
+  public int getPreviousScene() { return 203; }
+
   // 팥 떡 분기
   //@Override
   //public int getNextScene() { return 205; }
@@ -9,8 +13,6 @@ public class Scene_204 extends BaseScene {
   @Override
   public int getNextScene() { return 218; }
 
-  @Override
-  public int getPreviousScene() { return 203; }
 
   Drawable 팥떡;
   Drawable 쑥떡;

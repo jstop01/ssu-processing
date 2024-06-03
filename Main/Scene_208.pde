@@ -1,6 +1,6 @@
 public class Scene_208 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 207; }
 
   @Override
   public int getNextScene() { return 209; }

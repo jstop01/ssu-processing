@@ -1,7 +1,7 @@
 // 새 동아줄을 잡은 오누이는 올라가기 시작함. 호랑이가 나무에서 오누이를 바라봄.
 public class Scene_320 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 319; }
 
   @Override
   public int getNextScene() { return 321; }

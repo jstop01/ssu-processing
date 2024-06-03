@@ -1,6 +1,9 @@
 public class Scene_303 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 302; }
+
+  @Override
+  public int getNextScene() { return 304; }
 
   int GOAL_IN_HEIGHT = -168;
   int GO_UP_SPEED = 8;
@@ -23,8 +26,6 @@ public class Scene_303 extends BaseScene {
   Button skipButton;
   Button retryButton;
 
-  @Override
-  public int getNextScene() { return 304; }
   public void setup() {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
     isDialogVisible = uiManager.dialogUi.next();

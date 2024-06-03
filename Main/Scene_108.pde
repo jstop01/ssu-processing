@@ -14,7 +14,7 @@ void Scene_108_background_setup2(DrawManager drawManager) {
 
 public class Scene_108 extends BaseScene {
   @Override
-  public int getPreviousScene() { return 108; }
+  public int getPreviousScene() { return 107; }
 
   @Override
   public int getNextScene() { return 109; }

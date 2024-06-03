@@ -1,7 +1,7 @@
 // 동아줄이 끊어져 떨어지는 오누이와 바라보는 호랑이
 public class Scene_317 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 316; }
 
   @Override
   public int getNextScene() { return 318; }

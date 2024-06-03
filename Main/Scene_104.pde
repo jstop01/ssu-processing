@@ -9,7 +9,7 @@ public class Scene_104 extends BaseScene {
   public float rock1ZAngle = 0;
 
   @Override
-  public int getPreviousScene() { return 104; }
+  public int getPreviousScene() { return 103; }
 
   @Override
   public int getNextScene() { return 105; }

@@ -3,7 +3,7 @@ public class Scene_302 extends BaseScene {
   int X_AXIS = 2;
   color b1, b2;
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 301; }
 
   @Override
   public int getNextScene() { return 303; }

@@ -17,7 +17,7 @@ void Scene_211_Family_Setup(DrawManager drawManager) {
 
 public class Scene_211 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 210; }
 
   @Override
   public int getNextScene() { return 212; }

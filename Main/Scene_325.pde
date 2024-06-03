@@ -1,7 +1,7 @@
 // 호랑이가 썩은 밧줄을 타고 따라 올라옴.
 public class Scene_325 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 324; }
 
   @Override
   public int getNextScene() { return 326; }

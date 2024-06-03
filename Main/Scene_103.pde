@@ -24,7 +24,7 @@ void Scene_103_Setup(DrawManager drawManager) {
 
 public class Scene_103 extends BaseScene {
   @Override
-  public int getPreviousScene() { return 103; }
+  public int getPreviousScene() { return 102; }
 
   @Override
   public int getNextScene() { return 104; }

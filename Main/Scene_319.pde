@@ -1,7 +1,7 @@
 // 하늘에서 내려온 동아줄 중 튼튼한 새 동아줄을 잡은 오누이
 public class Scene_319 extends BaseScene {
   @Override
-  public int getPreviousScene() { return -1; }
+  public int getPreviousScene() { return 318; }
 
   @Override
   public int getNextScene() { return 320; }
