@@ -3,23 +3,18 @@ void Scene_103_Setup(DrawManager drawManager) {
 
     var boy = objectFactory.create(CharacterType.boy, CharacterPoseType.smile);
     boy.setPosition(500, 400);
-    boy.setScale(0.3f, 0.3f);
+    boy.setScale(0.6f, 0.6f);
     drawManager.addDrawable(boy);
 
     var girl = objectFactory.create(CharacterType.girl, CharacterPoseType.smile);
-    girl.setPosition(450, 550);
-    girl.setScale(0.3f, 0.3f);
+    girl.setPosition(350, 450);
+    girl.setScale(0.6f, 0.6f);
     drawManager.addDrawable(girl);
     
     var mom = objectFactory.create(CharacterType.mom, CharacterPoseType.front_ricecake);
-    mom.setPosition(800, 450);
-    mom.setScale(0.3f, 0.3f);
+    mom.setPosition(800, 400);
+    mom.setScale(0.6f, 0.6f);
     drawManager.addDrawable(mom);
-
-    var 절구 = objectFactory.create("res/images/object/morter.png");
-    절구.setPosition(width / 2, 450);
-    절구.setScale(0.03f, 0.03f);
-    drawManager.addDrawable(절구);
 }
 
 public class Scene_103 extends BaseScene {
