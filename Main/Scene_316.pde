@@ -35,6 +35,7 @@ public class Scene_316 extends BaseScene {
     if (clickCount == 0) {
       loadBackground("53-2", drawManager);
       ++clickCount;
+      uiManager.dialogUi.next();
       return;
     }
 
@@ -43,7 +44,9 @@ public class Scene_316 extends BaseScene {
       ++clickCount;
       return;
     }
-
+    if (uiManager.dialogUi.next()) {
+      return;
+    }
     loadNextScene();
   }
 }

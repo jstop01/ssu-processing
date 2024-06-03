@@ -33,6 +33,7 @@ public class Scene_326 extends BaseScene {
   public void mousePressed() {
     if (clickCount == 0) {
       loadBackground("63-2", drawManager);
+      uiManager.dialogUi.next();
       ++clickCount;
       return;
     }
@@ -43,6 +44,9 @@ public class Scene_326 extends BaseScene {
       return;
     }
 
+    if (uiManager.dialogUi.next()) {
+      return;
+    }
     loadNextScene();
   }
 }

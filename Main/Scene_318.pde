@@ -39,5 +39,8 @@ public class Scene_318 extends BaseScene {
   }
   
   public void mousePressed() {
+    if (uiManager.dialogUi.next()) {
+      return;
+    }
   }
 }
