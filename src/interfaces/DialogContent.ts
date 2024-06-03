@@ -4,7 +4,6 @@ export class DialogContent {
   public teller: string | undefined;
   public voicePath: string | undefined;
 
-  constructor(id: string, text: string);
   constructor(id: string, text: string, teller?: string, voicePath?: string) {
     this.id = id;
     this.text = text;

@@ -1,63 +1,53 @@
-// class UiManager {
-//   public dialogUi: DialogUi;
-//   public currentDialogList: Map<string, string>[];
-//   public tsvProcessor: TsvProcessor;
+import { ScenarioScript } from "../constants/ScenarioScript";
+import { BaseScene } from "./BaseScene";
+import { DialogContent } from "./DialogContent";
+import { DialogUi } from "./DialogUi";
 
-//   private constructor() {
-//     super();
-//     this.tsvProcessor = new TsvProcessor("Data/ScenarioScript.tsv");
-//     const s1 = this.tsvProcessor.readTsvFile();
+export class UiManager {
+  public dialogUi: DialogUi;
 
-//     this.currentDialogList = [...s1];
+  public constructor() {
+    this.dialogUi = new DialogUi();
+    this.dialogUi.show();
+  }
 
-//     this.dialogUi = new DialogUi();
-//     this.dialogUi.show();
-//   }
+  public getDialogDataById(id: string): DialogContent {
+    const data = ScenarioScript.find((item) => item.id === id);
+    if (data == null) {
+      throw Error(`찾을 수 없음: ${id}`);
+    }
+    let text = data["comment"];
+    let teller = data["character"];
+    let voice = data["voice"];
+    // if (Util.isNullOrWhitespace(voice) === false) {
+    //   voice = "res/sound/voice/" + voice + ".mp3";
+    // } else {
+    //   voice = null;
+    // }
+    const dialogContent = new DialogContent(id, text, teller, voice);
+    return dialogContent;
+  }
 
-//   public getDialogDataById(id: string): DialogContent {
-//     const data = this.tsvProcessor.getDataById(this.currentDialogList, id);
-//     if (data == null) {
-//       console.log("No data found for id: " + id);
-//       return null;
-//     }
-//     let text = data.get("comment");
-//     let teller = data.get("character");
-//     let voice = data.get("voice");
-//     if (Util.isNullOrWhitespace(voice) === false) {
-//       voice = "res/sound/voice/" + voice + ".mp3";
-//     } else {
-//       voice = null;
-//     }
-//     console.log("voice : " + voice);
+  public drawing() {
+    this.dialogUi.draw();
+  }
 
-//     const dialogContent = new DialogContent(id, text, teller, voice);
-//     return dialogContent;
-//   }
+  public mousePressed() {}
 
-//   public drawing() {
-//     this.dialogUi.draw();
-//   }
+  public getDialogForScene(scene: BaseScene): DialogContent[] {
+    const className = scene.constructor.name;
+    // Check if the class name starts with "Scene_"
+    if (className.startsWith("Scene_")) {
+      const sceneNumberStr = className.replace("Scene_", "");
+      // There won't be more than 100 dialogs..
+      const contents = ScenarioScript.filter((item, i) => {
+        const id = sceneNumberStr + i.toString().padStart(3, "0");
+        return id === item.id;
+      }) as DialogContent[];
 
-//   public mousePressed() {}
-
-//   public getDialogForScene(scene: BaseScene): DialogContent[] {
-//     const className = scene.constructor.name;
-//     // Check if the class name starts with "Scene_"
-//     if (className.startsWith("Scene_")) {
-//       const sceneNumberStr = className.substring(6);
-//       // There won't be more than 100 dialogs..
-//       const contents: DialogContent[] = [];
-//       for (let i = 0; i < 100; ++i) {
-//         const id = sceneNumberStr + String.format("%03d", i);
-//         const data = this.tsvProcessor.getDataById(this.currentDialogList, id);
-//         if (data == null) continue;
-
-//         contents.push(this.getDialogDataById(id));
-//       }
-
-//       return contents;
-//     } else {
-//       return [];
-//     }
-//   }
-// }
+      return contents;
+    } else {
+      return [];
+    }
+  }
+}
