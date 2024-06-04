@@ -6,7 +6,7 @@ public class Scene_318 extends BaseScene {
   @Override
   public int getNextScene() { return 313; }
 
-  private Button retryButton;
+  private Button2 retryButton;
 
   public void setup() {
     uiManager.dialogUi.enqueueAll(uiManager.getDialogForScene(this));
@@ -16,10 +16,10 @@ public class Scene_318 extends BaseScene {
 
     setup_Scene_301_BG(drawManager);
 
-    retryButton = new Button();
-    retryButton.text = "되돌아가시겠습니까?";
-    retryButton.position = new PVector(1000, 500);
-    retryButton.size = new PVector(300, 100);
+    retryButton = new Button2(loadImage("res/images/UI/3button.png"), 1050, 400);
+    retryButton.text = "Retry?";
+    retryButton.setScale(2, 2);
+    drawManager.addDrawable(retryButton);
 
     soundManager.playOnce("res/sound/effect/318_바람소리.mp3");
   }
@@ -31,7 +31,7 @@ public class Scene_318 extends BaseScene {
     drawManager.drawing();
     uiManager.drawing();
 
-    if (retryButton.drawAndCheckClick()) {
+    if (retryButton.isClicked()) {
       loadNextScene();
     }
     
