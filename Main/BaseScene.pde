@@ -45,14 +45,11 @@ public abstract class BaseScene {
   }
   
   public void mousePressed() {
-    println("BaseScene: mousePressed");
   }
 
   public void mouseReleased() {
-    println("BaseScene: mouseReleased");
   }
 
   public void keyPressed() {
-    println("BaseScene: mousePressed");
   }
 }

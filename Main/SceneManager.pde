@@ -54,6 +54,7 @@ public class SceneManager {
 
         stopPlayingVoice();
         currentScene.setup();
+        bgmManager.onSceneLoaded(currentScene);
         smoothFrame = true;
       }
     }
@@ -90,6 +91,7 @@ public class SceneManager {
         fadeIn = false;
         fadeOut = false;
         currentScene.setup();
+        bgmManager.onSceneLoaded(currentScene);
         nextScene = null;
         stopPlayingVoice();
         return;

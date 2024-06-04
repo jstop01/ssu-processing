@@ -44,7 +44,6 @@ void updateDeltaTime() {
 }
 
 void mousePressed() {
-  print("mousePressed");
   mouseClickedThisFrame = true;
   BaseScene scene = sceneManager.getCurrentScene();
   if (scene != null) {

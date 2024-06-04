@@ -8,6 +8,26 @@ public class BGMSequence {
 
   public String[] scenes;
   public String bgmPath;
+
+  public void play() {
+    if (new File(sketchPath(bgmPath)).exists() == false) {
+      println("BGM file not found: " + bgmPath);
+      return;
+    }
+
+    bgm = new SoundFile(Main.this, bgmPath);
+    // 볼륨 설정 50%
+    bgm.play();
+    bgm.amp(0.2);
+  }
+
+  public void stop() {
+    if (bgm != null)
+      bgm.stop();
+    bgm = null;
+  }
+
+  public SoundFile bgm;
 }
 
 public class BGMManager {
@@ -20,7 +40,7 @@ public class BGMManager {
     sequences.add(new BGMSequence(new String[]{ "Scene_101", "Scene_102", "Scene_103" }, "res/sound/bgm/튜토리얼.mp3"));
     sequences.add(new BGMSequence(new String[]{ "Scene_104" }, "res/sound/bgm/미니게임용1.mp3"));
     sequences.add(new BGMSequence(new String[]{ "Scene_105" }, "res/sound/bgm/튜토리얼.mp3"));
-    sequences.add(new BGMSequence(new String[]{ "Scene_106", "Scene_107, Scene_108" }, "res/sound/bgm/저녁숲속게임.mp3"));
+    sequences.add(new BGMSequence(new String[]{ "Scene_106", "Scene_107", "Scene_108" }, "res/sound/bgm/저녁숲속게임.mp3"));
     sequences.add(new BGMSequence(new String[]{ "Scene_109" }, "res/sound/bgm/긴급한분위기_숏.mp3"));
     sequences.add(new BGMSequence(new String[]{ "Scene_110", "Scene_111", "Scene_112", "Scene_113", "Scene_114" }, "res/sound/bgm/배드엔딩.mp3"));
     sequences.add(new BGMSequence(new String[]{ "Scene_201" }, "res/sound/bgm/기본.mp3"));
@@ -44,7 +64,33 @@ public class BGMManager {
     sequences.add(new BGMSequence(new String[]{ "Scene_Ending" }, "res/sound/bgm/엔딩크레딧.mp3"));
   }
 
-  public void OnSceneLoaded(BaseScene newScene) {
-    String sceneName = scene.getClass().getSimpleName();
+  public void onSceneLoaded(BaseScene newScene) {
+    println("onSceneLoaded: " + newScene.getClass().getSimpleName());
+    String sceneName = newScene.getClass().getSimpleName();
+    BGMSequence targetSequence = null;
+    for (var sequence : sequences) {
+      for (var sceneInSequence : sequence.scenes) {
+        if (sceneInSequence.equals(sceneName)) {
+          targetSequence = sequence;
+          break;
+        }
+      }
+    }
+
+    if (targetSequence == currentSequence) {
+      // Nothing to do. Keep playing.
+      println("Nothing to do. Keep playing.");
+      return;
+    }
+
+    if (currentSequence != null) {
+      currentSequence.stop();
+    }
+
+    currentSequence = targetSequence;
+    if (currentSequence != null) {
+      println("Playing BGM for " + sceneName);
+      currentSequence.play();
+    }
   }
 }

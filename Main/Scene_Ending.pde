@@ -176,7 +176,6 @@ public class Scene_Ending extends BaseScene {
     {
         pushStyle();
         
-        println("Scene_Ending : draw");
         background(255, 255, 255);
         DrawEnding();
         

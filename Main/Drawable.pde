@@ -71,11 +71,9 @@ public class Drawable {
 
   // draw function
   public void draw(){
-    System.out.println("Draw");
   }
 
   public void onClick(){
-    System.out.println("Clicked");
   }
 
   public boolean mousePressed(){

@@ -44,11 +44,13 @@ public class SoundManager {
   }
 
   public SoundFile playOnce(String path) {
-    if (new File(dataPath(path)).exists() == false)
-        return null;
+    if (new File(sketchPath(path)).exists() == false) {
+      println("File not found: " + path);
+      return null;
+    }
     SoundFile file = new SoundFile(Main.this, path);
     if (file == null)
-        return null;
+      return null;
 
     file.play();
     return file;
